@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <base href="../">
-<title>Case Studies · Marketing That Works | Bench Box Media</title>
-<meta name="description" content="Case studies across branding, content, creators, PR, strategy, media buying, partnerships, films, events and technology.">
+<title>Our Work · Case Studies, Films, Social Creatives &amp; Tech | Bench Box Media</title>
+<meta name="description" content="See our work: marketing case studies, ad films, social media creatives and websites built by Bench Box Media.">
 <link rel="canonical" href="https://benchboxmedia.com/work/">
-<meta property="og:title" content="Case Studies · Marketing That Works | Bench Box Media">
-<meta property="og:description" content="Case studies across branding, content, creators, PR, strategy, media buying, partnerships, films, events and technology.">
+<meta property="og:title" content="Our Work · Case Studies, Films, Social Creatives &amp; Tech | Bench Box Media">
+<meta property="og:description" content="See our work: marketing case studies, ad films, social media creatives and websites built by Bench Box Media.">
 <meta property="og:url" content="https://benchboxmedia.com/work/">
-<meta name="twitter:title" content="Case Studies · Marketing That Works | Bench Box Media">
-<meta name="twitter:description" content="Case studies across branding, content, creators, PR, strategy, media buying, partnerships, films, events and technology.">
+<meta name="twitter:title" content="Our Work · Case Studies, Films, Social Creatives &amp; Tech | Bench Box Media">
+<meta name="twitter:description" content="See our work: marketing case studies, ad films, social media creatives and websites built by Bench Box Media.">
 <link rel="icon" href="favicon.ico" sizes="48x48">
 <link rel="icon" type="image/png" sizes="96x96" href="icon-96.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -530,6 +530,50 @@ p{margin:0}
   .hero .sub{font-size:17px}
   .pitwrap{height:min(300px,38svh)}
 }
+.hub{margin-top:clamp(50px,7vw,90px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.hcard{position:relative;overflow:hidden;border-radius:30px;padding:26px;min-height:clamp(320px,34vw,440px);background:var(--soft);color:var(--ink);text-decoration:none;display:flex;flex-direction:column;justify-content:space-between;transition:transform .5s var(--spring),background .35s,color .3s}
+.hcard .hn{font:500 13px/1 var(--mono);letter-spacing:.14em;opacity:.7}
+.hcard h2{font:400 clamp(36px,4.4vw,68px)/1 var(--display)}
+.hcard p{margin-top:12px;max-width:34ch;font-size:clamp(15px,1.2vw,18px);opacity:.8}
+.hcard .hgo{display:inline-block;margin-top:16px;font-weight:600;transition:transform .4s var(--spring)}
+.htx{position:relative;z-index:1}
+.hvis{position:absolute;right:26px;top:26px;width:min(46%,300px);aspect-ratio:1.25}
+.hvis img{position:absolute;top:0;width:52%;aspect-ratio:3/4;object-fit:cover;border-radius:14px;box-shadow:0 14px 30px rgba(0,0,0,.25);transition:transform .6s var(--spring)}
+.hvis img:nth-child(1){left:0;transform:rotate(-9deg)}
+.hvis img:nth-child(2){left:24%;top:6%;transform:rotate(2deg);z-index:1}
+.hvis img:nth-child(3){left:48%;transform:rotate(10deg)}
+.hcs i{position:absolute;left:0;right:0;height:27%;border-radius:16px;background:var(--k);display:flex;align-items:flex-end;padding:10px 12px;box-shadow:0 12px 26px rgba(0,0,0,.18);transition:transform .6s var(--spring)}
+.hcs i b{font:600 12px/1.1 var(--body);color:#141414;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hcs i{align-items:center}
+.hcs i:nth-child(1){top:2%;transform:rotate(-4deg)}.hcs i:nth-child(2){top:36%;transform:rotate(2deg) translateX(6%)}.hcs i:nth-child(3){top:70%;transform:rotate(-2deg) translateX(-3%)}
+.htech .hb{position:absolute;inset:6% 0 auto 0;border-radius:14px;background:var(--bg);box-shadow:0 14px 30px rgba(0,0,0,.22);overflow:hidden;transform:rotate(-4deg);transition:transform .6s var(--spring)}
+.hbt{display:flex;align-items:center;gap:5px;padding:9px 10px;border-bottom:1px solid var(--line,rgba(127,127,127,.2))}
+.hbt i{width:8px;height:8px;border-radius:50%;background:#FF0C6A}.hbt i+i{background:#FFD60A}.hbt i+i+i{background:#00C98D}
+.hbt span{margin-left:6px;font:500 10px/1 var(--mono);opacity:.7;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hbb{display:grid;gap:8px;padding:14px}
+.hbb em{height:12px;border-radius:6px;background:var(--soft)}.hbb em:nth-child(1){height:44px;background:#3D5AFE}.hbb em:nth-child(3){width:70%}.hbb em:nth-child(4){width:45%;background:#FF0C6A}
+@media (hover:hover){
+  .hcard:hover{background:var(--c);color:#141414;transform:translateY(-6px) rotate(-1deg)}
+  .hcard:hover .hgo{transform:translateX(8px)}
+  .hcard:hover .hvis img:nth-child(1){transform:rotate(-16deg) translate(-14%,4%)}
+  .hcard:hover .hvis img:nth-child(2){transform:rotate(0) translateY(-8%) scale(1.06)}
+  .hcard:hover .hvis img:nth-child(3){transform:rotate(17deg) translate(14%,4%)}
+  .hcard:hover .hcs i:nth-child(1){transform:rotate(-10deg) translateY(-8%)}
+  .hcard:hover .hcs i:nth-child(3){transform:rotate(4deg) translate(6%,10%)}
+  .hcard:hover .htech .hb{transform:rotate(2deg) scale(1.05)}
+}
+.hcard:active{transform:scale(.98)}
+@media (max-width:700px){
+  .hub{grid-template-columns:1fr;gap:12px}
+  .hcard{min-height:210px;padding:20px;border-radius:24px;background:var(--c);color:#141414}
+  .hcard h2{font-size:34px}.hcard p{font-size:14px;max-width:24ch}
+  .hvis{position:relative;right:auto;top:auto;width:100%;aspect-ratio:auto;height:128px;margin:6px 0 16px}
+  .hvis img{width:30%}.hvis img:nth-child(1){left:8%}.hvis img:nth-child(2){left:35%}.hvis img:nth-child(3){left:62%}
+  .hcs i{left:4%;right:4%}
+  .htech .hb{left:6%;right:6%;inset-block-start:4%}
+  .hbb{gap:6px;padding:10px}.hbb em{height:9px}.hbb em:nth-child(1){height:30px}
+  .hcard .hn{position:absolute;top:20px;right:22px}
+}
 /* home reveal: plays after the loader, and whenever the home hero is drawn */
 .hero h1 .ln{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
 .hero h1 .ln>span{display:inline-block;transform-origin:0 100%}
@@ -721,7 +765,7 @@ footer{padding-top:clamp(120px,16vw,200px);padding-bottom:calc(28px + env(safe-a
     <div class="foot-grid">
       <div><p class="lead" style="font-size:19px">A full-service marketing agency. Strategy to screen, built on one bench.</p></div>
       <div><h4>Agency</h4><ul><li><a href="#services" data-link>Services</a></li><li><a href="#the-bench" data-link>The Bench</a></li><li><a href="#about" data-link>About</a></li><li><a href="#careers" data-link>Careers</a></li></ul></div>
-      <div><h4>Work</h4><ul><li><a href="#work" data-link>Case studies</a></li><li><a href="#films" data-link>Films</a></li><li><a href="#social" data-link>Social &amp; creative</a></li><li><a href="#clients" data-link>Clients</a></li><li><a href="#partners" data-link>Media partners</a></li><li><a href="#blog" data-link>Blog</a></li></ul></div>
+      <div><h4>Work</h4><ul><li><a href="#case-studies" data-link>Case studies</a></li><li><a href="#films" data-link>Films</a></li><li><a href="#social" data-link>Social creatives</a></li><li><a href="#clients" data-link>Clients</a></li><li><a href="#partners" data-link>Media partners</a></li><li><a href="#blog" data-link>Blog</a></li></ul></div>
       <div><h4>Talk</h4><ul><li>marketing@benchboxmedia.com</li><li>+91 6361 772 547</li><li><a href="#contact" data-link>Contact</a></li></ul><h4 style="margin-top:26px">Follow</h4><ul id="footSoc"></ul></div>
     </div>
     <div class="foot-legal"><span>© 2026 BENCH BOX MEDIA LLP</span><span><a href="#privacy" data-link>Privacy</a> · <a href="#terms" data-link>Terms</a></span></div>
@@ -730,7 +774,7 @@ footer{padding-top:clamp(120px,16vw,200px);padding-bottom:calc(28px + env(safe-a
 
 <div class="mnav" id="mnav" hidden>
   <button class="xbtn" id="mnavX" type="button" aria-label="Close menu">✕</button>
-  <a href="#home" data-link>Home</a><a href="#services" data-link>Services</a><a href="#the-bench" data-link>The Bench</a><a href="#work" data-link>Case studies</a><a href="#films" data-link>Films</a><a href="#social" data-link>Social</a><a href="#clients" data-link>Clients</a><a href="#partners" data-link>Media partners</a><a href="#blog" data-link>Blog</a><a href="#about" data-link>About</a><a href="#careers" data-link>Careers</a><a href="#contact" data-link>Contact</a>
+  <a href="#home" data-link>Home</a><a href="#services" data-link>Services</a><a href="#the-bench" data-link>The Bench</a><a href="#work" data-link>Work</a><a href="#case-studies" data-link>Case studies</a><a href="#films" data-link>Films</a><a href="#social" data-link>Social</a><a href="#clients" data-link>Clients</a><a href="#partners" data-link>Media partners</a><a href="#blog" data-link>Blog</a><a href="#about" data-link>About</a><a href="#careers" data-link>Careers</a><a href="#contact" data-link>Contact</a>
 </div>
 <div class="scrim" id="scrim"></div>
 <aside class="drawer" id="drawer" aria-hidden="true">
@@ -3964,8 +4008,9 @@ const MARK=(a,b)=>`<svg viewBox="0 0 627 612" aria-hidden="true"><rect x="0" y="
 function hsh(s){let h=2166136261;for(const c of s)h=Math.imul(h^c.charCodeAt(0),16777619);return h>>>0}
 
 /* ======================= VIEWS ======================= */
+const SOC=f=>`creatives/${f}.jpg`;
 const phead=(eb,h,lead)=>`<div class="phead"><div class="phtop"><span class="eyebrow">${eb}</span></div><h1>${h}</h1>${lead?`<p class="lead">${lead}</p>`:''}</div>`;
-const workTabs=cur=>`<nav class="subnav" aria-label="Work">${[['work','Case studies'],['websites','Websites'],['films','Films'],['social','Social & creative']].map(([k,l])=>`<a href="#${k}" data-link ${k===cur?'aria-current="page"':''}>${l}</a>`).join('')}</nav>`;
+const workTabs=cur=>`<nav class="subnav" aria-label="Work">${[['case-studies','Case studies'],['films','Films'],['social','Social creatives'],['websites','Tech']].map(([k,l])=>`<a href="#${k}" data-link ${k===cur?'aria-current="page"':''}>${l}</a>`).join('')}</nav>`;
 
 const LG=n=>D.logos[n]?`<i class="lg" role="img" aria-label="${esc(n)}" style="--logo:url(logos/${D.logos[n]}.png)"></i>`:esc(n);
 const TILE=(n,i)=>D.urls[n]?`<a class="logo-t" data-rv href="${D.urls[n]}" target="_blank" rel="noopener" style="--c:${hex(i)}" title="${esc(n)} · visit website">${LG(n)}</a>`:`<div class="logo-t" data-rv style="--c:${hex(i)}" title="${esc(n)}">${LG(n)}</div>`;
@@ -4029,7 +4074,7 @@ home:()=>`
       <div><span class="badge-x"><i></i>FILM MARKETING &amp; PR</span>
       <h2 class="mid" style="margin-top:22px">We launch <span class="hl" style="--c:var(--yellow)">films</span> too</h2>
       <p class="lead" style="margin-top:18px">Release strategy, film PR, trailer and music launches, UGC, premieres, activations, brand tie-ups and OTT campaigns. From first look to full houses.</p>
-      <div class="row" style="margin-top:26px"><a class="btn ink" href="#work" data-link data-film>See film campaigns ↗</a><a class="btn ghost" href="#services" data-link data-open="10">Film services</a></div></div>
+      <div class="row" style="margin-top:26px"><a class="btn ink" href="#case-studies" data-link data-film>See film campaigns ↗</a><a class="btn ghost" href="#services" data-link data-open="10">Film services</a></div></div>
       <div class="filmpills" aria-hidden="true">${['Strategy','PR','Launches','UGC','Premieres','Activations','Brands','Media','Streaming'].map((t,i)=>`<span style="--c:${hex(i)};--i:${i}">${t}</span>`).join('')}</div>
     </div>
   </section>
@@ -4076,7 +4121,23 @@ services:()=>`${phead('Services','Every part of how you <span class="hl" style="
     <a class="btn pinkb" href="#contact" data-link data-bench>Apply for The Bench ↗</a>
   </div>`,
 
-work:()=>`${phead('Work','Case <span class="hl" style="--c:var(--orange)">studies</span>','How we solve problems across every discipline on the bench.')}${workTabs('work')}
+work:()=>`${phead('Work','Pick what you want to <span class="hl" style="--c:var(--orange)">see</span>','Case studies, films, social creatives and tech. Everything we make, sorted.')}
+  <div class="hub">
+    <a class="hcard" href="#case-studies" data-link style="--c:var(--orange)"><span class="hn">01</span>
+      <div class="hvis hcs" aria-hidden="true">${D.cases.slice(0,3).map((c,i)=>`<i style="--k:${hex(i*3+1)}"><b>${esc(c.kind)}</b></i>`).join('')}</div>
+      <div class="htx"><h2>Case studies</h2><p>${D.cases.length} stories of problems solved across strategy, PR, media, branding and film.</p><span class="hgo">Open →</span></div></a>
+    <a class="hcard" href="#films" data-link style="--c:var(--yellow)"><span class="hn">02</span>
+      <div class="hvis" aria-hidden="true">${[0,3,6].map(k=>`<img src="${D.films[k].poster}" alt="" loading="lazy">`).join('')}</div>
+      <div class="htx"><h2>Films</h2><p>${D.films.length} TVCs, UGC, digital and AI ad films. Press play.</p><span class="hgo">Open →</span></div></a>
+    <a class="hcard" href="#social" data-link style="--c:var(--green)"><span class="hn">03</span>
+      <div class="hvis" aria-hidden="true">${[0,4,8].map(k=>`<img src="${SOC(D.social[k].f)}" alt="" loading="lazy">`).join('')}</div>
+      <div class="htx"><h2>Social creatives</h2><p>A pick of 3000+ ad creatives, festive posts and campaign visuals.</p><span class="hgo">Open →</span></div></a>
+    <a class="hcard" href="#websites" data-link style="--c:var(--blue)"><span class="hn">04</span>
+      <div class="hvis htech" aria-hidden="true"><div class="hb"><div class="hbt"><i></i><i></i><i></i><span>${esc(D.sites[0].domain)}</span></div><div class="hbb"><em></em><em></em><em></em><em></em></div></div></div>
+      <div class="htx"><h2>Tech</h2><p>Websites and digital builds made to turn visitors into enquiries.</p><span class="hgo">Open →</span></div></a>
+  </div>`,
+
+'case-studies':()=>`${phead('Work','Case <span class="hl" style="--c:var(--orange)">studies</span>','How we solve problems across every discipline on the bench.')}${workTabs('case-studies')}
   <div class="frow"><span class="eyebrow">Filter</span><div class="chiprow" id="ctype"><button class="fchip" type="button" data-ct="all" aria-pressed="true">All <em>${D.cases.length}</em></button><button class="fchip" type="button" data-ct="film" aria-pressed="false">Film marketing <em>${D.cases.filter(c=>c.film).length}</em></button>${D.services.map((sv,i)=>{const n=D.cases.filter(c=>c.svc===i&&!c.film).length;return n?`<button class="fchip" type="button" data-ct="${i}" aria-pressed="false">${esc(sv.short)} <em>${n}</em></button>`:''}).join('')}</div></div>
   <div id="caselist" style="margin-top:20px">${casesHTML()}</div>`,
 
@@ -4087,7 +4148,7 @@ films:()=>`${phead('Work','Ad <span class="hl" style="--c:var(--yellow)">films</
   <div class="frow"><span class="eyebrow">Filter</span><div class="chiprow" id="filters">${['All','TVC','UGC','DVC','AI'].map((k,i)=>`<button class="fchip" type="button" data-k="${k}" aria-pressed="${k==='All'}">${k==='All'?'All films':FMT[k]} <em>${k==='All'?films.length:films.filter(f=>f.fmt===k).length}</em></button>`).join('')}</div></div>
   <div class="wgrid" id="wgrid"></div>`,
 
-social:()=>`${phead('Work','Social &amp; <span class="hl" style="--c:var(--green)">creative</span>','Ad creatives, festive posts and campaign visuals made on the bench.')}${workTabs('social')}${oneStat('3000+','Static creatives produced',3)}
+social:()=>`${phead('Work','Social <span class="hl" style="--c:var(--green)">creatives</span>','Ad creatives, festive posts and campaign visuals made on the bench.')}${workTabs('social')}${oneStat('3000+','Static creatives produced',3)}
   <div class="masonry">${D.social.map((s,i)=>`<button class="shot" type="button" data-sh="${i}"><img src="creatives/${s.f}.jpg" alt="${esc(s.c)}" loading="lazy"><span>${esc(s.c)}</span></button>`).join('')}</div>`,
 
 clients:()=>`${phead('Clients','Trusted <span class="hl" style="--c:var(--yellow)">by</span>','From global names to homegrown favourites. Tap a name.')}${oneStat('100+','Brands',0)}${logosHTML(false)}${testiHTML()}`,
@@ -4184,7 +4245,7 @@ terms:()=>`${phead('Legal · Updated 27 September 2026','Terms &amp; conditions'
 function caseView(c,i,isSite){
   const list=isSite?D.sites:D.cases,col=isSite?hex(i*2+1):hex(c.svc||0),next=list[(i+1)%list.length];
   return `<div style="--c:${col}">
-  <div class="chero"><a class="link" href="#${isSite?'websites':'work'}" data-link style="justify-self:start">← All ${isSite?'websites':'case studies'}</a><span class="eyebrow">${esc(c.kind)}</span><h1>${esc(c.name)}</h1><p class="lead">${esc(c.sum)}</p>
+  <div class="chero"><a class="link" href="#${isSite?'websites':'case-studies'}" data-link style="justify-self:start">← All ${isSite?'websites':'case studies'}</a><span class="eyebrow">${esc(c.kind)}</span><h1>${esc(c.name)}</h1><p class="lead">${esc(c.sum)}</p>
     <div class="tags">${c.tags.map(t=>`<span class="chipsm">${esc(t)}</span>`).join('')}</div>
     <div class="row">${c.url?`<a class="btn ink" href="${c.url}" target="_blank" rel="noopener">Visit website ↗</a>`:''}</div></div>
   <div class="stats">${c.stats.map(([n,l])=>`<div><b>${esc(n)}</b><span class="eyebrow">${esc(l)}</span></div>`).join('')}</div>
@@ -4215,7 +4276,7 @@ function resolve(name){
   const pi=D.posts.findIndex(p=>p.slug===name);if(pi>=0)return{html:postView(D.posts[pi],pi),name};
   return{html:V.home(),name:'home'};
 }
-const NAVMAP={'case-':'work','web-':'work',websites:'work',films:'work',social:'work',work:'work','blog-':'blog'};
+const NAVMAP={'case-studies':'work','case-':'work','web-':'work',websites:'work',films:'work',social:'work',work:'work','blog-':'blog'};
 function navKey(n){for(const k in NAVMAP)if(n===k||n.startsWith(k)&&k.endsWith('-'))return NAVMAP[k];return n}
 function show(name,anim,restoreY){
   if(name===current||name===pending)return;pending=name;
@@ -4305,7 +4366,8 @@ $('#mnavX').onclick=()=>{$('#mnav').hidden=true;$('#menuBtn').focus()};
 const META={home:['Bench Box Media · Marketing, Media & Ad Films, Built on One Bench',null],
  services:['Services · Media Buying, PR, Branding, Content, Films & Events | Bench Box Media','Eleven marketing disciplines under one roof: media planning & buying, web & tech, content, influencer marketing, strategy, PR, branding, partnerships, video production, events and film marketing.'],
  'the-bench':['The Bench™ · One Team for Your Entire Brand | Bench Box Media','The Bench is Bench Box Media\'s flagship program: brand audit, strategy, social, ads, content, PR and website built by one team, with monthly reviews.'],
- work:['Case Studies · Marketing That Works | Bench Box Media','Case studies across branding, content, creators, PR, strategy, media buying, partnerships, films, events and technology.'],
+ work:['Our Work · Case Studies, Films, Social Creatives & Tech | Bench Box Media','See our work: marketing case studies, ad films, social media creatives and websites built by Bench Box Media.'],
+ 'case-studies':['Case Studies · Marketing That Works | Bench Box Media','Case studies across branding, content, creators, PR, strategy, media buying, partnerships, films, events and technology.'],
  websites:['Websites We\'ve Built · Web Design & Development | Bench Box Media','Fast, SEO-ready websites for healthcare, non-profit, construction and hospitality brands.'],
  films:['Ad Films · TVC, UGC, DVC & AI Ad Films | Bench Box Media','TV commercials, creator UGC, digital films and AI ad films produced by Bench Box Media.'],
  social:['Social Media Creatives · 3000+ Produced | Bench Box Media','Ad creatives, festive posts and campaign visuals from Bench Box Media.'],
@@ -4347,7 +4409,7 @@ function mount(n){
   if(n==='films')initFilms();
   if(n==='contact')initContact();
   if(n==='careers')initCareers();
-  if(n==='work')caseFilter();
+  if(n==='case-studies')caseFilter();
   if(n==='blog'){const g=$('#btags');g.addEventListener('click',e=>{const b=e.target.closest('[data-bt]');if(!b)return;$$('#btags [data-bt]').forEach(x=>x.setAttribute('aria-pressed',x===b));const t=b.dataset.bt;$('#postlist').innerHTML=postsHTML(D.posts.filter(p=>t==='all'||p.tag===t));reveals()})}
   inview();
   if($('#fbars'))funnel();
