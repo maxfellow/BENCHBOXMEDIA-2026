@@ -574,6 +574,21 @@ p{margin:0}
   .hbb{gap:6px;padding:10px}.hbb em{height:9px}.hbb em:nth-child(1){height:30px}
   .hcard .hn{position:absolute;top:20px;right:22px}
 }
+.hfilm{width:min(52%,360px)}
+.hfilm img{width:40%}
+.hfilm img:nth-child(1){left:0;top:10%;transform:rotate(-14deg);z-index:0}
+.hfilm img:nth-child(2){left:14%;top:4%;transform:rotate(-7deg);z-index:1}
+.hfilm img:nth-child(3){left:30%;top:0;transform:none;z-index:3;width:44%;box-shadow:0 20px 40px rgba(0,0,0,.35)}
+.hfilm img:nth-child(4){left:46%;top:4%;transform:rotate(7deg);z-index:2}
+.hfilm img:nth-child(5){left:60%;top:10%;transform:rotate(14deg);z-index:1}
+@media (hover:hover){
+  .hcard:hover .hfilm img:nth-child(1){transform:rotate(-20deg) translate(-16%,6%)}
+  .hcard:hover .hfilm img:nth-child(2){transform:rotate(-10deg) translate(-8%,0)}
+  .hcard:hover .hfilm img:nth-child(3){transform:translateY(-8%) scale(1.08)}
+  .hcard:hover .hfilm img:nth-child(4){transform:rotate(10deg) translate(8%,0)}
+  .hcard:hover .hfilm img:nth-child(5){transform:rotate(20deg) translate(16%,6%)}
+}
+@media (max-width:700px){.hfilm{width:100%}.hfilm img{width:26%}.hfilm img:nth-child(1){left:4%}.hfilm img:nth-child(2){left:19%}.hfilm img:nth-child(3){left:35%;width:30%}.hfilm img:nth-child(4){left:55%}.hfilm img:nth-child(5){left:70%}}
 /* home reveal: plays after the loader, and whenever the home hero is drawn */
 .hero h1 .ln{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
 .hero h1 .ln>span{display:inline-block;transform-origin:0 100%}
@@ -4127,7 +4142,7 @@ work:()=>`${phead('Work','Pick what you want to <span class="hl" style="--c:var(
       <div class="hvis hcs" aria-hidden="true">${D.cases.slice(0,3).map((c,i)=>`<i style="--k:${hex(i*3+1)}"><b>${esc(c.kind)}</b></i>`).join('')}</div>
       <div class="htx"><h2>Case studies</h2><p>${D.cases.length} stories of problems solved across strategy, PR, media, branding and film.</p><span class="hgo">Open →</span></div></a>
     <a class="hcard" href="#films" data-link style="--c:var(--yellow)"><span class="hn">02</span>
-      <div class="hvis" aria-hidden="true">${[0,3,6].map(k=>`<img src="${D.films[k].poster}" alt="" loading="lazy">`).join('')}</div>
+      <div class="hvis hfilm" aria-hidden="true">${['duroflex','livpure','kajol','dotkey','ring'].map(k=>`<img src="posters/hub-${k}.jpg" alt="" loading="lazy">`).join('')}</div>
       <div class="htx"><h2>Films</h2><p>${D.films.length} TVCs, UGC, digital and AI ad films. Press play.</p><span class="hgo">Open →</span></div></a>
     <a class="hcard" href="#social" data-link style="--c:var(--green)"><span class="hn">03</span>
       <div class="hvis" aria-hidden="true">${[0,4,8].map(k=>`<img src="${SOC(D.social[k].f)}" alt="" loading="lazy">`).join('')}</div>
