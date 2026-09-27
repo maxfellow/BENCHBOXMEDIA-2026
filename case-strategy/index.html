@@ -678,7 +678,6 @@ footer{padding-top:clamp(120px,16vw,200px);padding-bottom:calc(28px + env(safe-a
 
 <div class="cur" id="cur" aria-hidden="true"><span id="curT">PLAY</span></div>
 <div class="prog" aria-hidden="true"><i id="prog"></i></div>
-<button class="backbtn" id="backBtn" type="button" hidden>← Back</button>
 <div class="loader" id="loader" aria-hidden="true">
   <div class="lwrap">
     <div class="lstage"><i class="lb la"></i><i class="lb lbk"></i><i class="lb lc"></i></div>
@@ -4006,7 +4005,7 @@ home:()=>`
       <h2 class="mid" style="margin-top:22px">We launch <span class="hl" style="--c:var(--yellow)">films</span> too</h2>
       <p class="lead" style="margin-top:18px">Trailer reel pages, meme networks, film reviewers, YouTube creators, press circuits and first-day-show reactions. Release week, handled.</p>
       <div class="row" style="margin-top:26px"><a class="btn ink" href="#work" data-link data-film>See film campaigns ↗</a></div></div>
-      <div class="filmpills" aria-hidden="true">${['Trailer reels','Meme pages','Film reviewers','YouTube creators','Press meets','Song trends','First-day reactions','OTT premieres'].map((t,i)=>`<span style="--c:${hex(i)};--d:${i*.35}s">${t}</span>`).join('')}</div>
+      <div class="filmpills" aria-hidden="true">${['Release strategy','Film PR','Brand partnerships','Creator campaigns','Premiere events','Fan activations','Trailer & song launches','Digital media buying'].map((t,i)=>`<span style="--c:${hex(i)};--d:${i*.35}s">${t}</span>`).join('')}</div>
     </div>
   </section>
   ${testiHTML()}
@@ -4203,7 +4202,6 @@ function show(name,anim,restoreY){
     $('.foot-cta').hidden=current==='contact';
     closeDrawer();mount(current);pending=null;setMeta(current);
     const y=restoreY||0;window.scrollTo({top:y,behavior:'instant'});if(y)requestAnimationFrame(()=>window.scrollTo({top:y,behavior:'instant'}));
-    $('#backBtn').hidden=!navStack.length||current==='home';
   };
   if(!anim||reduce||current===null){swap();return}
   const w=$('#wipe');w.classList.remove('leave');w.classList.add('cover');
@@ -4229,7 +4227,6 @@ document.addEventListener('click',e=>{
   if(a.dataset.open)setTimeout(()=>openDrawer(+a.dataset.open),650);
 });
 addEventListener('popstate',()=>{if(navStack.length)goBack();else show(window.BB_PAGE||'home',true)});
-$('#backBtn').onclick=()=>{if(pushedOK&&history.state&&history.state.bb)history.back();else goBack()};
 /* light / dark switch, remembered on this device */
 const rootEl=document.documentElement;
 try{const t=localStorage.getItem('bb-theme');if(t)rootEl.setAttribute('data-theme',t)}catch(_){}
