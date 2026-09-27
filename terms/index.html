@@ -523,6 +523,26 @@ p{margin:0}
   .hero .sub{font-size:17px}
   .pitwrap{height:min(300px,38svh)}
 }
+/* home reveal: plays after the loader, and whenever the home hero is drawn */
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
+.hero h1 .ln>span{display:inline-block;transform-origin:0 100%}
+html.intro .hero h1 .ln>span,html.intro .hero .swap,html.intro .hero .sub,html.intro .hero .row>*,html.intro .bar>*{opacity:0}
+html.intro .pitwrap{border-bottom-color:transparent}
+html:not(.intro) .hero h1 .ln>span{animation:rvLine .95s cubic-bezier(.2,1.3,.3,1) backwards}
+html:not(.intro) .hero h1 .ln:nth-child(2)>span{animation-delay:.12s}
+html:not(.intro) .hero .swap{animation:rvPop .8s cubic-bezier(.3,1.7,.5,1) .38s backwards}
+html:not(.intro) .hero .sub{animation:rvUp .8s cubic-bezier(.2,.9,.3,1) .55s backwards}
+html:not(.intro) .hero .row>*{animation:rvBtn .7s cubic-bezier(.3,1.6,.5,1) .7s backwards}
+html:not(.intro) .hero .row>*+*{animation-delay:.8s}
+html:not(.intro) .pitwrap{animation:rvFloor 1s cubic-bezier(.7,0,.2,1) .15s backwards}
+html.revealing .bar>*{animation:rvDown .7s cubic-bezier(.2,1.2,.3,1) backwards}
+html.revealing .bar>*+*{animation-delay:.1s}
+@keyframes rvLine{from{transform:translateY(115%) rotate(7deg)}}
+@keyframes rvPop{0%{transform:scale(0) rotate(-24deg);opacity:0}100%{transform:rotate(-2deg);opacity:1}}
+@keyframes rvUp{from{transform:translateY(26px);opacity:0}}
+@keyframes rvBtn{from{transform:translateY(40px) scale(.6);opacity:0}}
+@keyframes rvDown{from{transform:translateY(-140%);opacity:0}}
+@keyframes rvFloor{from{border-bottom-color:transparent;clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
 /* crazy loader */
 .loader{position:fixed;inset:0;z-index:200;background:#0E0E12;color:#F4F4F6;display:grid;place-items:center;clip-path:circle(150% at 50% 50%);transition:clip-path .9s cubic-bezier(.7,0,.2,1)}
 .loader.out{clip-path:circle(0% at 50% 50%)}
@@ -3939,7 +3959,7 @@ const V={
 home:()=>`
   <div class="hero">
     <div class="hero-copy">
-      <h1><span class="q">Pull up a seat.<br>We're cooking crazy</span><br><button class="swap" id="swap" type="button" aria-live="polite"><b>Ad films</b><span class="go">see how →</span></button></h1>
+      <h1><span class="q"><span class="ln"><span>Pull up a seat.</span></span><span class="ln"><span>We're cooking crazy</span></span></span><br><button class="swap" id="swap" type="button" aria-live="polite"><b>Ad films</b><span class="go">see how →</span></button></h1>
       <p class="sub">Strategy, media, PR, branding, content, films, web and events. One team builds all of it.</p>
       <div class="row"><a class="btn ink" href="#contact" data-link>Start a project ↗</a><a class="btn ghost" href="#the-bench" data-link>Meet The Bench</a></div>
     </div>
@@ -4219,18 +4239,26 @@ let toastT;function toast(html){const t=$('#toast');t.innerHTML=html;t.hidden=fa
 function sharePage(){const url=pageLink(current||'home');
   const fallback=()=>{toast(`Copy this link:<input id="toastUrl" readonly value="${url}">`);const i=$('#toastUrl');i.focus();i.select()};
   if(navigator.clipboard)navigator.clipboard.writeText(url).then(()=>toast('Link copied. Anyone who opens it lands on this page.')).catch(fallback);else fallback()}
-/* crazy loader: blocks drop in, colours flash, then the site bursts through */
+/* hold hero animations (and the falling blocks) until the loader has cleared */
+const revealQ=[];let revealed=true;
+function onReveal(fn){revealed?fn():revealQ.push(fn)}
+function doReveal(){if(revealed)return;revealed=true;const H=document.documentElement;H.classList.remove('intro');H.classList.add('revealing');
+  setTimeout(()=>H.classList.remove('revealing'),1400);revealQ.splice(0).forEach(f=>{try{f()}catch(_){}})}
+/* crazy loader: blocks drop in, colours flash, then the site bursts through.
+   Plays on every load of the home page; on other pages once per visit. */
 (function(){
   const L=$('#loader');if(!L)return;
   let seen=false;try{seen=sessionStorage.getItem('bb-loaded')==='1'}catch(_){}
-  if(seen){L.classList.add('gone');return}
+  const startPage=location.hash.slice(1)||window.BB_PAGE||'home';
+  if(seen&&startPage!=='home'){L.classList.add('gone');return}
+  revealed=false;document.documentElement.classList.add('intro');
   const W=['Ad films','Branding','Content','Creators','PR','Websites','Strategy','Media buys','Events','Collabs'];let k=0;
   const wt=setInterval(()=>{k=(k+1)%W.length;const b=$('#lword');if(b){b.textContent=W[k];b.style.color=HEXS[k%6]}},150);
   const t0=performance.now();
   const done=()=>{clearInterval(wt);$('#lword').textContent='Served.';$('#lword').style.color='#FFD60A';
     const box=$('#lconf');for(let i=0;i<40;i++){const p=document.createElement('i');p.style.background=HEXS[i%6];box.appendChild(p);const a=Math.random()*Math.PI*2,v=160+Math.random()*420;
       p.animate([{transform:'translate(-50%,-50%) rotate(0)',opacity:1},{transform:`translate(calc(-50% + ${Math.cos(a)*v}px),calc(-50% + ${Math.sin(a)*v}px)) rotate(${Math.random()*720}deg)`,opacity:0}],{duration:900+Math.random()*500,easing:'cubic-bezier(.2,.8,.3,1)',fill:'forwards'})}
-    setTimeout(()=>{L.classList.add('out');setTimeout(()=>L.classList.add('gone'),950)},380);
+    setTimeout(()=>{L.classList.add('out');setTimeout(doReveal,260);setTimeout(()=>L.classList.add('gone'),950)},380);
     try{sessionStorage.setItem('bb-loaded','1')}catch(_){}};
   const ready=Promise.all([document.fonts?document.fonts.ready:Promise.resolve(),new Promise(r=>setTimeout(r,1700))]);
   Promise.race([ready,new Promise(r=>setTimeout(r,3200))]).then(done);
@@ -4419,7 +4447,7 @@ function startPhysics(){
   Events.on(engine,'beforeUpdate',()=>{if(drag){Body.setPosition(drag.it.b,{x:drag.tx,y:drag.ty});Body.setVelocity(drag.it.b,{x:0,y:0});Body.setAngle(drag.it.b,drag.it.b.angle*.9)}});
   Events.on(engine,'afterUpdate',()=>{for(const it of items){const {x,y}=it.b.position;it.el.style.transform=`translate(${x-it.w/2}px,${y-it.h/2}px) rotate(${it.b.angle}rad)`;
     if(y>H+400||x<-400||x>W+400){Body.setPosition(it.b,{x:W*.5+Math.random()*W*.4,y:-100});Body.setVelocity(it.b,{x:0,y:0})}}});
-  Runner.run(runner,engine);
+  onReveal(()=>Runner.run(runner,engine));
   let rt;const onR=()=>{clearTimeout(rt);rt=setTimeout(makeWalls,200)};addEventListener('resize',onR);
   cleanups.push(()=>{Runner.stop(runner);Engine.clear(engine);removeEventListener('resize',onR)});
 }
