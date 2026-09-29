@@ -531,7 +531,8 @@ p{margin:0}
   .hero .sub{font-size:17px}
   .pitwrap{height:min(300px,38svh)}
 }
-.hub{margin-top:clamp(50px,7vw,90px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.hub{margin-top:clamp(50px,7vw,90px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:1100px) and (min-width:701px){.hub{grid-template-columns:1fr 1fr}.hub .hcard:last-child{grid-column:1/-1}}
 .hcard{position:relative;overflow:hidden;border-radius:30px;padding:26px;min-height:clamp(320px,34vw,440px);background:var(--soft);color:var(--ink);text-decoration:none;display:flex;flex-direction:column;justify-content:space-between;transition:transform .5s var(--spring),background .35s,color .3s}
 .hcard .hn{font:500 13px/1 var(--mono);letter-spacing:.14em;opacity:.7}
 .hcard h2{font:400 clamp(36px,4.4vw,68px)/1 var(--display)}
@@ -613,6 +614,148 @@ p{margin:0}
 .foot-legal{padding-bottom:78px}
 #footSeo{display:flex;flex-wrap:wrap;gap:8px 18px}
 #footSeo a{font-size:14px;opacity:.8;text-decoration:none;color:inherit}#footSeo a:hover{opacity:1;text-decoration:underline}
+/* ===== BenchBox Labs ===== */
+html[data-page=labs] body{background:#0A0A0B}
+html[data-page=labs] .bar{--bg:#0A0A0B;--ink:#F4F4F6;--soft:#1A1A20;--line:#26262C;--muted:#9A9AA3;color:#F4F4F6}
+.labs{--bg:#0A0A0B;--ink:#F4F4F6;--muted:#9A9AA3;--soft:#141418;--line:#26262C;background:var(--bg);color:var(--ink);margin-inline:calc(50% - 50vw);padding:0 max(var(--gut),calc(50vw - 800px)) 20px;position:relative;overflow:hidden;
+  background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:56px 56px}
+.labs::before{content:"";position:absolute;left:50%;top:-240px;width:900px;height:700px;translate:-50% 0;background:radial-gradient(closest-side,rgba(255,12,106,.28),transparent);pointer-events:none}
+.labs .lead{color:#C9C9D0}
+.lpink{color:var(--pink)}.lmute{color:#6E6E78}
+.lmono,.lnum{font:500 12px/1.2 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#8A8A94}
+.lnum{color:var(--pink)}
+.btn.lghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.28)}
+.btn.lghost:hover{box-shadow:inset 0 0 0 1.5px var(--pink);color:#fff}
+.btn.pinkb:hover{box-shadow:0 0 44px rgba(255,12,106,.45)}
+.lhero{position:relative;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(30px,5vw,80px);align-items:center;padding-block:clamp(60px,9vw,130px) clamp(40px,6vw,80px)}
+.lbadge{display:inline-flex;align-items:center;gap:10px;font:500 12px/1 var(--mono);letter-spacing:.14em;padding:10px 14px;border-radius:999px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
+.lbadge i,.llive i{width:8px;height:8px;border-radius:50%;background:var(--pink);box-shadow:0 0 12px var(--pink);animation:lblink 1.4s ease-in-out infinite}
+@keyframes lblink{50%{opacity:.25}}
+.lhero h1{margin-top:26px;font:400 clamp(44px,6.6vw,104px)/.98 var(--display);letter-spacing:-.01em}
+.lhero .lead{margin-top:24px;max-width:48ch}
+.lhero .row{margin-top:30px;flex-wrap:wrap}
+.llive{display:inline-flex;align-items:center;gap:10px;margin-top:26px;font:500 13px/1 var(--mono);color:#9A9AA3}
+.lvis{position:relative;height:clamp(380px,40vw,560px);perspective:1600px;--rx:0deg;--ry:0deg}
+.ldash{position:absolute;left:0;top:4%;width:80%;border-radius:18px;background:#121216;box-shadow:0 40px 90px rgba(0,0,0,.6),inset 0 0 0 1px rgba(255,255,255,.08);transform:rotateX(calc(8deg + var(--rx))) rotateY(calc(-14deg + var(--ry)));transition:transform .4s ease-out;animation:lfloat 7s ease-in-out infinite}
+.lbt{display:flex;align-items:center;gap:6px;padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.07)}
+.lbt i{width:9px;height:9px;border-radius:50%;background:#FF5F57}.lbt i+i{background:#FEBC2E}.lbt i+i+i{background:#28C840}
+.lbt span{margin-left:10px;font:500 11px/1 var(--mono);color:#8A8A94}
+.ldb{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:16px}
+.lstat{background:#1A1A20;border-radius:12px;padding:12px}.lstat small{display:block;font-size:11px;color:#8A8A94}.lstat b{font:400 clamp(20px,2vw,28px)/1.2 var(--display)}
+.lchart{grid-column:1/-1;height:clamp(110px,11vw,170px);display:flex;align-items:flex-end;gap:6%;padding:10px 6px 0;border-radius:12px;background:#15151A}
+.lchart i{flex:1;border-radius:6px 6px 2px 2px;background:linear-gradient(180deg,var(--pink),rgba(255,12,106,.25));transform-origin:bottom;animation:lgrow 1.4s cubic-bezier(.2,.8,.2,1) both}
+@keyframes lgrow{from{transform:scaleY(0)}}
+@keyframes lfloat{50%{translate:0 -12px}}
+.lhp{position:absolute;right:-2%;bottom:-8%;font-size:clamp(7px,.72vw,10.5px);transform:rotateY(calc(-18deg + var(--ry))) rotateX(var(--rx)) rotateZ(3deg);animation:lfloat 7s ease-in-out -3.5s infinite;transition:transform .4s ease-out}
+/* phone */
+.lph{position:relative;width:26em;height:54em;border-radius:4.4em;padding:.8em;box-sizing:border-box;background:linear-gradient(145deg,#8a8f93,#23262a 28%,#4a4e53 62%,#1a1c1f);box-shadow:0 4em 8em rgba(0,0,0,.45);flex:none}
+.lscr{position:relative;width:100%;height:100%;border-radius:3.7em;overflow:hidden;font-family:var(--body);font-size:1em}
+.lisl{position:absolute;left:50%;top:.9em;width:8em;height:2.3em;margin-left:-4em;border-radius:99em;background:#000;z-index:3}
+.psb{height:4em;display:flex;justify-content:space-between;align-items:center;padding:.4em 2.2em 0 2.6em;font-size:1.05em;font-weight:600}
+.psi{display:flex;gap:.2em;align-items:flex-end}.psi i{width:.25em;height:.6em;background:currentColor;border-radius:.1em}.psi i+i{height:.8em}.psi i+i+i{height:1em}.psi b{width:1.7em;height:.8em;border-radius:.25em;margin-left:.4em;background:currentColor;opacity:.85}
+.pp{display:flex;flex-direction:column;gap:1.1em;padding:1em 1.6em;font-size:1.15em;line-height:1.25}
+.pp small{font-size:.8em}.pp b{font-weight:700}
+.pp h5{margin:0;font-family:var(--display);font-weight:400;line-height:1}
+.pring{--p:70;align-self:center;width:13em;height:13em;border-radius:50%;background:conic-gradient(var(--a) calc(var(--p)*1%),rgba(255,255,255,.08) 0);display:grid;place-items:center;margin-block:.6em}
+.pring>div{width:10.6em;height:10.6em;border-radius:50%;background:#0B0B0C;display:grid;place-content:center;text-align:center}
+.pring b{font:400 2.2em/1 var(--display)}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:.7em}
+.pgrid>div{border-radius:1.1em;padding:.9em;background:rgba(255,255,255,.07);display:flex;flex-direction:column;gap:.2em;min-height:3.6em}
+.pgrid b{font-size:1.25em}
+.prow{display:flex;justify-content:space-between;gap:.6em}.prow>div{display:flex;flex-direction:column}.prow b{font-size:1.3em}
+.pbars{display:flex;align-items:flex-end;gap:.45em;height:9em;padding-top:.5em}.pbars i{flex:1;border-radius:.4em .4em .15em .15em}.pbars.soft i{opacity:.85}
+.pbtn{border-radius:99em;padding:.9em;text-align:center;font-weight:700}
+.psearch{border-radius:1em;background:#F1F5F4;color:#5E6B68;padding:.9em 1em;font-size:.9em}
+.pcard{border-radius:1.4em;padding:1.1em;display:flex;flex-direction:column;gap:.35em}
+.ppill{align-self:flex-start;margin-top:.3em;background:#fff;color:#0E9F87;border-radius:99em;padding:.45em .9em;font-size:.8em;font-weight:700}
+.pmap{height:52%;background:#DCEBE7}.pmap svg{width:100%;height:100%}
+.psheet{position:absolute;left:0;right:0;bottom:0;background:#fff;border-radius:2em 2em 0 0;padding:1.4em 1.6em 2em;display:flex;flex-direction:column;gap:.8em;font-size:1.1em}
+.psheet h5{margin:0;font-family:var(--display);font-weight:400}
+.pprog{height:.4em;border-radius:99em;background:#EEF1F0}.pprog i{display:block;height:100%;border-radius:99em}
+.plist{display:flex;align-items:center;gap:.8em;padding:.7em;border-radius:1.1em;background:rgba(127,127,127,.12)}
+.plist>div{display:flex;flex-direction:column}.plist small{opacity:.65}
+.pav{width:2.6em;height:2.6em;border-radius:50%;background:linear-gradient(135deg,#CFE3DD,#9FC9BD);flex:none}
+.pdot{width:1em;height:1em;border-radius:50%;flex:none;margin-inline:.8em}
+.pmood{display:flex;flex-wrap:wrap;gap:.5em}.pmood span{padding:.55em .9em;border-radius:99em;background:rgba(255,255,255,.14);font-size:.85em;font-weight:600}
+.pbreath{width:14em;height:14em;border-radius:50%;margin:1.4em auto;display:grid;place-items:center;background:radial-gradient(circle,rgba(255,255,255,.35),rgba(255,214,176,.15) 60%,transparent 70%);box-shadow:0 0 0 1.4em rgba(255,255,255,.06),0 0 0 2.8em rgba(255,255,255,.04);animation:lbreath 5s ease-in-out infinite}
+.pbreath span{font:400 1.3em/1 var(--display)}
+@keyframes lbreath{50%{scale:1.12}}
+.pdonut{align-self:center;width:11em;height:11em;border-radius:50%;background:radial-gradient(circle,#150f3a 54%,transparent 55%),conic-gradient(var(--a) 0 37%,#4FD1C5 0 61%,#F6AD55 0 80%,#FC8181 0);margin-block:.5em}
+.pacts{display:grid;grid-template-columns:repeat(4,1fr);gap:.5em;text-align:center;font-size:.85em}.pacts span{display:flex;flex-direction:column;align-items:center;gap:.4em}.pacts i{width:2.8em;height:2.8em;border-radius:1em;opacity:.9}
+.pdial{width:13em;height:13em;border-radius:50%;margin:1em auto;display:grid;place-content:center;text-align:center;background:radial-gradient(circle,#1d1a16 58%,transparent 59%),conic-gradient(var(--a) 0 62%,rgba(255,255,255,.08) 0);box-shadow:0 0 3em rgba(255,178,63,.25)}
+.pdial b{font:400 2.6em/1 var(--display)}
+/* marquee */
+.lmarq{margin-inline:calc(-1 * max(var(--gut),calc(50vw - 800px)));overflow:hidden;border-block:1px solid rgba(255,255,255,.08);padding-block:18px;background:rgba(255,255,255,.02)}
+.lmarq .track{display:flex;width:max-content;align-items:center;gap:28px;font:400 clamp(22px,2.6vw,38px)/1 var(--display);white-space:nowrap}
+.lmarq em{font-style:normal;color:var(--pink);font-size:.6em}
+/* sections */
+.lsec{position:relative;padding-top:clamp(80px,10vw,150px)}
+.lsec h2,.lcta h2{margin-top:18px;font:400 clamp(34px,4.6vw,72px)/1.02 var(--display);max-width:18ch}
+.lsec>.lead{margin-top:20px;max-width:58ch}
+.lshead{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+.lshead .tnav button{background:#1A1A20;color:var(--ink)}
+.lshead .link{color:var(--ink)}
+.lgrid{margin-top:50px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.lcard{border-radius:22px;padding:28px;background:linear-gradient(180deg,#141418,#0F0F12);box-shadow:inset 0 0 0 1px rgba(255,255,255,.07);transition:transform .35s var(--spring),box-shadow .3s}
+.lcard:hover{transform:translateY(-6px);box-shadow:inset 0 0 0 1px var(--pink),0 20px 60px -20px rgba(255,12,106,.45)}
+.lno{font:500 12px/1 var(--mono);color:var(--pink)}
+.lcard h3{margin-top:16px;font:400 clamp(24px,2.2vw,32px)/1.05 var(--display)}
+.lcard p{margin-top:10px;color:#B5B5BD;font-size:16px}
+.lcard ul{margin:18px 0 0;padding:0;list-style:none;display:grid;gap:8px}
+.lcard li{font-size:15px;color:#D5D5DB;padding-left:22px;position:relative}
+.lcard li::before{content:"";position:absolute;left:0;top:.55em;width:10px;height:2px;background:var(--pink)}
+/* app concept carousel */
+.lcar{margin-top:40px;display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(-1 * var(--gut));padding-inline:var(--gut);padding-bottom:10px;scrollbar-width:none;cursor:grab}
+.lcar::-webkit-scrollbar{display:none}.lcar.grab{cursor:grabbing;scroll-snap-type:none}
+.lslide{flex:none;width:min(1060px,88vw);min-height:clamp(460px,44vw,620px);border-radius:28px;scroll-snap-align:start;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1fr);align-items:center;gap:20px;padding:clamp(24px,3.4vw,48px);position:relative;overflow:hidden;user-select:none}
+.lslide::after{content:"";position:absolute;right:-10%;top:-20%;width:60%;height:80%;background:radial-gradient(closest-side,var(--acc),transparent);opacity:.25;pointer-events:none}
+.lsx{position:relative;z-index:1;display:flex;flex-direction:column;gap:12px}
+.lsx .lmono{color:inherit;opacity:.7}
+.lsx h3{font:400 clamp(44px,5.4vw,86px)/.95 var(--display)}
+.lcat{font-size:18px}.lsx p{opacity:.82;max-width:34ch}
+.ltags{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}.ltags span{font:500 12px/1 var(--mono);padding:9px 12px;border-radius:999px;box-shadow:inset 0 0 0 1px currentColor;opacity:.8}
+.lduo{position:relative;height:100%;min-height:clamp(380px,38vw,560px);perspective:1800px;font-size:clamp(6.5px,.62vw,9px)}
+.lduo .lph{position:absolute;top:50%}
+.lduo .l1{left:4%;transform:translateY(-54%) rotateY(16deg) rotateZ(-3deg)}
+.lduo .l2{right:2%;transform:translateY(-44%) rotateY(-16deg) rotateZ(3deg)}
+.lslide:hover .l1{transform:translateY(-58%) rotateY(8deg) rotateZ(-2deg)}.lslide:hover .l2{transform:translateY(-40%) rotateY(-8deg) rotateZ(2deg)}
+.lduo .lph{transition:transform .6s var(--spring)}
+/* websites grid inside labs */
+.labs .sites{margin-top:40px}
+.labs .site{color:var(--ink)}
+/* steps */
+.lsteps{margin-top:50px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;position:relative}
+.lsteps::before{content:"";position:absolute;left:0;right:0;top:44px;height:2px;background:linear-gradient(90deg,var(--pink),rgba(255,12,106,.1))}
+.lstep{position:relative;display:flex;flex-direction:column;gap:10px}
+.lstep i{width:16px;height:16px;border-radius:50%;background:var(--pink);box-shadow:0 0 0 6px rgba(255,12,106,.2),0 0 20px var(--pink);margin-block:10px 6px}
+.lstep h4{font:400 26px/1 var(--display)}.lstep p{color:#B5B5BD;font-size:15px}
+/* tiers */
+.ltiers{margin-top:50px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.ltier{border-radius:24px;padding:30px;background:#121216;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);display:flex;flex-direction:column;gap:12px}
+.ltier.hot{background:linear-gradient(180deg,rgba(255,12,106,.18),#121216 70%);box-shadow:inset 0 0 0 1.5px var(--pink)}
+.ltier h3{font:400 32px/1 var(--display)}.ltier p{color:#B5B5BD;flex:1}.ltier b{font-weight:600}
+.ltier .btn{align-self:flex-start;margin-top:8px}
+/* why */
+.lstats{margin-top:50px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.lstats>div{border-top:2px solid rgba(255,255,255,.12);padding-top:18px;display:flex;flex-direction:column;gap:8px}
+.lstats b{font:400 clamp(44px,5vw,76px)/1 var(--display);color:var(--pink)}.lstats span{color:#B5B5BD}
+.labs .faq details{background:#121216;box-shadow:inset 0 0 0 1px rgba(255,255,255,.07)}
+.lcta{text-align:center;padding-block:clamp(90px,11vw,160px) clamp(60px,8vw,110px);display:grid;justify-items:center;gap:18px}
+.lcta h2{max-width:none}.lcta .lead{max-width:52ch}
+@media (max-width:980px){
+  .lhero{grid-template-columns:1fr}.lvis{height:420px}
+  .lgrid,.ltiers{grid-template-columns:1fr 1fr}.lsteps{grid-template-columns:1fr 1fr}.lsteps::before{display:none}
+  .lstats{grid-template-columns:1fr 1fr}
+  .lslide{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .lgrid,.ltiers,.lsteps{grid-template-columns:1fr}
+  .lvis{height:360px}.ldash{width:96%}.lhp{font-size:6.2px;right:-2%}
+  .ldb{gap:6px;padding:10px}.lstat{padding:8px}
+  .lslide{width:86vw;padding:22px;border-radius:22px}
+  .lduo{min-height:340px;font-size:5.6px}
+  .lcard{padding:22px}
+}
 /* home reveal: plays after the loader, and whenever the home hero is drawn */
 .hero h1 .ln{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
 .hero h1 .ln>span{display:inline-block;transform-origin:0 100%}
@@ -786,7 +929,8 @@ footer{padding-top:clamp(120px,16vw,200px);padding-bottom:calc(28px + env(safe-a
     </a>
     <nav class="nav" aria-label="Main">
       <a href="services/" data-link>Services</a>
-      <a href="the-bench/" data-link>The Bench<span class="bench-tag">NEW</span></a>
+      <a href="the-bench/" data-link>The Bench</a>
+      <a href="labs/" data-link>Labs<span class="bench-tag">NEW</span></a>
       <a href="work/" data-link>Work</a>
       <a href="clients/" data-link>Clients</a>
       <a class="opt" href="blog/" data-link>Blog</a>
@@ -859,7 +1003,7 @@ footer{padding-top:clamp(120px,16vw,200px);padding-bottom:calc(28px + env(safe-a
     <a class="foot-cta" href="contact/" data-link><span>Let's</span> <span>talk</span> <span>↗</span></a>
     <div class="foot-grid">
       <div><p class="lead" style="font-size:19px">A full-service marketing agency. Strategy to screen, built on one bench.</p><p style="margin-top:14px;font-size:14px;opacity:.7;max-width:40ch">Bench Box Media (BenchBox Media) is a marketing, PR, corporate communications, ad film and film marketing agency.</p></div>
-      <div><h4>Agency</h4><ul><li><a href="services/" data-link>Services</a></li><li><a href="the-bench/" data-link>The Bench</a></li><li><a href="about/" data-link>About</a></li><li><a href="careers/" data-link>Careers</a></li></ul></div>
+      <div><h4>Agency</h4><ul><li><a href="services/" data-link>Services</a></li><li><a href="the-bench/" data-link>The Bench</a></li><li><a href="labs/" data-link>BenchBox Labs</a></li><li><a href="about/" data-link>About</a></li><li><a href="careers/" data-link>Careers</a></li></ul></div>
       <div><h4>Work</h4><ul><li><a href="case-studies/" data-link>Case studies</a></li><li><a href="films/" data-link>Films</a></li><li><a href="social/" data-link>Social creatives</a></li><li><a href="clients/" data-link>Clients</a></li><li><a href="partners/" data-link>Media partners</a></li><li><a href="blog/" data-link>Blog</a></li></ul></div>
       <div><h4>Talk</h4><ul><li>marketing@benchboxmedia.com</li><li>+91 6361 772 547</li><li><a href="contact/" data-link>Contact</a></li></ul><h4 style="margin-top:26px">Follow</h4><ul id="footSoc"></ul></div>
     </div>
@@ -870,7 +1014,7 @@ footer{padding-top:clamp(120px,16vw,200px);padding-bottom:calc(28px + env(safe-a
 
 <div class="mnav" id="mnav" hidden>
   <button class="xbtn" id="mnavX" type="button" aria-label="Close menu">✕</button>
-  <a href="./" data-link>Home</a><a href="services/" data-link>Services</a><a href="the-bench/" data-link>The Bench</a><a href="work/" data-link>Work</a><a href="case-studies/" data-link>Case studies</a><a href="films/" data-link>Films</a><a href="social/" data-link>Social</a><a href="clients/" data-link>Clients</a><a href="partners/" data-link>Media partners</a><a href="blog/" data-link>Blog</a><a href="about/" data-link>About</a><a href="careers/" data-link>Careers</a><a href="contact/" data-link>Contact</a>
+  <a href="./" data-link>Home</a><a href="services/" data-link>Services</a><a href="the-bench/" data-link>The Bench</a><a href="labs/" data-link>Labs</a><a href="work/" data-link>Work</a><a href="case-studies/" data-link>Case studies</a><a href="films/" data-link>Films</a><a href="social/" data-link>Social</a><a href="clients/" data-link>Clients</a><a href="partners/" data-link>Media partners</a><a href="blog/" data-link>Blog</a><a href="about/" data-link>About</a><a href="careers/" data-link>Careers</a><a href="contact/" data-link>Contact</a>
 </div>
 <div class="scrim" id="scrim"></div>
 <aside class="drawer" id="drawer" aria-hidden="true">
@@ -4758,7 +4902,7 @@ function hsh(s){let h=2166136261;for(const c of s)h=Math.imul(h^c.charCodeAt(0),
 /* ======================= VIEWS ======================= */
 const SOC=f=>`creatives/${f}.jpg`;
 const phead=(eb,h,lead)=>`<div class="phead"><div class="phtop"><span class="eyebrow">${eb}</span></div><h1>${h}</h1>${lead?`<p class="lead">${lead}</p>`:''}</div>`;
-const workTabs=cur=>`<nav class="subnav" aria-label="Work">${[['case-studies','Case studies'],['films','Films'],['social','Social creatives'],['websites','Tech']].map(([k,l])=>`<a href="#${k}" data-link ${k===cur?'aria-current="page"':''}>${l}</a>`).join('')}</nav>`;
+const workTabs=cur=>`<nav class="subnav" aria-label="Work">${[['case-studies','Case studies'],['films','Films'],['social','Social creatives']].map(([k,l])=>`<a href="#${k}" data-link ${k===cur?'aria-current="page"':''}>${l}</a>`).join('')}</nav>`;
 
 const LG=n=>D.logos[n]?`<i class="lg" role="img" aria-label="${esc(n)}" style="--logo:url(logos/${D.logos[n]}.png)"></i>`:esc(n);
 const TILE=(n,i)=>D.urls[n]?`<a class="logo-t" data-rv href="${D.urls[n]}" target="_blank" rel="noopener" style="--c:${hex(i)}" title="${esc(n)} · visit website">${LG(n)}</a>`:`<div class="logo-t" data-rv style="--c:${hex(i)}" title="${esc(n)}">${LG(n)}</div>`;
@@ -4840,6 +4984,7 @@ services:()=>`${phead('Services','Every part of how you <span class="hl" style="
     <span class="sprev">${sv.s.map(x=>`<em>${esc(x)}</em>`).join('')}</span></span>
     <span class="sgo">Open →</span></button>`).join('')}</div>
   <section class="space"><div class="shead" data-rv><h2 class="mid">By the <span class="hl" style="--c:var(--yellow)">numbers</span></h2></div>${statsHTML()}</section>`,
+labs:()=>labsView(),
 'the-bench':()=>`
   <div class="bhero">
     <span class="badge-x"><i></i>BENCHBOX EXCLUSIVE</span>
@@ -4869,7 +5014,7 @@ services:()=>`${phead('Services','Every part of how you <span class="hl" style="
     <a class="btn pinkb" href="contact/" data-link data-bench>Apply for The Bench ↗</a>
   </div>`,
 
-work:()=>`${phead('Work','Pick what you want to <span class="hl" style="--c:var(--orange)">see</span>','Case studies, films, social creatives and tech. Everything we make, sorted.')}
+work:()=>`${phead('Work','Pick what you want to <span class="hl" style="--c:var(--orange)">see</span>','Case studies, films and social creatives. For websites and apps, see <a class="link" href="labs/" data-link>BenchBox Labs</a>.')}
   <div class="hub">
     <a class="hcard" href="case-studies/" data-link style="--c:var(--orange)"><span class="hn">01</span>
       <div class="hvis hcs" aria-hidden="true">${D.cases.slice(0,3).map((c,i)=>`<i style="--k:${hex(i*3+1)}"><b>${esc(c.kind)}</b></i>`).join('')}</div>
@@ -4880,16 +5025,13 @@ work:()=>`${phead('Work','Pick what you want to <span class="hl" style="--c:var(
     <a class="hcard" href="social/" data-link style="--c:var(--green)"><span class="hn">03</span>
       <div class="hvis" aria-hidden="true">${[0,4,8].map(k=>`<img src="${SOC(D.social[k].f)}" alt="" loading="lazy">`).join('')}</div>
       <div class="htx"><h2>Social creatives</h2><p>A pick of 3000+ ad creatives, festive posts and campaign visuals.</p><span class="hgo">Open →</span></div></a>
-    <a class="hcard" href="websites/" data-link style="--c:var(--blue)"><span class="hn">04</span>
-      <div class="hvis htech" aria-hidden="true"><div class="hb"><div class="hbt"><i></i><i></i><i></i><span>${esc(D.sites[0].domain)}</span></div><div class="hbb"><em></em><em></em><em></em><em></em></div></div></div>
-      <div class="htx"><h2>Tech</h2><p>Websites and digital builds made to turn visitors into enquiries.</p><span class="hgo">Open →</span></div></a>
   </div>`,
 
 'case-studies':()=>`${phead('Work','Case <span class="hl" style="--c:var(--orange)">studies</span>','How we solve problems across every discipline on the bench.')}${workTabs('case-studies')}
   <div class="frow"><span class="eyebrow">Filter</span><div class="chiprow" id="ctype"><button class="fchip" type="button" data-ct="all" aria-pressed="true">All <em>${D.cases.length}</em></button><button class="fchip" type="button" data-ct="film" aria-pressed="false">Film marketing <em>${D.cases.filter(c=>c.film).length}</em></button>${D.services.map((sv,i)=>{const n=D.cases.filter(c=>c.svc===i&&!c.film).length;return n?`<button class="fchip" type="button" data-ct="${i}" aria-pressed="false">${esc(sv.short)} <em>${n}</em></button>`:''}).join('')}</div></div>
   <div id="caselist" style="margin-top:20px">${casesHTML()}</div>`,
 
-websites:()=>`${phead('Work','Websites we\'ve <span class="hl" style="--c:var(--blue)">built</span>','Fast, SEO-ready websites that turn visitors into enquiries.')}${workTabs('websites')}
+websites:()=>`${phead('BenchBox Labs','Websites we\'ve <span class="hl" style="--c:var(--blue)">built</span>','Fast, SEO-ready websites that turn visitors into enquiries. Part of <a class="link" href="labs/" data-link>BenchBox Labs</a>.')}
   ${oneStat('20+','Websites built',2)}${sitesHTML()}`,
 
 films:()=>`${phead('Work','Ad <span class="hl" style="--c:var(--yellow)">films</span>','TV commercials, creator UGC, digital films and AI ad films from our production team. Hover to preview, tap to watch.')}${workTabs('films')}${oneStat('500+','Films & visual content',1)}
@@ -5026,6 +5168,113 @@ function postView(p,i){
   <section class="space"><div class="shead"><h2 class="mid">Keep reading</h2></div>${postsHTML([...D.posts.filter(x=>x!==p&&x.tag===p.tag),...D.posts.filter(x=>x!==p&&x.tag!==p.tag)].slice(0,3))}</section></div>`;
 }
 
+/* ======================= BENCHBOX LABS ======================= */
+const LAB_APPS=[
+ {k:'movra',name:'Movra',cat:'Fitness tracker app',desc:'Daily activity, heart rate and workouts in one place, with streaks and challenges that keep people coming back.',tags:['iOS and Android','Wearable sync','Challenges'],bg:'linear-gradient(160deg,#101112,#050506)',acc:'#C6FF3D',ink:'#F4F4F6'},
+ {k:'medlo',name:'Medlo',cat:'Medicine delivery app',desc:'Upload a prescription, get it checked by a pharmacist and track your medicines to the door in 30 minutes.',tags:['Prescription upload','Live tracking','Payments'],bg:'linear-gradient(160deg,#F1F8F5,#BFE0D6)',acc:'#0E9F87',ink:'#0F1F1C'},
+ {k:'stilla',name:'Stilla',cat:'Mindfulness app',desc:'Mood check-ins, guided breathing and sleep sounds, with a weekly view of how you are really doing.',tags:['Mood tracking','Audio sessions','Reminders'],bg:'linear-gradient(160deg,#3B2A6B,#C77D7D 70%,#F4B98A)',acc:'#FFD6B0',ink:'#FFFFFF'},
+ {k:'paysa',name:'Paysa',cat:'Payments and finance app',desc:'UPI payments, bills and spending insights with a clean, trustworthy interface built for everyday money.',tags:['UPI','Spend insights','Bank grade security'],bg:'linear-gradient(160deg,#0B1030,#2A1F6B)',acc:'#8B7BFF',ink:'#FFFFFF'},
+ {k:'hovi',name:'Hovi',cat:'Smart home app',desc:'Lights, climate, locks and energy for every room, controlled from one calm, fast dashboard.',tags:['IoT controls','Energy reports','Automations'],bg:'linear-gradient(160deg,#26231F,#121110)',acc:'#FFB23F',ink:'#F6F1EA'}
+];
+const LAB_BUILD=[
+ ['Websites','Brand sites, landing pages and microsites built to turn visitors into enquiries.',['Custom design, no templates','Booking, forms and WhatsApp built in','SEO and speed from day one','A CMS your team can edit']],
+ ['Mobile apps','iOS and Android apps people keep on their home screen.',['UX research and prototypes','One codebase, both platforms','Payments, maps, notifications','App Store and Play Store launch']],
+ ['SaaS platforms','Software your customers subscribe to, from first MVP to scale.',['MVP scoped to launch fast','Accounts, roles and billing','Dashboards and analytics','Cloud that grows with you']],
+ ['Web applications','Portals, dashboards and internal tools that replace spreadsheets and phone calls.',['Patient, student and customer portals','CRMs and booking systems','Admin panels and reports','Integrations with your tools']],
+ ['AI and automation','Assistants and automations that save your team hours every week.',['WhatsApp and website chatbots','Lead follow up on autopilot','AI features inside your product','Workflow automation']],
+ ['Online stores','D2C stores that sell, with the campaigns to drive traffic to them.',['Shopify or fully custom','Payments, COD and shipping','Inventory and order tracking','Conversion focused checkout']]
+];
+const PH_SB=`<div class="psb"><span>9:41</span><span class="psi"><i></i><i></i><i></i><b></b></span></div>`;
+function labScreen(a,alt){
+  const A=a.acc;
+  if(a.k==='movra')return alt
+   ?`${PH_SB}<div class="pp"><small style="opacity:.6">Workout complete</small><h5 style="font-size:2.3em;color:${A}">32:10</h5><div class="prow"><div><b>412</b><small>kcal</small></div><div><b>148</b><small>avg bpm</small></div><div><b>5.2</b><small>km</small></div></div><div class="pbars">${[40,62,55,80,70,92,66,74,58,85].map(h=>`<i style="height:${h}%;background:${A}"></i>`).join('')}</div><div class="pbtn" style="background:${A};color:#111">Share workout</div></div>`
+   :`${PH_SB}<div class="pp"><small style="opacity:.6">Good morning, Asha</small><div class="pring" style="--a:${A};--p:78"><div><b>8,432</b><small>steps today</small></div></div><div class="pgrid"><div><small>Heart</small><b>72</b></div><div><small>Calories</small><b>540</b></div><div><small>Sleep</small><b>7h 20m</b></div><div style="background:${A};color:#111"><small>Streak</small><b>5 days</b></div></div></div>`;
+  if(a.k==='medlo')return alt
+   ?`${PH_SB}<div class="pmap"><svg viewBox="0 0 200 170" aria-hidden="true"><path d="M0 60H200M0 120H200M50 0V170M140 0V170" stroke="#fff" stroke-width="9" opacity=".7"/><path d="M30 150C60 120 45 95 90 88S150 60 160 30" fill="none" stroke="${A}" stroke-width="4" stroke-dasharray="2 8" stroke-linecap="round"/><circle cx="160" cy="30" r="8" fill="#FF6B4A" stroke="#fff" stroke-width="3"/><circle cx="92" cy="87" r="10" fill="${A}" stroke="#fff" stroke-width="4"/></svg></div><div class="psheet"><small style="opacity:.6">Arriving in</small><h5 style="font-size:2em">18 min</h5><div class="pprog"><i style="width:64%;background:${A}"></i></div><div class="plist"><span class="pav"></span><div><b>Ravi, your rider</b><small>2 items · ₹206</small></div></div></div>`
+   :`${PH_SB}<div class="pp"><small style="opacity:.6">Deliver to</small><b>Home · 2nd Cross Road</b><div class="psearch">Search medicines</div><div class="pcard" style="background:${A};color:#fff"><b>Upload prescription</b><small>Checked by a pharmacist in minutes</small><span class="ppill">Upload now</span></div><div class="pgrid"><div style="background:#FFF1EC"><small>Fever and cold</small></div><div style="background:#E6F4F0"><small>Diabetes care</small></div><div style="background:#EEF0FF"><small>Heart health</small></div><div style="background:#FFF7E3"><small>Vitamins</small></div></div></div>`;
+  if(a.k==='stilla')return alt
+   ?`${PH_SB}<div class="pp" style="align-items:center;text-align:center"><small style="opacity:.8">Evening calm · 4 min</small><div class="pbreath" style="--a:${A}"><span>Breathe in</span></div><div class="prow"><div><b>Rain</b><small>sound</small></div><div><b>60%</b><small>volume</small></div></div></div>`
+   :`${PH_SB}<div class="pp"><h5 style="font-size:1.6em;line-height:1.15">How is your mind today?</h5><div class="pmood">${['Calm','Okay','Low','Tense'].map((m,i)=>`<span style="${i===0?`background:${A};color:#3B2A6B`:''}">${m}</span>`).join('')}</div><small style="opacity:.8">Mood this week</small><div class="pbars soft">${[50,64,45,72,80,68,88].map(h=>`<i style="height:${h}%;background:${A}"></i>`).join('')}</div></div>`;
+  if(a.k==='paysa')return alt
+   ?`${PH_SB}<div class="pp"><small style="opacity:.6">Spent this month</small><h5 style="font-size:2em">₹21,480</h5><div class="pdonut" style="--a:${A}"></div><div class="plist"><span class="pdot" style="background:${A}"></span><div><b>Food and dining</b><small>₹7,920</small></div></div><div class="plist"><span class="pdot" style="background:#4FD1C5"></span><div><b>Travel</b><small>₹5,110</small></div></div></div>`
+   :`${PH_SB}<div class="pp"><small style="opacity:.6">Total balance</small><h5 style="font-size:2.2em">₹48,250</h5><div class="pacts">${['Send','Scan','Bills','Split'].map(x=>`<span><i style="background:${A}"></i>${x}</span>`).join('')}</div><small style="opacity:.6">Recent</small><div class="plist"><span class="pav"></span><div><b>Chai Point</b><small>Today · ₹120</small></div></div><div class="plist"><span class="pav"></span><div><b>Electricity bill</b><small>Paid · ₹1,840</small></div></div></div>`;
+  return alt
+   ?`${PH_SB}<div class="pp" style="align-items:center;text-align:center"><small style="opacity:.6">Living room · AC</small><div class="pdial" style="--a:${A}"><b>24°</b><small>Cooling</small></div><div class="pbars soft">${[30,45,38,60,52,40,34].map(h=>`<i style="height:${h}%;background:${A}"></i>`).join('')}</div></div>`
+   :`${PH_SB}<div class="pp"><small style="opacity:.6">Welcome home</small><h5 style="font-size:1.6em">4 rooms · 12 devices</h5><div class="pgrid">${[['Lights','On',1],['Climate','24°',1],['Door','Locked',0],['Camera','Live',0]].map(([t,v,on])=>`<div style="${on?`background:${A};color:#1a1510`:'background:rgba(255,255,255,.07)'}"><small>${t}</small><b>${v}</b></div>`).join('')}</div><div class="pcard" style="background:rgba(255,255,255,.07)"><b>Night mode at 11 pm</b><small>Lights off, doors locked, AC 26°</small></div></div>`;
+}
+const labPhone=(a,alt,cls='')=>`<div class="lph ${cls}"><div class="lscr" style="background:${a.k==='medlo'&&!alt?'#fff':a.k==='medlo'?'#DCEBE7':a.bg};color:${a.k==='medlo'?'#0F1F1C':a.ink}"><span class="lisl"></span>${labScreen(a,alt)}</div></div>`;
+function labsView(){
+  const s=D.stats||[];
+  return `<div class="labs">
+  <section class="lhero">
+    <div class="lcopy">
+      <span class="lbadge"><i></i>BENCHBOX LABS · A BENCH BOX MEDIA PRODUCT</span>
+      <h1>If it runs on a <span class="lpink">screen</span>, we build it.</h1>
+      <p class="lead">Websites, mobile apps, SaaS platforms and AI tools, designed and engineered by the same team that already runs your brand, content and campaigns. One team. No hand offs.</p>
+      <div class="row"><a class="btn pinkb" href="contact/" data-link data-want="1">Start a build ↗</a><button class="btn lghost" type="button" data-lgo="lbuilds">See the builds</button></div>
+      <span class="llive"><i></i>Now taking new builds</span>
+    </div>
+    <div class="lvis" id="lvis" aria-hidden="true">
+      <div class="ldash"><div class="lbt"><i></i><i></i><i></i><span>app.yourbrand.com/dashboard</span></div>
+        <div class="ldb"><div class="lstat"><small>Leads today</small><b>128</b></div><div class="lstat"><small>Bookings</small><b>46</b></div><div class="lstat"><small>Revenue</small><b>₹4.2L</b></div>
+        <div class="lchart">${[34,52,40,66,58,80,72,90,76,96].map(h=>`<i style="height:${h}%"></i>`).join('')}</div></div></div>
+      ${labPhone(LAB_APPS[1],false,'lhp')}
+    </div>
+  </section>
+  <div class="lmarq"><div class="track" data-marq>${[0,1].map(()=>['Websites','Mobile apps','SaaS','AI tools','Dashboards','Online stores','Automation','Portals','CRMs','Chatbots'].map(t=>`<span>${t}</span><em>✦</em>`).join('')).join('')}</div></div>
+
+  <section class="lsec"><span class="lnum">01 · What we build</span><h2>Six things we build. <span class="lmute">Everything in between.</span></h2>
+    <p class="lead">From a landing page that fills your calendar to a platform your customers pay for every month. Every build comes with design, engineering, launch and care.</p>
+    <div class="lgrid">${LAB_BUILD.map(([t,d,li],i)=>`<div class="lcard" data-rv><span class="lno">${String(i+1).padStart(2,'0')}</span><h3>${t}</h3><p>${d}</p><ul>${li.map(x=>`<li>${x}</li>`).join('')}</ul></div>`).join('')}</div>
+  </section>
+
+  <section class="lsec" id="lbuilds"><span class="lnum">02 · App concepts</span><div class="lshead"><h2>Apps designed <span class="lmute">in the Labs.</span></h2><div class="tnav"><button type="button" data-lc="-1" aria-label="Previous">←</button><button type="button" data-lc="1" aria-label="Next">→</button></div></div>
+    <p class="lead">A look at the kind of products we design and build. Each one is a Labs concept, made in house to show what your app could feel like.</p>
+    <div class="lcar" id="lcar">${LAB_APPS.map((a,i)=>`<article class="lslide" style="--acc:${a.acc};background:${a.bg};color:${a.ink}">
+      <div class="lsx"><span class="lmono">${String(i+1).padStart(2,'0')} / ${String(LAB_APPS.length).padStart(2,'0')} · Labs concept</span><h3>${a.name}</h3><b class="lcat">${a.cat}</b><p>${a.desc}</p><div class="ltags">${a.tags.map(t=>`<span>${t}</span>`).join('')}</div></div>
+      <div class="lduo">${labPhone(a,false,'l1')}${labPhone(a,true,'l2')}</div></article>`).join('')}</div>
+  </section>
+
+  <section class="lsec"><span class="lnum">03 · Live builds</span><div class="lshead"><h2>Built on the bench, <span class="lmute">live today.</span></h2><a class="link" href="websites/" data-link>All websites <span>→</span></a></div>
+    ${sitesHTML()}
+  </section>
+
+  <section class="lsec"><span class="lnum">04 · How a build runs</span><h2>From idea to launch, <span class="lmute">in the open.</span></h2>
+    <p class="lead">You see progress every week, click through a prototype before we code, and launch with a team that stays on after go live.</p>
+    <div class="lsteps">${[['Week 1','Discover','Goals, users and scope, agreed on one page with a fixed quote.'],['Week 2','Design','A clickable prototype you test on your own phone before a line of code.'],['Week 3+','Build','Two week sprints with a demo at the end of each one.'],['Launch','Go live','Tested on every device, launched with a campaign from the Bench.'],['Monthly','Grow','Updates, new features, hosting and a performance review every month.']].map(([w,t,d],i)=>`<div class="lstep" data-rv><span class="lmono">${w}</span><i></i><h4>${t}</h4><p>${d}</p></div>`).join('')}</div>
+  </section>
+
+  <section class="lsec"><span class="lnum">05 · Ways to work with us</span><h2>Start small. Build big. <span class="lmute">Keep growing.</span></h2>
+    <div class="ltiers">${[['1 to 2 weeks','Discovery sprint','Workshops, user flows, a clickable prototype and a fixed quote for the build.','Fixed fee'],['Most chosen','Build','Your website, app or platform, designed, built and launched in clear milestones.','Fixed quote after discovery'],['Every month','Growth retainer','Hosting, care, new features, SEO and campaigns, with a monthly performance review.','Monthly plan']].map(([e,t,d,p],i)=>`<div class="ltier${i===1?' hot':''}"><span class="lmono">${e}</span><h3>${t}</h3><p>${d}</p><b>${p}</b><a class="btn ${i===1?'pinkb':'lghost'}" href="contact/" data-link data-want="1">Get a quote</a></div>`).join('')}</div>
+  </section>
+
+  <section class="lsec lwhy"><span class="lnum">06 · Why Labs</span><h2>A tech team that <span class="lpink">already knows your brand.</span></h2>
+    <p class="lead">Most tech agencies can't run your campaigns. Most marketing agencies can't build software. Labs sits on the same bench as Bench Box Media's strategy, content, PR and media teams, so what we build launches with a plan to grow.</p>
+    <div class="lstats">${[['100+','Brands served by Bench Box Media'],['20+','Websites built'],['150+','Launches and activations'],['1','Team, one point of contact']].map(([n,l])=>`<div><b data-count="${n}">${n}</b><span>${l}</span></div>`).join('')}</div>
+  </section>
+
+  <section class="lsec"><span class="lnum">07 · Questions</span><h2>Good to know.</h2>
+    <div class="faq">${[['How long does a build take?','A website usually takes 3 to 6 weeks. Apps and platforms take 8 to 16 weeks, depending on scope. You get a fixed timeline after the discovery sprint.'],['Do you work with startups?','Yes. We scope a focused MVP so you launch fast and learn from real users.'],['Who owns the code?','You do. Once the project is paid, the code, designs and accounts are yours.'],['Can Labs work with our in house team?','Yes. We can own the whole build or plug into your team for design, engineering or launch.']].map(([q,a])=>`<details><summary>${q}</summary><p>${a}</p></details>`).join('')}</div>
+  </section>
+
+  <section class="lcta"><h2>Pull up a seat <span class="lpink">at the Labs.</span></h2><p class="lead">We take on a few builds at a time, so every project gets the team's full attention. Tell us what you're building.</p>
+    <div class="row" style="justify-content:center"><a class="btn pinkb" href="contact/" data-link data-want="1">Start a build ↗</a><a class="btn lghost" href="https://wa.me/916361772547?text=Hi%20BenchBox%20Labs%2C%20I%27d%20like%20to%20build%20something." target="_blank" rel="noopener">Chat on WhatsApp</a></div></section>
+  </div>`;
+}
+function initLabs(){
+  $$('[data-lgo]').forEach(b=>b.onclick=()=>document.getElementById(b.dataset.lgo)?.scrollIntoView({behavior:'smooth',block:'start'}));
+  const car=$('#lcar');
+  if(car){$$('[data-lc]').forEach(b=>b.onclick=()=>car.scrollBy({left:+b.dataset.lc*car.querySelector('.lslide').offsetWidth,behavior:'smooth'}));
+    let d=null;car.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse')return;d={x:e.clientX,l:car.scrollLeft,m:false};car.classList.add('grab')});
+    const mv=e=>{if(!d)return;const dx=e.clientX-d.x;if(Math.abs(dx)>4)d.m=true;car.scrollLeft=d.l-dx};
+    const up=()=>{if(!d)return;d=null;car.classList.remove('grab');car.style.scrollSnapType='none';requestAnimationFrame(()=>car.style.scrollSnapType='')};
+    addEventListener('pointermove',mv);addEventListener('pointerup',up);cleanups.push(()=>{removeEventListener('pointermove',mv);removeEventListener('pointerup',up)})}
+  const v=$('#lvis');
+  if(v&&!coarse){const mv=e=>{const r=v.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;v.style.setProperty('--rx',(-y*10).toFixed(2)+'deg');v.style.setProperty('--ry',(x*14).toFixed(2)+'deg')};
+    addEventListener('pointermove',mv);cleanups.push(()=>removeEventListener('pointermove',mv))}
+}
+
 /* ======================= ROUTER ======================= */
 const main=$('#main');let current=null,pending=null;
 function resolve(name){
@@ -5036,13 +5285,13 @@ function resolve(name){
   const li=(D.landings||[]).findIndex(p=>p.slug===name);if(li>=0)return{html:landView(D.landings[li],li),name};
   return{html:V.home(),name:'home'};
 }
-const NAVMAP={'case-studies':'work','case-':'work','web-':'work',websites:'work',films:'work',social:'work',work:'work','blog-':'blog'};
+const NAVMAP={'case-studies':'work','case-':'work','web-':'labs',websites:'labs',films:'work',social:'work',work:'work','blog-':'blog'};
 function navKey(n){for(const k in NAVMAP)if(n===k||n.startsWith(k)&&k.endsWith('-'))return NAVMAP[k];return n}
 function show(name,anim,restoreY){
   if(name===current||name===pending)return;pending=name;
   const swap=()=>{
     teardown();
-    const r=resolve(name);main.innerHTML=r.html;current=r.name;
+    const r=resolve(name);main.innerHTML=r.html;current=r.name;document.documentElement.dataset.page=current;
     const nk=navKey(current);
     $$('.nav a').forEach(a=>a.getAttribute('href')==='#'+nk?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current'));
     $('.foot-cta').hidden=current==='contact';
@@ -5126,6 +5375,7 @@ $('#mnavX').onclick=()=>{$('#mnav').hidden=true;$('#menuBtn').focus()};
 /* per-route SEO title + description (the live site renders these server-side) */
 const META={home:['Bench Box Media · Marketing, Media & Ad Films, Built on One Bench',null],
  services:['Services · Media Buying, PR, Branding, Content, Films & Events | Bench Box Media','Eleven marketing disciplines under one roof: media planning & buying, web & tech, content, influencer marketing, strategy, PR, branding, partnerships, video production, events and film marketing.'],
+ labs:['BenchBox Labs · Websites, Apps, SaaS & AI Development | Bench Box Media','BenchBox Labs is the tech studio of Bench Box Media: websites, mobile apps, SaaS platforms, web applications, AI automation and online stores, designed and built by one team.'],
  'the-bench':['The Bench™ · One Team for Your Entire Brand | Bench Box Media','The Bench is Bench Box Media\'s flagship program: brand audit, strategy, social, ads, content, PR and website built by one team, with monthly reviews.'],
  work:['Our Work · Case Studies, Films, Social Creatives & Tech | Bench Box Media','See our work: marketing case studies, ad films, social media creatives and websites built by Bench Box Media.'],
  'case-studies':['Case Studies · Marketing That Works | Bench Box Media','Case studies across branding, content, creators, PR, strategy, media buying, partnerships, films, events and technology.'],
@@ -5167,6 +5417,7 @@ function mount(n){
     ts.addEventListener('wheel',e=>{if(Math.abs(e.deltaY)>Math.abs(e.deltaX)&&e.shiftKey){ts.scrollLeft+=e.deltaY;e.preventDefault()}},{passive:false})}
   if(n==='home'){startPhysics();miniBench();heroSwap();const fp=$('.filmpills');if(fp){const o=new IntersectionObserver(es=>{if(es[0].isIntersecting){fp.classList.add('on');o.disconnect()}},{threshold:.3});o.observe(fp);cleanups.push(()=>o.disconnect())}}
   if(n==='the-bench'){benchGame();timeline()}
+  if(n==='labs')initLabs();
   if(n==='films')initFilms();
   if(n==='contact')initContact();
   if(n==='careers')initCareers();
