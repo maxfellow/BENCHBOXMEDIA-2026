@@ -1048,6 +1048,251 @@ html[data-page=labs] .bar{--bg:#0A0A0B;--ink:#F4F4F6;--soft:#1A1A20;--line:#2626
   .p3.xpl .atab{transform:translateZ(170px)}.p3.xpl .asb{transform:translateZ(185px)}.p3.xpl .p3isl{transform:translateZ(192px)}.p3.xpl .ahome{transform:translateZ(178px)}
   .p3.xpl .p3back{transform:rotateY(180deg) translateZ(80px)}
 }
+/* ===== Labs v2 ===== */
+html[data-page=labs] footer{--bg:#0A0A0B;--ink:#F4F4F6;--muted:#9A9AA3;--line:#26262C;--soft:#141418;color:#F4F4F6}
+.l2sheet{--bg:#0A0A0B;--ink:#F4F4F6;--muted:#9A9AA3;--line:#26262C;--soft:#141418}
+.lb2 .lead{max-width:44ch}
+.l2hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(24px,4vw,60px);align-items:center;padding-block:clamp(56px,8vw,110px) clamp(30px,5vw,60px)}
+.l2hero h1{font:400 clamp(44px,6.2vw,96px)/.98 var(--display);margin-top:8px}
+.l2hero .lead{margin-top:20px}
+.l2hero .row{margin-top:28px;flex-wrap:wrap}
+.l2vis{position:relative;height:clamp(460px,44vw,640px);display:grid;place-items:center}
+.l2vis .p3,.l2vis .pf{scale:.86}
+.l2ring{position:absolute;width:78%;aspect-ratio:1;border-radius:50%;background:radial-gradient(closest-side,rgba(255,12,106,.26),transparent 70%)}
+.l2sec{padding-top:clamp(64px,8vw,110px)}
+.l2sec h2{margin-top:14px;font:400 clamp(34px,4.4vw,64px)/1 var(--display)}
+.l2build{margin-top:26px;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+.l2b{display:flex;flex-direction:column;gap:6px;padding:18px;border-radius:18px;background:#121216;box-shadow:inset 0 0 0 1px rgba(255,255,255,.07)}
+.l2b i{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:rgba(255,12,106,.14);color:var(--pink);margin-bottom:6px}
+.l2b b{font-weight:600;font-size:16px}.l2b small{color:#9A9AA3;font-size:13px;line-height:1.35}
+/* project tiles */
+.l2grid{margin-top:30px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.l2tile{position:relative;border:0;padding:0;cursor:pointer;border-radius:26px;overflow:hidden;aspect-ratio:3/4.3;color:#fff;text-align:left;background:#121216;isolation:isolate;transition:transform .45s var(--spring)}
+.l2tbg{position:absolute;inset:0;background:var(--bg);z-index:-1}
+.l2tbg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,8,10,0) 45%,rgba(8,8,10,.85))}
+.l2tile:hover{transform:translateY(-6px)}
+.l2tile:active{transform:scale(.97)}
+.l2mini{position:absolute;left:50%;top:8%;width:300px;height:620px;margin-left:-150px;transform-origin:50% 0;scale:.44;pointer-events:none;transition:scale .5s var(--spring)}
+.l2tile:hover .l2mini{scale:.47}
+.l2meta{position:absolute;left:18px;right:18px;bottom:16px;display:flex;flex-direction:column;gap:2px}
+.l2meta b{font:400 26px/1 var(--display)}.l2meta small{font-size:13px;opacity:.75}
+/* the "tap me" bubble */
+.l2tap{position:absolute;left:62%;top:50%;width:0;height:0;z-index:2}
+.l2tap b{position:absolute;left:-13px;top:-13px;width:26px;height:26px;border-radius:50%;background:#fff;box-shadow:0 0 0 4px color-mix(in srgb,var(--acc) 60%,transparent),0 8px 20px rgba(0,0,0,.4);animation:l2press 1.8s cubic-bezier(.3,0,.3,1) infinite}
+.l2tap i{position:absolute;left:-13px;top:-13px;width:26px;height:26px;border-radius:50%;border:2px solid #fff;opacity:0;animation:l2ring 1.8s cubic-bezier(.2,.6,.3,1) infinite}
+.l2tap i:nth-child(2){animation-delay:.25s}.l2tap i:nth-child(3){animation-delay:.5s}
+@keyframes l2press{0%,100%{transform:scale(1)}12%{transform:scale(.72)}24%{transform:scale(1.08)}36%{transform:scale(1)}}
+@keyframes l2ring{0%,10%{transform:scale(.6);opacity:0}16%{opacity:.9}70%,100%{transform:scale(3.4);opacity:0}}
+.l2tile:nth-child(2) .l2tap b,.l2tile:nth-child(2) .l2tap i{animation-delay:.35s}
+.l2tile:nth-child(3) .l2tap b,.l2tile:nth-child(3) .l2tap i{animation-delay:.7s}
+.l2tile:nth-child(4) .l2tap b,.l2tile:nth-child(4) .l2tap i{animation-delay:1.05s}
+.l2tile:nth-child(5) .l2tap b,.l2tile:nth-child(5) .l2tap i{animation-delay:1.4s}
+/* flat phone (touch devices and tiles) */
+.pf{position:relative;display:block;width:300px;height:620px;border-radius:54px;padding:3px;background:linear-gradient(135deg,var(--f2),var(--f1) 40%,var(--f3) 70%,var(--f2));box-shadow:0 40px 80px -20px rgba(0,0,0,.6),0 0 0 1px rgba(0,0,0,.4);
+  --f1:#1d1d20;--f2:#6b6b70;--f3:#2c2c30}
+.pf.f-ti{--f1:#7c7a74;--f2:#e3e0d9;--f3:#9d9a93}.pf.f-bl{--f1:#2b3553;--f2:#8a97bd;--f3:#3d4a70}.pf.f-gd{--f1:#7a6247;--f2:#e6cfae;--f3:#a3876a}.pf.f-si{--f1:#6f6a7c;--f2:#e4dff0;--f3:#9a94a8}
+.pff{display:block;width:100%;height:100%;border-radius:51px;background:#050505;padding:9px}
+.pf .p3glass{display:block}
+.pfk{position:absolute;width:4px;border-radius:3px;background:var(--f2)}.pfk1{right:-3px;top:175px;height:90px}.pfk2{left:-3px;top:185px;height:120px}
+.aringv.still{animation:none}
+/* live sites */
+.l2sites{margin-top:24px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.l2sites a{display:grid;grid-template-columns:1fr auto;gap:2px 10px;padding:18px 20px;border-radius:18px;background:#121216;box-shadow:inset 0 0 0 1px rgba(255,255,255,.07);color:#fff;text-decoration:none;transition:box-shadow .25s,transform .35s var(--spring)}
+.l2sites a:hover{box-shadow:inset 0 0 0 1.5px var(--pink);transform:translateY(-3px)}
+.l2sites small{grid-column:1;color:#9A9AA3;font:500 12px/1.3 var(--mono)}.l2sites span{grid-row:1/3;grid-column:2;align-self:center;color:var(--pink)}
+/* steps */
+.l2steps{margin:24px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.l2steps li{padding:18px;border-top:2px solid var(--pink);display:flex;flex-direction:column;gap:4px}
+.l2steps span{font:500 12px/1 var(--mono);color:var(--pink)}.l2steps b{font:400 24px/1.1 var(--display);margin-top:6px}.l2steps small{color:#9A9AA3}
+/* case study sheet */
+html.sheet-open,html.sheet-open body{overflow:hidden}
+.l2sheet{position:fixed;inset:0;z-index:150;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;background:rgba(5,5,7,.7);opacity:0;transition:opacity .35s}
+.l2sheet.on{opacity:1}
+.l2s-in{--bg:#0A0A0B;max-width:1180px;margin:clamp(0px,4vh,40px) auto;background:#0C0C0E;color:#F4F4F6;border-radius:28px;overflow:hidden;transform:translateY(40px);transition:transform .45s cubic-bezier(.2,.8,.2,1);box-shadow:0 40px 100px rgba(0,0,0,.6)}
+.l2sheet.on .l2s-in{transform:none}
+.l2s-bar{position:sticky;top:0;z-index:3;display:flex;justify-content:space-between;align-items:center;padding:14px 18px;background:rgba(12,12,14,.96)}
+.l2s-x{width:44px;height:44px;border-radius:50%;border:0;background:#1d1d22;color:#fff;font-size:16px;cursor:pointer}
+.l2s-x:hover{background:var(--pink)}
+.l2s-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:20px;padding:clamp(24px,4vw,50px);position:relative}
+.l2s-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,8,10,.85),rgba(8,8,10,.3))}
+.l2s-h,.l2s-ph{position:relative}
+.l2s-ic{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;background:var(--acc);color:#111}
+.l2s-h h2{margin-top:16px;font:400 clamp(56px,7vw,110px)/.92 var(--display)}
+.l2s-tag{margin-top:10px;font-weight:600;font-size:clamp(18px,1.6vw,22px);color:var(--acc)}
+.l2s-dl{margin:24px 0 0;display:grid;gap:0}
+.l2s-dl div{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-top:1px solid rgba(255,255,255,.14)}
+.l2s-dl dt{font:500 11px/1.5 var(--mono);letter-spacing:.12em;text-transform:uppercase;opacity:.65}.l2s-dl dd{margin:0;font-weight:600;text-align:right}
+.l2s-ph{height:600px;display:grid;place-items:center}.l2s-ph .p3,.l2s-ph .pf{scale:.86}
+.l2s-hint{position:absolute;bottom:0;left:0;right:0;text-align:center;font:500 11px/1 var(--mono);letter-spacing:.1em;opacity:.7}
+.l2s-body{padding:clamp(24px,4vw,56px);display:grid;gap:34px}
+.l2s-body section{display:grid;gap:10px;max-width:760px}
+.l2s-body p{color:#C9C9D0;font-size:17px}
+.l2s-big{font:600 clamp(22px,2.2vw,30px)/1.3 var(--body)!important;color:#fff!important}
+.l2s-ol{margin:0;padding-left:22px;display:grid;gap:8px;color:#D5D5DB}
+.l2s-ol li::marker{color:var(--acc);font-weight:700}
+.l2s-feat{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.l2s-feat li{padding:10px 14px;border-radius:99px;background:#17171b;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);font-size:14px}
+.l2s-two{grid-template-columns:1fr 1fr;max-width:none!important}
+.l2s-end{display:flex;flex-wrap:wrap;gap:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,.1)}
+@media (max-width:1100px){.l2grid{grid-template-columns:repeat(3,minmax(0,1fr))}.l2build{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:980px){
+  .l2hero{grid-template-columns:1fr}.l2vis{height:560px}
+  .l2sites{grid-template-columns:1fr 1fr}.l2steps{grid-template-columns:1fr 1fr}
+  .l2s-hero{grid-template-columns:1fr}.l2s-ph{height:560px}
+}
+@media (max-width:640px){
+  .l2vis{height:500px}.l2vis .pf,.l2vis .p3{scale:.76}
+  .l2build{grid-template-columns:1fr 1fr}.l2b{padding:14px}
+  .l2grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-inline:calc(-1 * var(--gut));padding:0 var(--gut) 8px;scroll-padding-inline:var(--gut);scrollbar-width:none}.l2grid::-webkit-scrollbar{display:none}
+  .l2tile{flex:0 0 62vw;scroll-snap-align:start;border-radius:22px;aspect-ratio:3/4.6}.l2mini{scale:.4;top:6%}.l2meta b{font-size:22px}.l2meta{left:16px;bottom:14px}
+  .l2sites,.l2steps{grid-template-columns:1fr}
+  .l2s-in{margin:0;border-radius:0;min-height:100%}
+  .l2s-ph{height:500px}.l2s-ph .pf,.l2s-ph .p3{scale:.76}
+  .l2s-two{grid-template-columns:1fr}
+}
+
+/* footer is the end of the page */
+html,body{overscroll-behavior:none;overscroll-behavior-y:none}
+body{min-height:0}
+footer{margin-bottom:0}
+footer~*:not(script):not(style):not(link){position:fixed!important}
+/* ===== Labs v3 ===== */
+.lb3{background:#08080A;background-image:none!important}
+.lb3::before{display:none}
+.l3orb{position:absolute;border-radius:50%;pointer-events:none;will-change:transform}
+.l3orb.o1{left:-10%;top:-200px;width:900px;height:900px;background:radial-gradient(closest-side,rgba(255,12,106,.22),transparent);animation:l3drift 18s ease-in-out infinite}
+.l3orb.o2{right:-15%;top:1400px;width:1000px;height:1000px;background:radial-gradient(closest-side,rgba(92,80,255,.16),transparent);animation:l3drift 22s ease-in-out -6s infinite reverse}
+@keyframes l3drift{50%{transform:translate(120px,80px) scale(1.1)}}
+/* reveal */
+.l3r{opacity:0;transform:translateY(34px);transition:opacity .9s cubic-bezier(.2,.8,.2,1) var(--d,0s),transform 1s cubic-bezier(.2,.8,.2,1) var(--d,0s)}
+.l3r.in{opacity:1;transform:none}
+.l3words span{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em}
+.l3words em{display:inline-block;font-style:normal;transform:translateY(110%);transition:transform 1s cubic-bezier(.2,1,.3,1) calc(.15s + var(--i) * .07s)}
+.l3words.in em{transform:none}
+/* hero */
+.l3hero{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(24px,4vw,60px);align-items:center;padding-block:clamp(60px,8vw,120px) clamp(20px,4vw,50px)}
+.l3hero h1{font:400 clamp(46px,6vw,96px)/.98 var(--display);margin-top:6px}
+.l3hero .lead{margin-top:20px;max-width:40ch}
+.l3hero .row{margin-top:30px}
+.l3vis{position:relative;height:clamp(380px,38vw,560px)}
+.l3lap{position:absolute;left:0;top:6%;width:88%;animation:l3float 8s ease-in-out infinite}
+.l3scr{position:relative;aspect-ratio:16/10;border-radius:14px 14px 0 0;overflow:hidden;background:#111;box-shadow:0 0 0 8px #1a1a1e,0 0 0 9px #2c2c32,0 40px 90px -20px rgba(0,0,0,.7)}
+.l3scr img,.l3view img{display:block;width:100%;height:auto;will-change:transform;animation:l3scroll 16s cubic-bezier(.6,0,.4,1) infinite}
+@keyframes l3scroll{0%,8%{transform:translateY(0)}46%,56%{transform:translateY(var(--t))}94%,100%{transform:translateY(0)}}
+.l3base{height:14px;margin:0 -7%;border-radius:0 0 18px 18px;background:linear-gradient(180deg,#2c2c32,#141417);box-shadow:0 30px 50px -10px rgba(0,0,0,.6)}
+.l3ph{position:absolute;right:0;bottom:-6%;width:300px;height:620px;transform-origin:bottom right;scale:.62;pointer-events:none;animation:l3float 7s ease-in-out -3s infinite}
+@keyframes l3float{50%{translate:0 -12px}}
+.l3tapfx{position:absolute;z-index:20;width:54px;height:54px;margin:-27px 0 0 -27px;border-radius:50%;background:rgba(255,255,255,.4);box-shadow:0 0 0 2px rgba(255,255,255,.9);pointer-events:none;animation:l3tapfx .65s ease-out forwards}
+@keyframes l3tapfx{0%{transform:scale(.3);opacity:0}30%{transform:scale(.7);opacity:1}100%{transform:scale(1.5);opacity:0}}
+.l3tags{display:flex;flex-wrap:wrap;gap:10px;padding-top:10px}
+.l3tags span{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:999px;background:#131317;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);font-weight:600;font-size:15px}
+.l3tags i{color:var(--pink);display:grid}
+/* sections */
+.l3sec{position:relative;padding-top:clamp(70px,9vw,130px)}
+.l3head h2{margin-top:14px;font:400 clamp(36px,4.6vw,68px)/1 var(--display)}
+/* website marquee */
+.l3marq{margin-inline:calc(-1 * max(var(--gut),calc(50vw - 800px)));overflow:hidden;padding-block:14px}
+.l3marq:first-of-type{margin-top:30px}
+.l3track{display:flex;gap:22px;width:max-content;animation:l3marq 60s linear infinite}
+.l3marq.rev .l3track{animation-direction:reverse;animation-duration:70s}
+@keyframes l3marq{to{transform:translateX(-50%)}}
+.l3site{width:clamp(280px,30vw,440px);flex:none;margin:0}
+.l3bar{display:flex;align-items:center;gap:6px;padding:10px 12px;border-radius:14px 14px 0 0;background:#1a1a1e}
+.l3bar i{width:9px;height:9px;border-radius:50%;background:#FF5F57}.l3bar i+i{background:#FEBC2E}.l3bar i+i+i{background:#28C840}
+.l3bar span{margin-left:10px;padding:4px 10px;border-radius:6px;background:#0f0f12;color:#8A8A94;font:500 11px/1 var(--mono)}
+.l3view{aspect-ratio:16/10;overflow:hidden;border-radius:0 0 14px 14px;background:#111}
+.l3view img{animation-duration:14s}
+.l3site:nth-child(2n) .l3view img{animation-delay:-4s}.l3site:nth-child(3n) .l3view img{animation-delay:-8s}
+.l3site figcaption{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:12px 4px 0}
+.l3site figcaption b{font-weight:600}.l3site figcaption small{color:#8A8A94;font-size:13px}
+/* steps */
+.l3steps{margin:26px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.l3steps li{position:relative;padding:22px 0 0;display:flex;flex-direction:column;gap:4px}
+.l3steps li::before{content:"";position:absolute;left:0;top:0;height:2px;width:100%;background:var(--pink);transform-origin:left;transform:scaleX(0);transition:transform 1s cubic-bezier(.2,.8,.2,1) calc(var(--d,0s) + .2s)}
+.l3steps li.in::before{transform:scaleX(1)}
+.l3steps span{font:500 12px/1 var(--mono);color:var(--pink)}.l3steps b{font:400 26px/1.1 var(--display);margin-top:8px}.l3steps small{color:#9A9AA3}
+.lb3 .lcta{position:relative}
+@media (max-width:980px){
+  .l3hero{grid-template-columns:1fr}.l3vis{height:clamp(300px,70vw,480px)}
+  .l3steps{grid-template-columns:1fr 1fr}
+  .l3orb{display:none}
+}
+@media (max-width:640px){
+  .l3ph{scale:.42}.l3lap{width:92%}
+  .l3steps{grid-template-columns:1fr}
+  .l3site{width:78vw}
+}
+/* Labs: phone smoothness */
+.lb3 .l3track,.lb3 .l3view img,.lb3 .l3scr img,.lvs-in,.lvc-heart,.l3lap,.l3ph{backface-visibility:hidden}
+.lb3 .l3site{contain:layout paint}
+.lvs{contain:strict}
+@media (max-width:980px),(hover:none){
+  .lb3 *,.lvs *{-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+  .lvc-g{background:rgba(255,255,255,.26)!important}
+  .l3lap,.l3ph{animation:none!important}
+  .lb3 .l3track{will-change:transform}
+}
+/* ===== Labs hero live hospital site ===== */
+.l3scr.lvwrap{background:#7F95AC}
+.l3scr.lvwrap img{animation:none!important;height:auto}
+.lvs{position:absolute;inset:0;overflow:hidden}
+.lvs-in{position:absolute;left:0;top:0;width:1200px;height:750px;transform-origin:0 0;overflow:hidden;color:#fff;font-family:'Onest',system-ui,sans-serif;background:radial-gradient(80% 75% at 58% 42%,#AEBFD0,#8298AF 55%,#667D95)}
+.lvs-in b{font-weight:600}
+.lvc-nav{position:absolute;left:0;right:0;top:0;display:flex;justify-content:space-between;align-items:center;padding:22px 36px;font-size:14px;z-index:4}
+.lvc-lg{font-weight:400!important;font-size:26px;letter-spacing:.16em}
+.lvc-tabs{position:relative;display:flex;padding:6px;border-radius:40px;background:rgba(255,255,255,.16)}
+.lvc-tabs span{position:relative;z-index:1;padding:9px 16px;border-radius:30px;transition:color .35s}
+.lvc-tabs span.on{color:#34465A}
+.lvc-hl{position:absolute;left:6px;top:6px;bottom:6px;width:90px;border-radius:30px;background:#fff;transition:transform .5s cubic-bezier(.3,1.2,.4,1),width .5s}
+.lvc-cta{padding:12px 20px;border-radius:40px;background:#16212E}
+.lvc-copy{position:absolute;left:36px;top:108px;width:470px;z-index:3}
+.lvc-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:30px;background:rgba(255,255,255,.16);font-size:13px}
+.lvc-badge i{width:7px;height:7px;border-radius:50%;background:#7CF2C0;box-shadow:0 0 10px #7CF2C0;animation:lvcblink 1.4s ease-in-out infinite}
+@keyframes lvcblink{50%{opacity:.25}}
+.lvc-copy h3{font-family:'Onest',system-ui,sans-serif!important;font-weight:300;font-size:74px;line-height:.96;letter-spacing:-.04em;margin-top:20px;color:#fff}
+.lvc-copy h3 b{font-weight:500}
+.lvc-copy p{font-size:16px;line-height:1.55;opacity:.88;margin-top:18px;max-width:380px}
+.lvc-btns{display:flex;gap:10px;margin-top:26px}
+.lvc-btns span{padding:15px 22px;border-radius:40px;background:#fff;color:#16212E;font-weight:600;font-size:15px;transition:transform .2s}
+.lvc-btns span+span{background:rgba(255,255,255,.16);color:#fff}
+.lvs-in .prs{transform:scale(.94)}
+.lvc-heart{position:absolute;left:520px;top:40px;width:470px;height:560px;z-index:2}
+.lvc-heart img{position:relative;width:100%;height:100%;object-fit:cover;-webkit-mask:radial-gradient(closest-side,#000 72%,transparent);mask:radial-gradient(closest-side,#000 72%,transparent);animation:lvcbeat 1.2s cubic-bezier(.3,0,.2,1) infinite;will-change:transform}
+@keyframes lvcbeat{0%,40%,100%{transform:scale(1)}12%{transform:scale(1.045)}24%{transform:scale(1.01)}32%{transform:scale(1.03)}}
+.lvc-glow{position:absolute;left:50%;top:52%;width:360px;height:360px;margin:-180px 0 0 -180px;border-radius:50%;background:radial-gradient(closest-side,rgba(140,230,255,.55),transparent);animation:lvcglow 1.2s ease-out infinite}
+@keyframes lvcglow{0%{transform:scale(.8);opacity:.9}70%{transform:scale(1.35);opacity:0}100%{opacity:0}}
+.lvc-g{position:absolute;z-index:3;background:rgba(255,255,255,.17);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.32);border-radius:22px;padding:16px 20px}
+.lvc-g small{font-size:12px;opacity:.85}
+.lvc-bpm{right:36px;top:100px;width:260px}
+.lvc-bpm b{display:block;font-weight:400!important;font-size:38px;letter-spacing:-.03em}
+.lvc-ecg{stroke-dasharray:420;stroke-dashoffset:420;animation:lvcecg 1.2s linear infinite}
+@keyframes lvcecg{to{stroke-dashoffset:0}}
+.lvc-doc{right:36px;top:262px;display:flex;align-items:center;gap:12px;width:300px}
+.lvc-doc img{width:46px;height:46px;border-radius:50%;object-fit:cover}
+.lvc-doc b{display:block;font-weight:500!important;font-size:15px}
+.lvc-stats{position:absolute;left:36px;right:36px;bottom:30px;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.35);z-index:3}
+.lvc-stats div{padding-top:16px;font-size:13px;opacity:.92}
+.lvc-stats b{display:block;font-weight:400!important;font-size:32px}
+.lvc-panel{position:absolute;left:560px;top:118px;width:400px;height:300px;z-index:6;border-radius:26px;background:rgba(245,248,252,.94);color:#0E1C2B;box-shadow:0 40px 80px -20px rgba(14,28,43,.5);padding:26px;opacity:0;transform:translateY(24px) scale(.96);transition:opacity .4s,transform .5s cubic-bezier(.2,1.2,.3,1);pointer-events:none}
+.lvc-panel.on{opacity:1;transform:none}
+.lvc-pv{position:absolute;inset:26px;transition:opacity .35s,transform .45s}
+.lvc-pv small{font-size:13px;color:#5b6b7e}
+.lvc-pv b{display:block;font-size:24px;letter-spacing:-.02em;margin-top:4px}
+.lvc-slots{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:18px}
+.lvc-slots span{padding:12px 0;text-align:center;border-radius:12px;border:1px solid #d7dee7;font-size:15px;transition:background .25s,color .25s,transform .2s}
+.lvc-slots span.on{background:#16212E;color:#fff;border-color:#16212E}
+.lvc-confirm{position:absolute;left:0;right:0;bottom:0;padding:15px;text-align:center;border-radius:14px;background:#3F6FA8;color:#fff;font-weight:600;transition:transform .2s}
+.lvc-done{opacity:0;transform:translateY(16px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.lvc-done b{font-size:30px;margin-top:14px}.lvc-done small{max-width:260px;margin-top:6px;line-height:1.45}
+.lvc-tick{width:64px;height:64px;border-radius:50%;background:#7CF2C0;display:grid;place-items:center;transform:scale(.4);transition:transform .5s cubic-bezier(.2,1.6,.3,1) .1s}
+.lvc-panel.ok [data-pick]{opacity:0;transform:translateY(-16px)}
+.lvc-panel.ok .lvc-done{opacity:1;transform:none}
+.lvc-panel.ok .lvc-tick{transform:none}
+.lvs-cur{position:absolute;left:-12px;top:-12px;z-index:9;width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,.85);box-shadow:0 0 0 2px #16212E,0 8px 20px rgba(0,0,0,.3);transform:translate(600px,420px);transition:transform .55s cubic-bezier(.5,0,.2,1);pointer-events:none}
+.lvs-cur::after{content:"";position:absolute;inset:-14px;border-radius:50%;border:2px solid #fff;opacity:0}
+.lvs-cur.tp::after{animation:lvstap .55s ease-out}
+@keyframes lvstap{0%{transform:scale(.3);opacity:1}100%{transform:scale(1.4);opacity:0}}
+
 /* home reveal: plays after the loader, and whenever the home hero is drawn */
 .hero h1 .ln{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
 .hero h1 .ln>span{display:inline-block;transform-origin:0 100%}
@@ -1234,135 +1479,94 @@ footer{padding-top:clamp(120px,16vw,200px);padding-bottom:calc(28px + env(safe-a
       <button class="menu-btn" id="menuBtn" type="button">Menu</button>
     </div>
   </header>
-  <main id="main"><div class="labs">
-  <section class="lhero">
-    <div class="lcopy">
-      <span class="llock"><svg viewBox="0 0 240 240" aria-hidden="true"><path d="M132 34H34V206H206V108" fill="none" stroke="#F4F2F0" stroke-width="20" stroke-linecap="square"/><rect x="160" y="16" width="64" height="64" fill="#FF0C6A"/></svg><span>BenchBox <b>Labs</b></span></span><span class="lbadge"><i></i>A BENCH BOX MEDIA PRODUCT</span>
-      <h1>If it runs on a <span class="lpink">screen</span>, we build it.</h1>
-      <p class="lead">Websites, mobile apps, SaaS platforms and AI tools, designed and engineered by the same team that already runs your brand, content and campaigns. One team. No hand offs.</p>
-      <div class="row"><a class="btn pinkb" href="contact/" data-link data-want="1">Start a build ↗</a><button class="btn lghost" type="button" data-lgo="lbuilds">See the builds</button></div>
-      <span class="llive"><i></i>Now taking new builds</span>
+  <main id="main"><div class="labs lb3">
+  <div class="l3orb o1"></div><div class="l3orb o2"></div>
+  <section class="l3hero">
+    <div class="l3copy">
+      <span class="llock l3r"><svg viewBox="0 0 240 240" aria-hidden="true"><path d="M132 34H34V206H206V108" fill="none" stroke="#F4F2F0" stroke-width="20" stroke-linecap="square"/><rect x="160" y="16" width="64" height="64" fill="#FF0C6A"/></svg><span>BenchBox <b>Labs</b></span></span>
+      <h1 class="l3words"><span style="--i:0"><em>If</em></span> <span style="--i:1"><em>it</em></span> <span style="--i:2"><em>runs</em></span> <span style="--i:3"><em>on</em></span> <span style="--i:4"><em>a</em></span> <span style="--i:5"><em class="lpink">screen,</em></span> <span style="--i:6"><em>we</em></span> <span style="--i:7"><em>build</em></span> <span style="--i:8"><em>it.</em></span></h1>
+      <p class="lead l3r" style="--d:.7s">Websites, apps, SaaS and AI tools, built by the team that already runs your brand.</p>
+      <div class="row l3r" style="--d:.85s"><a class="btn pinkb" href="contact/" data-link data-want="1">Start a build ↗</a></div>
     </div>
-    <div class="lvis" id="lvis">
-      <div class="ldash" id="ldash"><div class="lbt"><i></i><i></i><i></i><span>app.yourbrand.com/dashboard</span></div>
-  <div class="ldb"><div class="lstat"><small>Leads</small><b data-dv="l">128</b><em>▲ 24%</em></div><div class="lstat"><small>Bookings</small><b data-dv="b">46</b><em>▲ 11%</em></div><div class="lstat"><small>Revenue</small><b data-dv="r">₹4.2L</b><em>▲ 32%</em></div>
-  <div class="lchart"><div class="lrange"><button data-rg="7D" class="on">7D</button><button data-rg="30D" class="">30D</button><button data-rg="90D" class="">90D</button></div><div class="lbars" id="lbars"></div><span class="ltip" id="ltip" hidden></span></div></div></div>
-      <div class="p3 f-bl" id="p3hero"><div class="p3shadow"></div><div class="p3b"><i class="p3s" style="--z:-4.2"></i><i class="p3s" style="--z:0"></i><i class="p3s" style="--z:4.2"></i><i class="p3e p3er"></i><i class="p3e p3el"></i><i class="p3e p3et"></i><i class="p3e p3eb"></i>
-    <div class="p3back"><div class="p3cam"><i></i><i></i><i></i><b></b></div><span class="p3logo"><svg viewBox="0 0 627 612" aria-hidden="true"><rect width="294" height="612" rx="70"/><rect x="332" width="295" height="242" rx="70"/><rect x="332" y="281" width="295" height="331" rx="70"/></svg></span></div>
-    <div class="p3f"><div class="p3glass"><div class="p3scr" data-scr></div><span class="p3isl"></span><span class="p3glare"></span></div></div>
-    <span class="p3k p3pw"></span><span class="p3k p3v1"></span><span class="p3k p3v2"></span><span class="p3k p3ac"></span></div></div>
+    <div class="l3vis l3r" style="--d:.3s">
+      <div class="l3lap"><div class="l3scr lvwrap"><div class="lvs" id="lvs"><div class="lvs-in">
+  <div class="lvc-nav"><b class="lvc-lg">CORE</b><span class="lvc-tabs"><em class="lvc-hl"></em><span data-tab="0" class="on">Heart care</span><span data-tab="1" class="">Doctors</span><span data-tab="2" class="">Checkups</span><span data-tab="3" class="">Emergency</span></span><span class="lvc-cta">Book a consult</span></div>
+  <div class="lvc-copy"><span class="lvc-badge"><i></i>Cardiac emergency, open 24/7</span><h3>Care for the <b>one that never stops.</b></h3><p>A hospital built only for the heart. Scans in minutes, surgeons with 4,000 procedures behind them.</p><div class="lvc-btns"><span data-book>Book a heart check</span><span>Talk to a nurse</span></div></div>
+  <div class="lvc-heart"><div class="lvc-glow"></div><img src="labsites/live/heart.jpg" alt="" decoding="async"></div>
+  <div class="lvc-g lvc-bpm"><small>Live resting rate</small><b><span data-bpm>72</span> bpm</b><svg viewBox="0 0 220 44" width="220" height="44"><path class="lvc-ecg" d="M0 26h40l6-4 6 4h14l7-20 9 36 8-26 6 10h24l6-5 6 5h88" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"/></svg></div>
+  <div class="lvc-g lvc-doc"><img src="labsites/live/doc.jpg" alt=""><div><small>Next available</small><b>Dr. Anika Rao, 4:30 pm</b></div></div>
+  <div class="lvc-stats"><div><b><span data-cnt="4000">4000</span>+</b>Heart surgeries</div><div><b><span data-cnt="11">11</span> min</b>Door to cath lab</div><div><b><span data-cnt="36">36</span></b>Cardiologists</div><div><b><span data-cnt="98.4">98.4</span>%</b>Success rate</div></div>
+  <div class="lvc-panel" data-panel><div class="lvc-pv" data-pick><small>Dr. Anika Rao · Cardiology</small><b>Choose a time, Wednesday</b><div class="lvc-slots"><span data-slot="9:30">9:30</span><span data-slot="10:00">10:00</span><span data-slot="10:30">10:30</span><span data-slot="11:00">11:00</span><span data-slot="4:00">4:00</span><span data-slot="4:30">4:30</span></div><span class="lvc-confirm" data-confirm>Confirm booking</span></div>
+    <div class="lvc-pv lvc-done" data-done><span class="lvc-tick"><svg viewBox="0 0 24 24" width="30" height="30"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#0E1C2B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><b>You're booked.</b><small>Wednesday, <span data-when>10:30</span> am. A reminder is on its way to WhatsApp.</small></div></div>
+  <span class="lvs-cur" data-cur></span>
+</div></div></div><div class="l3base"></div></div>
+      <div class="l3ph"><div class="pf f-bk" id="p3hero"><div class="pff"><div class="p3glass"><div class="p3scr" data-scr></div><span class="p3isl"></span></div></div><span class="pfk pfk1"></span><span class="pfk pfk2"></span></div></div>
     </div>
   </section>
-  <div class="lmarq"><div class="track" data-marq><span>Websites</span><em>✦</em><span>Mobile apps</span><em>✦</em><span>SaaS</span><em>✦</em><span>AI tools</span><em>✦</em><span>Dashboards</span><em>✦</em><span>Online stores</span><em>✦</em><span>Automation</span><em>✦</em><span>Portals</span><em>✦</em><span>CRMs</span><em>✦</em><span>Chatbots</span><em>✦</em><span>Websites</span><em>✦</em><span>Mobile apps</span><em>✦</em><span>SaaS</span><em>✦</em><span>AI tools</span><em>✦</em><span>Dashboards</span><em>✦</em><span>Online stores</span><em>✦</em><span>Automation</span><em>✦</em><span>Portals</span><em>✦</em><span>CRMs</span><em>✦</em><span>Chatbots</span><em>✦</em></div></div>
+  <div class="l3tags"><span class="l3r" style="--d:0s"><i><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 11l9-7 9 7v9h-6v-6H9v6H3z"/></svg></i>Websites</span><span class="l3r" style="--d:0.1s"><i><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg></i>Mobile apps</span><span class="l3r" style="--d:0.2s"><i><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></i>SaaS products</span><span class="l3r" style="--d:0.30000000000000004s"><i><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 3a9 9 0 1 0 10 10H11z"/><path d="M14 2v8h8a8 8 0 0 0-8-8z"/></svg></i>Web apps</span><span class="l3r" style="--d:0.4s"><i><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></i>AI and automation</span><span class="l3r" style="--d:0.5s"><i><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 7h14l-1.3 12H6.3z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 7V5.5a3 3 0 0 1 6 0V7" fill="none" stroke="currentColor" stroke-width="2"/></svg></i>Online stores</span></div>
 
-  <section class="lsec"><span class="lnum">01 · What we build</span><h2>Six things we build. <span class="lmute">Everything in between.</span></h2>
-    <p class="lead">From a landing page that fills your calendar to a platform your customers pay for every month. Every build comes with design, engineering, launch and care.</p>
-    <div class="lgrid"><div class="lcard" data-rv><span class="lno">01</span><h3>Websites</h3><p>Brand sites, landing pages and microsites built to turn visitors into enquiries.</p><ul><li>Custom design, no templates</li><li>Booking, forms and WhatsApp built in</li><li>SEO and speed from day one</li><li>A CMS your team can edit</li></ul></div><div class="lcard" data-rv><span class="lno">02</span><h3>Mobile apps</h3><p>iOS and Android apps people keep on their home screen.</p><ul><li>UX research and prototypes</li><li>One codebase, both platforms</li><li>Payments, maps, notifications</li><li>App Store and Play Store launch</li></ul></div><div class="lcard" data-rv><span class="lno">03</span><h3>SaaS platforms</h3><p>Software your customers subscribe to, from first MVP to scale.</p><ul><li>MVP scoped to launch fast</li><li>Accounts, roles and billing</li><li>Dashboards and analytics</li><li>Cloud that grows with you</li></ul></div><div class="lcard" data-rv><span class="lno">04</span><h3>Web applications</h3><p>Portals, dashboards and internal tools that replace spreadsheets and phone calls.</p><ul><li>Patient, student and customer portals</li><li>CRMs and booking systems</li><li>Admin panels and reports</li><li>Integrations with your tools</li></ul></div><div class="lcard" data-rv><span class="lno">05</span><h3>AI and automation</h3><p>Assistants and automations that save your team hours every week.</p><ul><li>WhatsApp and website chatbots</li><li>Lead follow up on autopilot</li><li>AI features inside your product</li><li>Workflow automation</li></ul></div><div class="lcard" data-rv><span class="lno">06</span><h3>Online stores</h3><p>D2C stores that sell, with the campaigns to drive traffic to them.</p><ul><li>Shopify or fully custom</li><li>Payments, COD and shipping</li><li>Inventory and order tracking</li><li>Conversion focused checkout</li></ul></div></div>
+  <section class="l3sec"><div class="l3head l3r"><span class="lnum">Websites</span><h2>Ten brands. <span class="lmute">Ten worlds.</span></h2></div></section>
+  <div class="l3marq"><div class="l3track"><figure class="l3site"><div class="l3bar"><i></i><i></i><i></i></div><div class="l3view"><img src="labsites/rouge.jpg" alt="Rouge Studio website design" decoding="async" style="--t:-48.77%"></div><figcaption><b>Rouge Studio</b><small>Creative agency</small></figcaption></figure><figure class="l3site"><div class="l3bar"><i></i><i></i><i></i></div><div class="l3view"><img src="labsites/volt.jpg" alt="Volt One website design" decoding="async" style="--t:-46.53%"></div><figcaption><b>Volt One</b><small>Electric car</small></figcaption></figure><figure class="l3site"><div class="l3bar"><i></i><i></i><i></i></div><div class="l3view"><img src="labsites/fizo.jpg" alt="Fizo website design" decoding="async" style="--t:-43.24%"></div><figcaption><b>Fizo</b><small>Sparkling soda</small></figcaption></figure><figure class="l3site"><div class="l3bar"><i></i><i></i><i></i></div><div class="l3view"><img src="labsites/oasis.jpg" alt="Oasis Villas website design" decoding="async" style="--t:-47.13%"></div><figcaption><b>Oasis Villas</b><small>Luxury stays</small></figcaption></figure><figure class="l3site"><div class="l3bar"><i></i><i></i><i></i></div><div class="l3view"><img src="labsites/core.jpg" alt="Core Heart Hospital website design" decoding="async" style="--t:-48.49%"></div><figcaption><b>Core Heart Hospital</b><small>Cardiac care</small></figcaption></figure><figure class="l3site"><div class="l3bar"><i></i><i></i><i></i></div><div class="l3view"><img src="labsites/rouge.jpg" alt="Rouge Studio website design" decoding="async" style="--t:-48.77%"></div><figcaption><b>Rouge Studio</b><small>Creative agency</small></figcaption></figure><figure class="l3site"><div class="l3bar"><i></i><i></i><i></i></div><div class="l3view"><img src="labsites/volt.jpg" alt="Volt One website design" decoding="async" style="--t:-46.53%"></div><figcaption><b>Volt One</b><small>Electric car</small></figcaption></figure><figure class="l3site"><div class="l3bar"><i></i><i></i><i></i></div><div class="l3view"><img src="labsites/fizo.jpg" alt="Fizo website design" decoding="async" style="--t:-43.24%"></div><figcaption><b>Fizo</b><small>Sparkling soda</small></figcaption></figure><figure class="l3site"><div class="l3bar"><i></i><i></i><i></i></div><div class="l3view"><img src="labsites/oasis.jpg" alt="Oasis Villas website design" decoding="async" style="--t:-47.13%"></div><figcaption><b>Oasis Villas</b><small>Luxury stays</small></figcaption></figure><figure class="l3site"><div class="l3bar"><i></i><i></i><i></i></div><div class="l3view"><img src="labsites/core.jpg" alt="Core Heart Hospital website design" decoding="async" style="--t:-48.49%"></div><figcaption><b>Core Heart Hospital</b><small>Cardiac care</small></figcaption></figure></div></div>
+  <div class="l3marq rev"><div class="l3track"><figure class="l3site"><div class="l3bar"><i></i><i></i><i></i></div><div class="l3view"><img src="labsites/tempo.jpg" alt="Tempo website design" decoding="async" style="--t:-46.12%"></div><figcaption><b>Tempo</b><small>Fine watches</small></figcaption></figure><figure class="l3site"><div class="l3bar"><i></i><i></i><i></i></div><div class="l3view"><img src="labsites/stride.jpg" alt="Stride website design" decoding="async" style="--t:-47.96%"></div><figcaption><b>Stride</b><small>Running shoes</small></figcaption></figure><figure class="l3site"><div class="l3bar"><i></i><i></i><i></i></div><div class="l3view"><img src="labsites/bloom.jpg" alt="Bloom website design" decoding="async" style="--t:-43.58%"></div><figcaption><b>Bloom</b><small>Clean skincare</small></figcaption></figure><figure class="l3site"><div class="l3bar"><i></i><i></i><i></i></div><div class="l3view"><img src="labsites/nomad.jpg" alt="Nomad Roasters website design" decoding="async" style="--t:-47.23%"></div><figcaption><b>Nomad Roasters</b><small>Specialty coffee</small></figcaption></figure><figure class="l3site"><div class="l3bar"><i></i><i></i><i></i></div><div class="l3view"><img src="labsites/plinth.jpg" alt="Plinth website design" decoding="async" style="--t:-41.22%"></div><figcaption><b>Plinth</b><small>Finance SaaS</small></figcaption></figure><figure class="l3site"><div class="l3bar"><i></i><i></i><i></i></div><div class="l3view"><img src="labsites/tempo.jpg" alt="Tempo website design" decoding="async" style="--t:-46.12%"></div><figcaption><b>Tempo</b><small>Fine watches</small></figcaption></figure><figure class="l3site"><div class="l3bar"><i></i><i></i><i></i></div><div class="l3view"><img src="labsites/stride.jpg" alt="Stride website design" decoding="async" style="--t:-47.96%"></div><figcaption><b>Stride</b><small>Running shoes</small></figcaption></figure><figure class="l3site"><div class="l3bar"><i></i><i></i><i></i></div><div class="l3view"><img src="labsites/bloom.jpg" alt="Bloom website design" decoding="async" style="--t:-43.58%"></div><figcaption><b>Bloom</b><small>Clean skincare</small></figcaption></figure><figure class="l3site"><div class="l3bar"><i></i><i></i><i></i></div><div class="l3view"><img src="labsites/nomad.jpg" alt="Nomad Roasters website design" decoding="async" style="--t:-47.23%"></div><figcaption><b>Nomad Roasters</b><small>Specialty coffee</small></figcaption></figure><figure class="l3site"><div class="l3bar"><i></i><i></i><i></i></div><div class="l3view"><img src="labsites/plinth.jpg" alt="Plinth website design" decoding="async" style="--t:-41.22%"></div><figcaption><b>Plinth</b><small>Finance SaaS</small></figcaption></figure></div></div>
+
+  <section class="l3sec" id="lwork"><div class="l3head l3r"><span class="lnum">Apps</span><h2>Tap a project.</h2></div>
+    <div class="l2grid"><button type="button" class="l2tile l3r" data-open-case="0" style="--acc:#C6FF3D;--bg:linear-gradient(160deg,#101112,#050506);--d:0s" aria-label="Open the Movra case study">
+      <span class="l2tbg"></span>
+      <span class="l2mini"><span class="pf f-bk mini"><span class="pff"><span class="p3glass"><span class="p3scr"><div class="asb" style="color:#fff"><span>9:41</span></div><div class="ap" style="background:#0B0B0C;color:#F4F4F6">
+     <div class="ah"><div><small>Tuesday, 29 Sep</small><h4>Good morning, Asha</h4></div><span class="aav" style="background:linear-gradient(135deg,#C6FF3D,#5BE7A9)"></span></div>
+     <div class="aring"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50" stroke="#1d1f1a" stroke-width="12" fill="none"/><circle class="aringv still" cx="60" cy="60" r="50" stroke="#C6FF3D" stroke-width="12" fill="none" stroke-linecap="round" stroke-dasharray="314" stroke-dashoffset="69" transform="rotate(-90 60 60)"/><circle cx="60" cy="60" r="34" stroke="#1d1f1a" stroke-width="10" fill="none"/><circle class="aringv still" cx="60" cy="60" r="34" stroke="#5BE7A9" stroke-width="10" fill="none" stroke-linecap="round" stroke-dasharray="214" stroke-dashoffset="80" transform="rotate(-90 60 60)"/></svg><div><b>8,432</b><small>of 10,000 steps</small></div></div>
+     <div class="agrid"><div class="acell"><small><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z"/></svg> Heart</small><b>72<i>bpm</i></b></div><div class="acell"><small><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg> Calories</small><b>540<i>kcal</i></b></div><div class="acell"><small><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z"/></svg> Sleep</small><b>7h 20m</b></div><div class="acell" style="background:#C6FF3D;color:#111"><small>Streak</small><b>5 days</b></div></div>
+     <span class="abtn" data-act="start" style="background:#C6FF3D;color:#111"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg> Start a run</span></div><nav class="atab" style="--c:#C6FF3D" data-theme-tab="movra"><span class="on" style="color:#C6FF3D"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 11l9-7 9 7v9h-6v-6H9v6H3z"/></svg><span>Today</span></span><span class="" style=""><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg><span>Workout</span></span><span class="" style=""><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><span>Trends</span></span></nav></span><span class="p3isl"></span></span></span></span></span>
+      <span class="l2tap" aria-hidden="true"><i></i><i></i><i></i><b></b></span>
+      <span class="l2meta"><b>Movra</b><small>Fitness tracker app</small></span>
+    </button><button type="button" class="l2tile l3r" data-open-case="1" style="--acc:#0E9F87;--bg:linear-gradient(160deg,#F1F8F5,#BFE0D6);--d:0.08s" aria-label="Open the Medlo case study">
+      <span class="l2tbg"></span>
+      <span class="l2mini"><span class="pf f-ti mini"><span class="pff"><span class="p3glass"><span class="p3scr"><div class="asb" style="color:#0F1F1C"><span>9:41</span></div><div class="ap" style="background:#F6FAF8;color:#0F1F1C">
+     <div class="ah"><div><small>Deliver to</small><h4>Home · Indiranagar</h4></div><span class="acartb" data-act="go" data-t="cart" style="background:#0E9F87"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 7h14l-1.3 12H6.3z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 7V5.5a3 3 0 0 1 6 0V7" fill="none" stroke="currentColor" stroke-width="2"/></svg><b>1</b></span></div>
+     <div class="asearch">Search medicines, brands, labs</div>
+     <div class="apres" style="background:linear-gradient(135deg,#0E9F87,#087a67)"><div><b>Upload a prescription</b><small>A pharmacist checks it in 5 minutes</small></div><span>Upload</span></div>
+     <small class="asub">Frequently bought</small>
+     <div class="aitem"><span class="apill" style="background:#E6F4F0"></span><div><b>Dolo 650 · 15 tablets</b><small>₹32</small></div><div class="aqty"><span data-act="dec" data-k="a">−</span><b>1</b><span data-act="inc" data-k="a">+</span></div></div><div class="aitem"><span class="apill" style="background:#E6F4F0"></span><div><b>Vitamin D3 60K · 4 caps</b><small>₹128</small></div><span class="aadd" data-act="inc" data-k="b" style="color:#0E9F87;border-color:#0E9F87">Add</span></div><div class="aitem"><span class="apill" style="background:#E6F4F0"></span><div><b>ORS Orange · 4 sachets</b><small>₹96</small></div><span class="aadd" data-act="inc" data-k="c" style="color:#0E9F87;border-color:#0E9F87">Add</span></div></div><nav class="atab" style="--c:#0E9F87" data-theme-tab="medlo"><span class="on" style="color:#0E9F87"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 11l9-7 9 7v9h-6v-6H9v6H3z"/></svg><span>Home</span></span><span class="" style=""><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 7h14l-1.3 12H6.3z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 7V5.5a3 3 0 0 1 6 0V7" fill="none" stroke="currentColor" stroke-width="2"/></svg><span>Cart</span></span><span class="" style=""><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6" fill="#fff"/></svg><span>Track</span></span></nav></span><span class="p3isl"></span></span></span></span></span>
+      <span class="l2tap" aria-hidden="true"><i></i><i></i><i></i><b></b></span>
+      <span class="l2meta"><b>Medlo</b><small>Medicine delivery app</small></span>
+    </button><button type="button" class="l2tile l3r" data-open-case="2" style="--acc:#FFD6B0;--bg:linear-gradient(160deg,#3B2A6B,#C77D7D 70%,#F4B98A);--d:0.16s" aria-label="Open the Stilla case study">
+      <span class="l2tbg"></span>
+      <span class="l2mini"><span class="pf f-si mini"><span class="pff"><span class="p3glass"><span class="p3scr"><div class="asb" style="color:#fff"><span>9:41</span></div><div class="ap" style="background:linear-gradient(170deg,#3B2A6B,#8E5A86 65%,#E59C87);color:#fff">
+     <div class="ah"><div><small>Evening check in</small><h4>How is your mind today?</h4></div></div>
+     <div class="amood"><span data-act="mood" data-i="0" class="" style="--c:#FFD6B0">Calm</span><span data-act="mood" data-i="1" class="on" style="--c:#FFD6B0">Okay</span><span data-act="mood" data-i="2" class="" style="--c:#FFD6B0">Low</span><span data-act="mood" data-i="3" class="" style="--c:#FFD6B0">Tense</span><span data-act="mood" data-i="4" class="" style="--c:#FFD6B0">Happy</span><span data-act="mood" data-i="5" class="" style="--c:#FFD6B0">Tired</span></div>
+     <div class="aglass"><small>Suggested for you</small><b>Gratitude pause</b><span data-act="go" data-t="breathe" class="abtn sm" style="background:#fff;color:#3B2A6B">Begin</span></div>
+     <small class="asub">Mood this week</small><div class="aline"><svg viewBox="0 0 240 60"><path d="M0 44C30 40 40 20 70 26S120 50 150 30 210 10 240 16" fill="none" stroke="#FFD6B0" stroke-width="3"/></svg></div></div><nav class="atab" style="--c:#FFD6B0" data-theme-tab="stilla"><span class="on" style="color:#FFD6B0"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4C9 4 4 10 4 20c10 0 16-5 16-16z"/></svg><span>Check in</span></span><span class="" style=""><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 8h11a3 3 0 1 0-3-3M3 12h16a3 3 0 1 1-3 3M3 16h8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><span>Breathe</span></span><span class="" style=""><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z"/></svg><span>Sleep</span></span></nav></span><span class="p3isl"></span></span></span></span></span>
+      <span class="l2tap" aria-hidden="true"><i></i><i></i><i></i><b></b></span>
+      <span class="l2meta"><b>Stilla</b><small>Mindfulness app</small></span>
+    </button><button type="button" class="l2tile l3r" data-open-case="3" style="--acc:#8B7BFF;--bg:linear-gradient(160deg,#0B1030,#2A1F6B);--d:0.24s" aria-label="Open the Paysa case study">
+      <span class="l2tbg"></span>
+      <span class="l2mini"><span class="pf f-bl mini"><span class="pff"><span class="p3glass"><span class="p3scr"><div class="asb" style="color:#fff"><span>9:41</span></div><div class="ap" style="background:linear-gradient(180deg,#141a44,#0B1030 55%);color:#fff">
+     <div class="ah"><div><small>Hello, Karthik</small><h4>Paysa</h4></div><span class="aav" style="background:linear-gradient(135deg,#8B7BFF,#4FD1C5)"></span></div>
+     <div class="abal" style="background:linear-gradient(135deg,#8B7BFF,#5b4bd6)"><small>Total balance</small><b>₹48,250.60</b><span data-act="eye">Hide</span><span class="achip"></span></div>
+     <div class="aquick"><span data-act="go" data-t="pay"><i style="background:rgba(255,255,255,.08)"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 11l18-8-8 18-2-8z"/></svg></i>Send</span><span data-act="go" data-t="home"><i style="background:rgba(255,255,255,.08)"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></i>Scan</span><span data-act="go" data-t="home"><i style="background:rgba(255,255,255,.08)"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></i>Bills</span><span data-act="go" data-t="home"><i style="background:rgba(255,255,255,.08)"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 3a9 9 0 1 0 10 10H11z"/><path d="M14 2v8h8a8 8 0 0 0-8-8z"/></svg></i>Split</span></div>
+     <small class="asub">Recent</small>
+     <div class="aitem dark"><span class="aav2" style="background:rgba(255,255,255,.1)"></span><div><b>Third Wave Coffee</b><small>Today, 9:12 am</small></div><b style="color:#fff">-₹240</b></div><div class="aitem dark"><span class="aav2" style="background:rgba(255,255,255,.1)"></span><div><b>Salary · Acme Pvt Ltd</b><small>28 Sep</small></div><b style="color:#4FD1C5">+₹92,000</b></div><div class="aitem dark"><span class="aav2" style="background:rgba(255,255,255,.1)"></span><div><b>BESCOM electricity</b><small>27 Sep</small></div><b style="color:#fff">-₹1,840</b></div></div><nav class="atab" style="--c:#8B7BFF" data-theme-tab="paysa"><span class="on" style="color:#8B7BFF"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 11l9-7 9 7v9h-6v-6H9v6H3z"/></svg><span>Home</span></span><span class="" style=""><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 11l18-8-8 18-2-8z"/></svg><span>Pay</span></span><span class="" style=""><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 3a9 9 0 1 0 10 10H11z"/><path d="M14 2v8h8a8 8 0 0 0-8-8z"/></svg><span>Insights</span></span></nav></span><span class="p3isl"></span></span></span></span></span>
+      <span class="l2tap" aria-hidden="true"><i></i><i></i><i></i><b></b></span>
+      <span class="l2meta"><b>Paysa</b><small>Payments and finance app</small></span>
+    </button><button type="button" class="l2tile l3r" data-open-case="4" style="--acc:#FFB23F;--bg:linear-gradient(160deg,#26231F,#121110);--d:0.32s" aria-label="Open the Hovi case study">
+      <span class="l2tbg"></span>
+      <span class="l2mini"><span class="pf f-gd mini"><span class="pff"><span class="p3glass"><span class="p3scr"><div class="asb" style="color:#fff"><span>9:41</span></div><div class="ap" style="background:linear-gradient(180deg,#2a251f,#121110);color:#F6F1EA">
+     <div class="ah"><div><small>Living room · 27°C outside</small><h4>2 of 4 devices on</h4></div><span class="aav" style="background:linear-gradient(135deg,#FFB23F,#ff7a3f)"></span></div>
+     <div class="aroom" style="--g:#FFB23F"><span class="alamp on" style="--c:#FFB23F"></span><small>Scene</small><b>Evening warm</b></div>
+     <div class="adev"><span data-act="dev" data-k="Lights" class="on" style="--c:#FFB23F"><span class="asw"><i></i></span><b>Lights</b><small>On</small></span><span data-act="dev" data-k="Fan" class="" style="--c:#FFB23F"><span class="asw"><i></i></span><b>Fan</b><small>Off</small></span><span data-act="dev" data-k="TV" class="" style="--c:#FFB23F"><span class="asw"><i></i></span><b>TV</b><small>Off</small></span><span data-act="dev" data-k="Lock" class="on" style="--c:#FFB23F"><span class="asw"><i></i></span><b>Lock</b><small>Locked</small></span></div></div><nav class="atab" style="--c:#FFB23F" data-theme-tab="hovi"><span class="on" style="color:#FFB23F"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 11l9-7 9 7v9h-6v-6H9v6H3z"/></svg><span>Home</span></span><span class="" style=""><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 8h11a3 3 0 1 0-3-3M3 12h16a3 3 0 1 1-3 3M3 16h8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><span>Climate</span></span><span class="" style=""><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg><span>Energy</span></span></nav></span><span class="p3isl"></span></span></span></span></span>
+      <span class="l2tap" aria-hidden="true"><i></i><i></i><i></i><b></b></span>
+      <span class="l2meta"><b>Hovi</b><small>Smart home app</small></span>
+    </button></div>
   </section>
 
-  <section class="lsec" id="lbuilds"><span class="lnum">02 · Recent projects</span><h2>Fresh off <span class="lmute">the Labs bench.</span></h2>
-    <p class="lead">Five products designed and built in house by the Labs team. Every screen is live: tap through the app, turn the phone in your hand, and open the exploded view to see how it is put together.</p>
-    <div class="lpc" id="lpc">
-  <div class="lpc-view"><div class="lpc-track" id="lpcT"><article class="lps on" data-i="0" style="--acc:#C6FF3D">
-    <div class="lps-bg" style="background:linear-gradient(160deg,#101112,#050506)"></div><div class="lps-glow"></div>
-    <div class="lps-info">
-      <div class="lps-top"><span class="lps-no">01<i>/05</i></span><span class="lps-kind">Recent project · 2026 · Fitness tracker app</span></div>
-      <h3 class="lps-name"><span style="--k:0">M</span><span style="--k:1">o</span><span style="--k:2">v</span><span style="--k:3">r</span><span style="--k:4">a</span></h3>
-      <p class="lps-tag">Fitness that keeps people coming back.</p><p class="lps-brief">A fitness tracker built around habits, not just numbers. Rings, live runs and streaks turn a daily walk into something people look forward to.</p>
-      <ul class="lps-feat"><li style="--k:0"><i></i>Activity rings with daily goals</li><li style="--k:1"><i></i>Live run tracking with heart rate</li><li style="--k:2"><i></i>Streaks, badges and challenges</li><li style="--k:3"><i></i>Apple Health and Google Fit sync</li><li style="--k:4"><i></i>Weekly trends and coach insights</li></ul>
-      <div class="lps-meta"><div><small>Platforms</small><b>iOS · Android · Coach dashboard</b></div><div><small>Built with</small><span class="lps-stack"><em>Flutter</em><em>Firebase</em><em>HealthKit</em><em>Google Fit</em><em>Node.js</em></span></div><div><small>We delivered</small><b>Brand, UX, UI system, apps, admin</b></div></div>
-    </div>
-    <div class="lps-stage">
-      <div class="lps-ph"><div class="p3 f-bk" id="p3car"><div class="p3shadow"></div><div class="p3b"><i class="p3s" style="--z:-4.2"></i><i class="p3s" style="--z:0"></i><i class="p3s" style="--z:4.2"></i><i class="p3e p3er"></i><i class="p3e p3el"></i><i class="p3e p3et"></i><i class="p3e p3eb"></i>
-    <div class="p3back"><div class="p3cam"><i></i><i></i><i></i><b></b></div><span class="p3logo"><svg viewBox="0 0 627 612" aria-hidden="true"><rect width="294" height="612" rx="70"/><rect x="332" width="295" height="242" rx="70"/><rect x="332" y="281" width="295" height="331" rx="70"/></svg></span></div>
-    <div class="p3f"><div class="p3glass"><div class="p3scr" data-scr></div><span class="p3isl"></span><span class="p3glare"></span></div></div>
-    <span class="p3k p3pw"></span><span class="p3k p3v1"></span><span class="p3k p3v2"></span><span class="p3k p3ac"></span></div></div></div>
-      <div class="lps-call" style="left:-8%;top:16%;--k:0"><b>126 bpm</b><small>Live heart rate</small></div><div class="lps-call" style="left:72%;top:8%;--k:1"><b>5 day streak</b><small>Challenges</small></div><div class="lps-call" style="left:78%;top:62%;--k:2"><b>8,432 steps</b><small>Today</small></div>
-      <div class="lps-ctl"><button type="button" class="lps-x" data-x>Exploded view</button><span>Drag to turn · Tap to use</span></div>
-    </div></article><article class="lps" data-i="1" style="--acc:#0E9F87">
-    <div class="lps-bg" style="background:linear-gradient(160deg,#F1F8F5,#BFE0D6)"></div><div class="lps-glow"></div>
-    <div class="lps-info">
-      <div class="lps-top"><span class="lps-no">02<i>/05</i></span><span class="lps-kind">Recent project · 2026 · Medicine delivery app</span></div>
-      <h3 class="lps-name"><span style="--k:0">M</span><span style="--k:1">e</span><span style="--k:2">d</span><span style="--k:3">l</span><span style="--k:4">o</span></h3>
-      <p class="lps-tag">Medicines at the door in 30 minutes.</p><p class="lps-brief">An e-pharmacy where a prescription photo becomes a verified order in minutes, with live rider tracking all the way to the door.</p>
-      <ul class="lps-feat"><li style="--k:0"><i></i>Prescription upload with pharmacist check</li><li style="--k:1"><i></i>Smart cart with refill reminders</li><li style="--k:2"><i></i>30 minute delivery with live tracking</li><li style="--k:3"><i></i>Rider app and pharmacy dashboard</li><li style="--k:4"><i></i>UPI, cards and cash on delivery</li></ul>
-      <div class="lps-meta"><div><small>Platforms</small><b>Customer app · Rider app · Pharmacy panel</b></div><div><small>Built with</small><span class="lps-stack"><em>React Native</em><em>Node.js</em><em>PostgreSQL</em><em>Google Maps</em><em>Razorpay</em></span></div><div><small>We delivered</small><b>UX, UI, three apps, backend, launch</b></div></div>
-    </div>
-    <div class="lps-stage">
-      <div class="lps-ph"></div>
-      <div class="lps-call" style="left:-10%;top:20%;--k:0"><b>Verified</b><small>by a pharmacist</small></div><div class="lps-call" style="left:74%;top:12%;--k:1"><b>18 min</b><small>Arriving</small></div><div class="lps-call" style="left:76%;top:64%;--k:2"><b>₹206</b><small>Order total</small></div>
-      <div class="lps-ctl"><button type="button" class="lps-x" data-x>Exploded view</button><span>Drag to turn · Tap to use</span></div>
-    </div></article><article class="lps" data-i="2" style="--acc:#FFD6B0">
-    <div class="lps-bg" style="background:linear-gradient(160deg,#3B2A6B,#C77D7D 70%,#F4B98A)"></div><div class="lps-glow"></div>
-    <div class="lps-info">
-      <div class="lps-top"><span class="lps-no">03<i>/05</i></span><span class="lps-kind">Recent project · 2026 · Mindfulness app</span></div>
-      <h3 class="lps-name"><span style="--k:0">S</span><span style="--k:1">t</span><span style="--k:2">i</span><span style="--k:3">l</span><span style="--k:4">l</span><span style="--k:5">a</span></h3>
-      <p class="lps-tag">Two minutes of calm, whenever you need it.</p><p class="lps-brief">A mindfulness app with mood check-ins, guided breathing and sleep sounds, wrapped in soft colour and motion that slows you down.</p>
-      <ul class="lps-feat"><li style="--k:0"><i></i>Daily mood check-ins</li><li style="--k:1"><i></i>Guided box breathing</li><li style="--k:2"><i></i>Sleep sounds and timers</li><li style="--k:3"><i></i>Weekly mood insights</li><li style="--k:4"><i></i>Gentle reminders</li></ul>
-      <div class="lps-meta"><div><small>Platforms</small><b>iOS · Android · Web</b></div><div><small>Built with</small><span class="lps-stack"><em>React Native</em><em>Firebase</em><em>Audio streaming</em><em>Mixpanel</em></span></div><div><small>We delivered</small><b>Brand, UX, UI, motion, apps</b></div></div>
-    </div>
-    <div class="lps-stage">
-      <div class="lps-ph"></div>
-      <div class="lps-call" style="left:-8%;top:18%;--k:0"><b>Calm</b><small>Mood today</small></div><div class="lps-call" style="left:74%;top:10%;--k:1"><b>4 min</b><small>Breathing</small></div><div class="lps-call" style="left:76%;top:62%;--k:2"><b>7 nights</b><small>Sleep streak</small></div>
-      <div class="lps-ctl"><button type="button" class="lps-x" data-x>Exploded view</button><span>Drag to turn · Tap to use</span></div>
-    </div></article><article class="lps" data-i="3" style="--acc:#8B7BFF">
-    <div class="lps-bg" style="background:linear-gradient(160deg,#0B1030,#2A1F6B)"></div><div class="lps-glow"></div>
-    <div class="lps-info">
-      <div class="lps-top"><span class="lps-no">04<i>/05</i></span><span class="lps-kind">Recent project · 2026 · Payments and finance app</span></div>
-      <h3 class="lps-name"><span style="--k:0">P</span><span style="--k:1">a</span><span style="--k:2">y</span><span style="--k:3">s</span><span style="--k:4">a</span></h3>
-      <p class="lps-tag">Everyday money, beautifully simple.</p><p class="lps-brief">A UPI payments app with a calm, trustworthy interface: pay in two taps, split bills and finally understand where the money goes.</p>
-      <ul class="lps-feat"><li style="--k:0"><i></i>UPI payments and QR scan</li><li style="--k:1"><i></i>Two tap pay with success receipts</li><li style="--k:2"><i></i>Spending insights by category</li><li style="--k:3"><i></i>Bill reminders and split with friends</li><li style="--k:4"><i></i>Bank grade encryption and app lock</li></ul>
-      <div class="lps-meta"><div><small>Platforms</small><b>iOS · Android · Ops console</b></div><div><small>Built with</small><span class="lps-stack"><em>Kotlin</em><em>Swift</em><em>UPI stack</em><em>Node.js</em><em>PostgreSQL</em></span></div><div><small>We delivered</small><b>UX, UI, native apps, security review</b></div></div>
-    </div>
-    <div class="lps-stage">
-      <div class="lps-ph"></div>
-      <div class="lps-call" style="left:-8%;top:18%;--k:0"><b>₹48,250</b><small>Balance</small></div><div class="lps-call" style="left:74%;top:10%;--k:1"><b>Paid</b><small>in 1.2 seconds</small></div><div class="lps-call" style="left:76%;top:62%;--k:2"><b>37%</b><small>Food and dining</small></div>
-      <div class="lps-ctl"><button type="button" class="lps-x" data-x>Exploded view</button><span>Drag to turn · Tap to use</span></div>
-    </div></article><article class="lps" data-i="4" style="--acc:#FFB23F">
-    <div class="lps-bg" style="background:linear-gradient(160deg,#26231F,#121110)"></div><div class="lps-glow"></div>
-    <div class="lps-info">
-      <div class="lps-top"><span class="lps-no">05<i>/05</i></span><span class="lps-kind">Recent project · 2026 · Smart home app</span></div>
-      <h3 class="lps-name"><span style="--k:0">H</span><span style="--k:1">o</span><span style="--k:2">v</span><span style="--k:3">i</span></h3>
-      <p class="lps-tag">Every room, one calm dashboard.</p><p class="lps-brief">A smart home app that makes lights, climate, locks and energy feel effortless, with scenes that run the house on their own.</p>
-      <ul class="lps-feat"><li style="--k:0"><i></i>Room by room device control</li><li style="--k:1"><i></i>Climate dial with modes</li><li style="--k:2"><i></i>Door locks and camera alerts</li><li style="--k:3"><i></i>Energy reports by appliance</li><li style="--k:4"><i></i>Scenes and schedules</li></ul>
-      <div class="lps-meta"><div><small>Platforms</small><b>iOS · Android · Wall tablet</b></div><div><small>Built with</small><span class="lps-stack"><em>Flutter</em><em>MQTT</em><em>AWS IoT</em><em>Node.js</em><em>Firebase</em></span></div><div><small>We delivered</small><b>UX, UI, apps, IoT integration</b></div></div>
-    </div>
-    <div class="lps-stage">
-      <div class="lps-ph"></div>
-      <div class="lps-call" style="left:-8%;top:20%;--k:0"><b>24°</b><small>Cooling</small></div><div class="lps-call" style="left:74%;top:12%;--k:1"><b>Locked</b><small>Front door</small></div><div class="lps-call" style="left:76%;top:64%;--k:2"><b>▼ 12%</b><small>Energy this week</small></div>
-      <div class="lps-ctl"><button type="button" class="lps-x" data-x>Exploded view</button><span>Drag to turn · Tap to use</span></div>
-    </div></article></div></div>
-  <div class="lpc-nav"><button type="button" class="lpc-arr" data-go="-1" aria-label="Previous project">←</button>
-    <div class="lpc-dots"><button type="button" data-to="0" class="on" style="--a:#C6FF3D"><span>Movra</span><i><b></b></i></button><button type="button" data-to="1" class="" style="--a:#0E9F87"><span>Medlo</span><i><b></b></i></button><button type="button" data-to="2" class="" style="--a:#FFD6B0"><span>Stilla</span><i><b></b></i></button><button type="button" data-to="3" class="" style="--a:#8B7BFF"><span>Paysa</span><i><b></b></i></button><button type="button" data-to="4" class="" style="--a:#FFB23F"><span>Hovi</span><i><b></b></i></button></div>
-    <button type="button" class="lpc-arr" data-go="1" aria-label="Next project">→</button></div>
+  <section class="l3sec"><div class="l3head l3r"><span class="lnum">How a build runs</span></div>
+    <ol class="l3steps"><li class="l3r" style="--d:0s"><span>01</span><b>Discover</b><small>Scope and a fixed quote</small></li><li class="l3r" style="--d:0.12s"><span>02</span><b>Design</b><small>A prototype you can tap</small></li><li class="l3r" style="--d:0.24s"><span>03</span><b>Build</b><small>Weekly demos</small></li><li class="l3r" style="--d:0.36s"><span>04</span><b>Launch</b><small>Live, with a campaign</small></li><li class="l3r" style="--d:0.48s"><span>05</span><b>Grow</b><small>Monthly updates</small></li></ol>
+  </section>
+
+  <section class="lcta l3r"><div class="lctam"><svg viewBox="0 0 240 240" aria-hidden="true"><path d="M132 34H34V206H206V108" fill="none" stroke="#F4F2F0" stroke-width="20" stroke-linecap="square"/><rect x="160" y="16" width="64" height="64" fill="#FF0C6A"/></svg></div><h2>Pull up a seat <span class="lpink">at the Labs.</span></h2>
+    <div class="row" style="justify-content:center"><a class="btn pinkb" href="contact/" data-link data-want="1">Start a build ↗</a><a class="btn lghost" href="https://wa.me/916361772547?text=Hi%20BenchBox%20Labs%2C%20I%27d%20like%20to%20build%20something." target="_blank" rel="noopener">WhatsApp us</a></div></section>
   </div>
-  </section>
-
-  <section class="lsec"><span class="lnum">03 · Live builds</span><div class="lshead"><h2>Built on the bench, <span class="lmute">live today.</span></h2><a class="link" href="websites/" data-link>All websites <span>→</span></a></div>
-    <div class="sites"><a class="site" data-rv href="web-rvr/" data-link style="--c:#FFD60A"><div class="browser mini"><div class="top"><i></i><i></i><i></i><span class="url">rvrhealthcare.in</span></div><div class="shot"><div class="wf"><div class="nv"><b>RVR Healthcare</b><span><i></i><i></i></span></div><div class="hd">Advanced specialist care, one tap away</div></div></div></div><div class="cap2"><span class="eyebrow">Healthcare website</span><h3>RVR Healthcare</h3><p class="muted">A multi-page hospital website that maps 9 super-specialities, 15 doctors and 2 centres into one easy journey.</p></div></a><a class="site" data-rv href="web-pns/" data-link style="--c:#00C98D"><div class="browser mini"><div class="top"><i></i><i></i><i></i><span class="url">pnsglobalfoundation.org</span></div><div class="shot"><div class="wf"><div class="nv"><b>PNS Global Foundation</b><span><i></i><i></i></span></div><div class="hd">One Purpose. One Community. One Impact.</div></div></div></div><div class="cap2"><span class="eyebrow">Non-profit website</span><h3>PNS Global Foundation</h3><p class="muted">A mission-first website for a foundation bringing education, healthcare, livelihood and welfare under one roof.</p></div></a><a class="site" data-rv href="web-aashi/" data-link style="--c:#A98BFF"><div class="browser mini"><div class="top"><i></i><i></i><i></i><span class="url">aashigroups.in</span></div><div class="shot"><div class="wf"><div class="nv"><b>Aashi Constructions</b><span><i></i><i></i></span></div><div class="hd">25 years of building, now online</div></div></div></div><div class="cap2"><span class="eyebrow">Construction website</span><h3>Aashi Constructions</h3><p class="muted">A modern marketing website for a Bangalore construction firm with 25+ years of residential and commercial expertise.</p></div></a><a class="site" data-rv href="web-amaravathi/" data-link style="--c:#FFD60A"><div class="browser mini"><div class="top"><i></i><i></i><i></i><span class="url">hotelamaravathi.in</span></div><div class="shot"><div class="wf"><div class="nv"><b>Hotel Amaravathi</b><span><i></i><i></i></span></div><div class="hd">Book the stay in one tap</div></div></div></div><div class="cap2"><span class="eyebrow">Hospitality website</span><h3>Hotel Amaravathi</h3><p class="muted">A boutique hotel website with room showcases and one-tap WhatsApp booking flows.</p></div></a></div>
-  </section>
-
-  <section class="lsec"><span class="lnum">04 · How a build runs</span><h2>From idea to launch, <span class="lmute">in the open.</span></h2>
-    <p class="lead">You see progress every week, click through a prototype before we code, and launch with a team that stays on after go live.</p>
-    <div class="lsteps"><div class="lstep" data-rv><span class="lmono">Week 1</span><i></i><h4>Discover</h4><p>Goals, users and scope, agreed on one page with a fixed quote.</p></div><div class="lstep" data-rv><span class="lmono">Week 2</span><i></i><h4>Design</h4><p>A clickable prototype you test on your own phone before a line of code.</p></div><div class="lstep" data-rv><span class="lmono">Week 3+</span><i></i><h4>Build</h4><p>Two week sprints with a demo at the end of each one.</p></div><div class="lstep" data-rv><span class="lmono">Launch</span><i></i><h4>Go live</h4><p>Tested on every device, launched with a campaign from the Bench.</p></div><div class="lstep" data-rv><span class="lmono">Monthly</span><i></i><h4>Grow</h4><p>Updates, new features, hosting and a performance review every month.</p></div></div>
-  </section>
-
-  <section class="lsec"><span class="lnum">05 · Ways to work with us</span><h2>Start small. Build big. <span class="lmute">Keep growing.</span></h2>
-    <div class="ltiers"><div class="ltier"><span class="lmono">1 to 2 weeks</span><h3>Discovery sprint</h3><p>Workshops, user flows, a clickable prototype and a fixed quote for the build.</p><b>Fixed fee</b><a class="btn lghost" href="contact/" data-link data-want="1">Get a quote</a></div><div class="ltier hot"><span class="lmono">Most chosen</span><h3>Build</h3><p>Your website, app or platform, designed, built and launched in clear milestones.</p><b>Fixed quote after discovery</b><a class="btn pinkb" href="contact/" data-link data-want="1">Get a quote</a></div><div class="ltier"><span class="lmono">Every month</span><h3>Growth retainer</h3><p>Hosting, care, new features, SEO and campaigns, with a monthly performance review.</p><b>Monthly plan</b><a class="btn lghost" href="contact/" data-link data-want="1">Get a quote</a></div></div>
-  </section>
-
-  <section class="lsec lwhy"><span class="lnum">06 · Why Labs</span><h2>A tech team that <span class="lpink">already knows your brand.</span></h2>
-    <p class="lead">Most tech agencies can't run your campaigns. Most marketing agencies can't build software. Labs sits on the same bench as Bench Box Media's strategy, content, PR and media teams, so what we build launches with a plan to grow.</p>
-    <div class="lstats"><div><b data-count="100+">100+</b><span>Brands served by Bench Box Media</span></div><div><b data-count="20+">20+</b><span>Websites built</span></div><div><b data-count="150+">150+</b><span>Launches and activations</span></div><div><b data-count="1">1</b><span>Team, one point of contact</span></div></div>
-  </section>
-
-  <section class="lsec"><span class="lnum">07 · Questions</span><h2>Good to know.</h2>
-    <div class="faq"><details><summary>How long does a build take?</summary><p>A website usually takes 3 to 6 weeks. Apps and platforms take 8 to 16 weeks, depending on scope. You get a fixed timeline after the discovery sprint.</p></details><details><summary>Do you work with startups?</summary><p>Yes. We scope a focused MVP so you launch fast and learn from real users.</p></details><details><summary>Who owns the code?</summary><p>You do. Once the project is paid, the code, designs and accounts are yours.</p></details><details><summary>Can Labs work with our in house team?</summary><p>Yes. We can own the whole build or plug into your team for design, engineering or launch.</p></details></div>
-  </section>
-
-  <section class="lcta"><div class="lctam"><svg viewBox="0 0 240 240" aria-hidden="true"><path d="M132 34H34V206H206V108" fill="none" stroke="#F4F2F0" stroke-width="20" stroke-linecap="square"/><rect x="160" y="16" width="64" height="64" fill="#FF0C6A"/></svg></div><h2>Pull up a seat <span class="lpink">at the Labs.</span></h2><p class="lead">We take on a few builds at a time, so every project gets the team's full attention. Tell us what you're building.</p>
-    <div class="row" style="justify-content:center"><a class="btn pinkb" href="contact/" data-link data-want="1">Start a build ↗</a><a class="btn lghost" href="https://wa.me/916361772547?text=Hi%20BenchBox%20Labs%2C%20I%27d%20like%20to%20build%20something." target="_blank" rel="noopener">Chat on WhatsApp</a></div></section>
-  </div></main>
+  <div class="l2sheet" id="l2sheet" hidden role="dialog" aria-modal="true" aria-label="Project case study"></div></main>
   <footer id="footer">
     <a class="foot-cta" href="contact/" data-link><span>Let's</span> <span>talk</span> <span>↗</span></a>
     <div class="foot-grid">
@@ -5348,7 +5552,7 @@ services:()=>`${phead('Services','Every part of how you <span class="hl" style="
     <span class="sprev">${sv.s.map(x=>`<em>${esc(x)}</em>`).join('')}</span></span>
     <span class="sgo">Open →</span></button>`).join('')}</div>
   <section class="space"><div class="shead" data-rv><h2 class="mid">By the <span class="hl" style="--c:var(--yellow)">numbers</span></h2></div>${statsHTML()}</section>`,
-labs:()=>labsView(),
+labs:()=>labsView3(),
 'the-bench':()=>`
   <div class="bhero">
     <span class="badge-x"><i></i>BENCHBOX EXCLUSIVE</span>
@@ -5661,10 +5865,10 @@ function p3drive(el,base={rx:-4,ry:-18}){
   const io=new IntersectionObserver(es=>{vis=es[0].isIntersecting});io.observe(el);
   const loop=now=>{const dt=Math.min(40,now-last);last=now;
     if(vis&&!drag){if(Math.abs(vy)>.05){ry+=vy;vy*=.94}else{const k=(now-t0)/1000;if(k>1.2){const target=base.ry+Math.sin(now/2400)*10;ry+=(nearest(ry,target)-ry)*.02;rx+=((base.rx+Math.sin(now/3100)*3)-rx)*.03}}set()}
-    raf=requestAnimationFrame(loop)};
-  const nearest=(cur,tg)=>{const d=((tg-cur)%360+540)%360-180;return cur+d};
+    if(!dead)raf=requestAnimationFrame(loop)};
+  let dead=false;const nearest=(cur,tg)=>{const d=((tg-cur)%360+540)%360-180;return cur+d};
   set();raf=requestAnimationFrame(loop);cleanups.push(()=>{cancelAnimationFrame(raf);io.disconnect()});
-  return {spin(){vy=21.6}};
+  return {spin(){vy=21.6},stop(){dead=true;cancelAnimationFrame(raf);io.disconnect()}};
 }
 
 /* ---- the five apps, each a small working prototype ---- */
@@ -5738,21 +5942,21 @@ const LAB_PROTOS={
  paysa:{frame:'bl',tabs:[['home','Home','home'],['pay','Pay','send'],['spend','Insights','pie']],
   st:()=>({tab:'home',hide:false,amt:'',paid:false,seg:0}),
   view(s,a){const A=a.acc;
-   if(s.tab==='home')return `<div class="ap" style="background:linear-gradient(180deg,#141a44,#0B1030 55%);color:#fff">
-     <div class="ah"><div><small>Hello, Karthik</small><h4>Paysa</h4></div><span class="aav" style="background:linear-gradient(135deg,${A},#4FD1C5)"></span></div>
-     <div class="abal" style="background:linear-gradient(135deg,${A},#5b4bd6)"><small>Total balance</small><b>${s.hide?'₹ • • • • •':'₹48,250.60'}</b><button data-act="eye">${s.hide?'Show':'Hide'}</button><span class="achip"></span></div>
+   if(s.tab==='home')return `<div class="ap" style="background:linear-gradient(180deg,${a.p1||'#141a44'},${a.p0||'#0B1030'} 55%);color:#fff">
+     <div class="ah"><div><small>Hello, Karthik</small><h4>Paysa</h4></div><span class="aav" style="background:linear-gradient(135deg,${A},${a.p4||'#4FD1C5'})"></span></div>
+     <div class="abal" style="background:linear-gradient(135deg,${A},${a.p2||'#5b4bd6'})"><small>Total balance</small><b>${s.hide?'₹ • • • • •':'₹48,250.60'}</b><button data-act="eye">${s.hide?'Show':'Hide'}</button><span class="achip"></span></div>
      <div class="aquick">${[['Send','send'],['Scan','chart'],['Bills','bolt'],['Split','pie']].map(([t,k])=>`<button data-act="go" data-t="${t==='Send'?'pay':'home'}"><i style="background:rgba(255,255,255,.08)">${ic(k,18)}</i>${t}</button>`).join('')}</div>
      <small class="asub">Recent</small>
-     ${[['Third Wave Coffee','Today, 9:12 am','-₹240'],['Salary · Acme Pvt Ltd','28 Sep','+₹92,000'],['BESCOM electricity','27 Sep','-₹1,840']].map(([t,d,v])=>`<div class="aitem dark"><span class="aav2" style="background:rgba(255,255,255,.1)"></span><div><b>${t}</b><small>${d}</small></div><b style="color:${v[0]==='+'?'#4FD1C5':'#fff'}">${v}</b></div>`).join('')}</div>`;
-   if(s.tab==='pay'){if(s.paid)return `<div class="ap center" style="background:#0B1030;color:#fff"><div class="aok" style="--c:#4FD1C5"><svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24" fill="none" stroke="#4FD1C5" stroke-width="3"/><path d="M15 27l7 7 15-15" fill="none" stroke="#4FD1C5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h4>${inr(+s.amt||0)} sent</h4><small>to Priya S · UPI ref 4829 1063</small><button class="abtn" data-act="again" style="background:${A};color:#fff">Done</button></div>`;
-    return `<div class="ap" style="background:#0B1030;color:#fff">
+     ${[['Third Wave Coffee','Today, 9:12 am','-₹240'],['Salary · Acme Pvt Ltd','28 Sep','+₹92,000'],['BESCOM electricity','27 Sep','-₹1,840']].map(([t,d,v])=>`<div class="aitem dark"><span class="aav2" style="background:rgba(255,255,255,.1)"></span><div><b>${t}</b><small>${d}</small></div><b style="color:${v[0]==='+'?(a.p4||'#4FD1C5'):'#fff'}">${v}</b></div>`).join('')}</div>`;
+   if(s.tab==='pay'){if(s.paid)return `<div class="ap center" style="background:${a.p0||'#0B1030'};color:#fff"><div class="aok" style="--c:${a.p4||'#4FD1C5'}"><svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24" fill="none" stroke="${a.p4||'#4FD1C5'}" stroke-width="3"/><path d="M15 27l7 7 15-15" fill="none" stroke="${a.p4||'#4FD1C5'}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h4>${inr(+s.amt||0)} sent</h4><small>to Priya S · UPI ref 4829 1063</small><button class="abtn" data-act="again" style="background:${A};color:#fff">Done</button></div>`;
+    return `<div class="ap" style="background:${a.p0||'#0B1030'};color:#fff">
      <div class="ah"><div><small>Paying</small><h4>Priya S</h4></div><span class="aav" style="background:linear-gradient(135deg,#F6AD55,#FC8181)"></span></div>
      <div class="aamt">${s.amt?inr(+s.amt):'₹0'}</div><small class="asub" style="text-align:center">priya@okpaysa</small>
      <div class="akeys">${['1','2','3','4','5','6','7','8','9','00','0','⌫'].map(k=>`<button data-act="key" data-k="${k}">${k}</button>`).join('')}</div>
-     <button class="abtn" data-act="pay" style="background:${+s.amt?A:'#3a3f6b'};color:#fff">${+s.amt?'Pay '+inr(+s.amt):'Enter an amount'}</button></div>`}
-   const C=[['Food and dining',7920,A],['Travel',5110,'#4FD1C5'],['Shopping',4270,'#F6AD55'],['Bills',4180,'#FC8181']];const T=C.reduce((t,c)=>t+c[1],0);let acc=0;
+     <button class="abtn" data-act="pay" style="background:${+s.amt?A:(a.p3||'#3a3f6b')};color:#fff">${+s.amt?'Pay '+inr(+s.amt):'Enter an amount'}</button></div>`}
+   const C=[['Food and dining',7920,A],['Travel',5110,(a.p4||'#4FD1C5')],['Shopping',4270,'#F6AD55'],['Bills',4180,'#FC8181']];const T=C.reduce((t,c)=>t+c[1],0);let acc=0;
    const g=C.map(([,v,c])=>{const a0=acc/T*100;acc+=v;return `${c} ${a0}% ${acc/T*100}%`}).join(',');
-   return `<div class="ap" style="background:#0B1030;color:#fff">
+   return `<div class="ap" style="background:${a.p0||'#0B1030'};color:#fff">
      <div class="ah"><div><small>September spending</small><h4>${inr(T)}</h4></div></div>
      <div class="adonut" style="background:conic-gradient(${g})"><div><small>${C[s.seg][0]}</small><b>${inr(C[s.seg][1])}</b><i>${Math.round(C[s.seg][1]/T*100)}%</i></div></div>
      ${C.map(([t,v,c],i)=>`<button class="aitem dark${i===s.seg?' sel':''}" data-act="seg" data-i="${i}"><span class="adot" style="background:${c}"></span><div><b>${t}</b><small>${Math.round(v/T*100)}% of spend</small></div><b>${inr(v)}</b></button>`).join('')}</div>`},
@@ -5799,7 +6003,7 @@ const LAB_PROTOS={
 };
 function runProto(phoneEl,app){
   const P=LAB_PROTOS[app.k],scr=phoneEl.querySelector('[data-scr]');const s=P.st();
-  phoneEl.className=phoneEl.className.replace(/f-\w+/,'f-'+P.frame);
+  phoneEl.className=phoneEl.className.replace(/f-\w+/,'f-'+(app.frame||P.frame));
   const draw=(anim)=>{scr.innerHTML=`<div class="asb" style="color:${/medlo/.test(app.k)&&s.tab!=='track'?'#0F1F1C':(app.k==='medlo'?'#0F1F1C':'#fff')}"><span>9:41</span><span class="asbi">${SB_ICONS}</span></div>${P.view(s,app)}
     <nav class="atab" style="--c:${app.acc}" data-theme-tab="${app.k}">${P.tabs.map(([k,t,i])=>`<button data-act="tab" data-t="${k}" class="${s.tab===k?'on':''}">${ic(i,20)}<span>${t}</span></button>`).join('')}</nav><span class="ahome"></span>`;
     if(anim){const v=scr.querySelector('.ap');v&&v.classList.add('in')}};
@@ -5924,6 +6128,215 @@ function initProjects(){
   cleanups.push(()=>{cancelAnimationFrame(raf);io.disconnect();removeEventListener('keydown',key);clearTimeout(idleT);stop&&stop()});
 }
 
+/* ===== BenchBox Labs v2: crisp page, project tiles, case study sheet ===== */
+const LAB_CASE={
+ movra:{brief:'Build a fitness app people open every day, not one they download in January and forget by February.',challenge:'Most trackers bury people in numbers. The brief was to turn activity into a habit loop that feels rewarding at a glance and motivating over weeks.',approach:['Two weeks of research with runners, walkers and gym regulars','Designed a ring-first home screen that answers "how am I doing today" in one look','Built live run tracking with heart rate and a calm, readable workout screen','Added streaks and challenges tied to real goals, not vanity badges'],icon:'heart'},
+ medlo:{brief:'Let anyone order prescription medicines in under a minute and get them home in 30.',challenge:'Pharmacy orders are slowed by prescription checks, stock questions and phone calls. The flow had to feel as quick as ordering food while staying compliant.',approach:['Mapped the full journey across customer, pharmacist and rider','Made prescription upload the first action, checked by a pharmacist in minutes','Designed a cart with refill reminders and clear totals','Built live rider tracking with an honest arrival time'],icon:'cart'},
+ stilla:{brief:'Create a mindfulness app that feels calm from the very first screen.',challenge:'Wellness apps often feel like another to-do list. This one needed to lower the heart rate, not raise it, while still building a daily habit.',approach:['Designed a soft visual language with slow, breathing motion','Mood check-ins in one tap, with suggestions that match the mood','Guided box breathing with a visual pacer','Sleep sounds with timers and a gentle weekly mood view'],icon:'leaf'},
+ paysa:{brief:'Design a UPI payments app that feels trustworthy, fast and genuinely simple.',challenge:'Payments apps are crowded with offers and banners. The goal was a clean app where paying takes two taps and spending finally makes sense.',approach:['Stripped the home screen to balance, four actions and recent payments','A keypad-first pay flow with a clear success receipt','Spending insights grouped into categories people recognise','Security built in: app lock, device binding and encryption'],icon:'send'},
+ hovi:{brief:'Bring every device in the home into one calm, fast dashboard.',challenge:'Smart homes end up with five apps for five brands. Hovi had to unify lights, climate, locks and energy without feeling technical.',approach:['Room-first navigation that mirrors how people think about their home','One-tap device tiles with instant feedback','A climate dial with modes and live energy use','Scenes and schedules so the house runs itself'],icon:'bolt'}
+};
+const isTouchLite=()=>matchMedia('(hover:none),(max-width:980px)').matches;
+function phoneFlat(id,frame='bk'){return `<div class="pf f-${frame}" id="${id}"><div class="pff"><div class="p3glass"><div class="p3scr" data-scr></div><span class="p3isl"></span></div></div><span class="pfk pfk1"></span><span class="pfk pfk2"></span></div>`}
+const phoneAny=(id,frame)=>isTouchLite()?phoneFlat(id,frame):phone3d(id,frame);
+function miniScreen(a){const P=LAB_PROTOS[a.k];const s=P.st();return `<div class="asb" style="color:${a.k==='medlo'?'#0F1F1C':'#fff'}"><span>9:41</span></div>${P.view(s,a).replace(/class="aringv"/g,'class="aringv still"').replace(/<button/g,'<span').replace(/<\/button>/g,'</span>')}<nav class="atab" style="--c:${a.acc}" data-theme-tab="${a.k}">${P.tabs.map(([k,t,i],n)=>`<span class="${n===0?'on':''}" style="${n===0?`color:${a.acc}`:''}">${ic(i,20)}<span>${t}</span></span>`).join('')}</nav>`}
+function labsView2(){
+  const build=[['Websites','Sites that turn visitors into enquiries','home'],['Mobile apps','iOS and Android, one team','play'],['SaaS','Products people subscribe to','chart'],['Web apps','Portals, CRMs and dashboards','pie'],['AI and automation','Chatbots and workflows','bolt'],['Online stores','D2C stores that sell','cart']];
+  return `<div class="labs lb2">
+  <section class="l2hero">
+    <div class="l2copy">
+      <span class="llock">${LABS_MARK()}<span>BenchBox <b>Labs</b></span></span>
+      <h1>If it runs on a <span class="lpink">screen</span>, we build it.</h1>
+      <p class="lead">Websites, apps, SaaS and AI tools, built by the team that already runs your brand.</p>
+      <div class="row"><a class="btn pinkb" href="contact/" data-link data-want="1">Start a build ↗</a><button class="btn lghost" type="button" data-lgo="lwork">See our work</button></div>
+    </div>
+    <div class="l2vis"><div class="l2ring"></div>${phoneAny('p3hero','bl')}</div>
+  </section>
+
+  <section class="l2sec"><span class="lnum">What we build</span>
+    <div class="l2build">${build.map(([t,d,i])=>`<div class="l2b"><i>${ic(i,20)}</i><b>${t}</b><small>${d}</small></div>`).join('')}</div>
+  </section>
+
+  <section class="l2sec" id="lwork"><span class="lnum">Recent projects</span><h2>Tap a project.</h2>
+    <div class="l2grid">${LAB_APPS.map((a,i)=>`<button type="button" class="l2tile" data-open-case="${i}" style="--acc:${a.acc};--bg:${a.bg}" aria-label="Open the ${a.name} case study">
+      <span class="l2tbg"></span>
+      <span class="l2mini"><span class="pf f-${LAB_PROJ[a.k].frame} mini"><span class="pff"><span class="p3glass"><span class="p3scr">${miniScreen(a)}</span><span class="p3isl"></span></span></span></span></span>
+      <span class="l2tap" aria-hidden="true"><i></i><i></i><i></i><b></b></span>
+      <span class="l2meta"><b>${a.name}</b><small>${a.cat}</small></span>
+    </button>`).join('')}</div>
+  </section>
+
+  <section class="l2sec"><span class="lnum">Live websites</span>
+    <div class="l2sites">${D.sites.map(c=>`<a href="#${c.slug}" data-link><b>${esc(c.name)}</b><small>${esc(c.domain)}</small><span>→</span></a>`).join('')}</div>
+  </section>
+
+  <section class="l2sec"><span class="lnum">How a build runs</span>
+    <ol class="l2steps">${[['Discover','Scope and a fixed quote'],['Design','A prototype you can tap'],['Build','Sprints with weekly demos'],['Launch','Live, with a campaign'],['Grow','Updates every month']].map(([t,d],i)=>`<li><span>${String(i+1).padStart(2,'0')}</span><b>${t}</b><small>${d}</small></li>`).join('')}</ol>
+  </section>
+
+  <section class="lcta"><div class="lctam">${LABS_MARK()}</div><h2>Pull up a seat <span class="lpink">at the Labs.</span></h2>
+    <div class="row" style="justify-content:center"><a class="btn pinkb" href="contact/" data-link data-want="1">Start a build ↗</a><a class="btn lghost" href="https://wa.me/916361772547?text=Hi%20BenchBox%20Labs%2C%20I%27d%20like%20to%20build%20something." target="_blank" rel="noopener">WhatsApp us</a></div></section>
+  </div>
+  <div class="l2sheet" id="l2sheet" hidden role="dialog" aria-modal="true" aria-label="Project case study"></div>`;
+}
+function caseSheet(i){const a=Object.assign({},LAB_APPS[i],LAB_APPS[i].k==='medlo'?{acc:'#45E3C4',bg:'radial-gradient(90% 80% at 70% 50%,#11574b,#062520 70%)'}:{}),P=LAB_PROJ[a.k],C=LAB_CASE[a.k],n=LAB_APPS[(i+1)%LAB_APPS.length];
+  return `<div class="l2s-in" style="--acc:${a.acc}">
+  <div class="l2s-bar"><span class="lmono">Recent project · 2026</span><button type="button" class="l2s-x" data-close-case aria-label="Close">✕</button></div>
+  <div class="l2s-hero" style="background:${a.bg}">
+    <div class="l2s-h"><span class="l2s-ic">${ic(C.icon,26)}</span><h2>${a.name}</h2><p class="l2s-tag">${P.tag}</p>
+      <dl class="l2s-dl"><div><dt>Category</dt><dd>${a.cat}</dd></div><div><dt>Platforms</dt><dd>${P.plat}</dd></div><div><dt>Timeline</dt><dd>12 to 16 weeks</dd></div></dl></div>
+    <div class="l2s-ph">${phoneAny('p3case',P.frame)}<span class="l2s-hint">Tap the screen to try it</span></div>
+  </div>
+  <div class="l2s-body">
+    <section><span class="lnum">The brief</span><p class="l2s-big">${C.brief}</p></section>
+    <section><span class="lnum">The challenge</span><p>${C.challenge}</p></section>
+    <section><span class="lnum">What we did</span><ol class="l2s-ol">${C.approach.map(x=>`<li>${x}</li>`).join('')}</ol></section>
+    <section><span class="lnum">Features</span><ul class="l2s-feat">${P.feats.map(f=>`<li>${f}</li>`).join('')}</ul></section>
+    <section class="l2s-two"><div><span class="lnum">Built with</span><div class="lps-stack">${P.stack.map(t=>`<em>${t}</em>`).join('')}</div></div><div><span class="lnum">We delivered</span><p>${P.deliv}</p></div></section>
+    <div class="l2s-end"><a class="btn pinkb" href="contact/" data-link data-want="1">Build something like this ↗</a><button type="button" class="btn lghost" data-open-case="${(i+1)%LAB_APPS.length}">Next: ${n.name} →</button></div>
+  </div></div>`}
+function initLabs2(){
+  $$('[data-lgo]').forEach(b=>b.onclick=()=>document.getElementById(b.dataset.lgo)?.scrollIntoView({behavior:'smooth',block:'start'}));
+  const lite=isTouchLite();const kill=[];
+  const hero=$('#p3hero');if(hero){if(!lite){const d=p3drive(hero,{rx:-6,ry:-22});d&&kill.push(d.stop)}kill.push(runProto(hero,LAB_APPS[3]))}
+  const sh=$('#l2sheet');let stopCase=[];
+  const close=()=>{stopCase.forEach(f=>{try{f()}catch(_){}});stopCase=[];sh.classList.remove('on');document.documentElement.classList.remove('sheet-open');setTimeout(()=>{if(!sh.classList.contains('on')){sh.hidden=true;sh.innerHTML=''}},380)};
+  const open=i=>{stopCase.forEach(f=>{try{f()}catch(_){}});stopCase=[];sh.innerHTML=caseSheet(i);sh.hidden=false;sh.scrollTop=0;
+    requestAnimationFrame(()=>{sh.classList.add('on');document.documentElement.classList.add('sheet-open')});
+    const ph=$('#p3case');if(!lite){const d=p3drive(ph,{rx:-4,ry:-18});d&&stopCase.push(d.stop)}stopCase.push(runProto(ph,LAB_APPS[i]))};
+  document.addEventListener('click',onDoc);function onDoc(e){const o=e.target.closest('[data-open-case]');if(o){e.preventDefault();open(+o.dataset.openCase);return}
+    if(e.target.closest('[data-close-case]')||e.target===sh)close();if(sh.classList.contains('on')&&e.target.closest('#l2sheet a[data-link]'))close()}
+  const key=e=>{if(e.key==='Escape'&&sh.classList.contains('on'))close()};addEventListener('keydown',key);
+  cleanups.push(()=>{document.removeEventListener('click',onDoc);removeEventListener('keydown',key);kill.forEach(f=>{try{f()}catch(_){}});close();document.documentElement.classList.remove('sheet-open')});
+}
+
+/* ===== Labs hero: live self-playing hospital site ===== */
+function liveSite(){const slots=['9:30','10:00','10:30','11:00','4:00','4:30'];return `<div class="lvs" id="lvs"><div class="lvs-in">
+  <div class="lvc-nav"><b class="lvc-lg">CORE</b><span class="lvc-tabs"><em class="lvc-hl"></em>${['Heart care','Doctors','Checkups','Emergency'].map((t,i)=>`<span data-tab="${i}" class="${i?'':'on'}">${t}</span>`).join('')}</span><span class="lvc-cta">Book a consult</span></div>
+  <div class="lvc-copy"><span class="lvc-badge"><i></i>Cardiac emergency, open 24/7</span><h3>Care for the <b>one that never stops.</b></h3><p>A hospital built only for the heart. Scans in minutes, surgeons with 4,000 procedures behind them.</p><div class="lvc-btns"><span data-book>Book a heart check</span><span>Talk to a nurse</span></div></div>
+  <div class="lvc-heart"><div class="lvc-glow"></div><img src="labsites/live/heart.jpg" alt="" decoding="async"></div>
+  <div class="lvc-g lvc-bpm"><small>Live resting rate</small><b><span data-bpm>72</span> bpm</b><svg viewBox="0 0 220 44" width="220" height="44"><path class="lvc-ecg" d="M0 26h40l6-4 6 4h14l7-20 9 36 8-26 6 10h24l6-5 6 5h88" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"/></svg></div>
+  <div class="lvc-g lvc-doc"><img src="labsites/live/doc.jpg" alt=""><div><small>Next available</small><b>Dr. Anika Rao, 4:30 pm</b></div></div>
+  <div class="lvc-stats">${[['4000','+','Heart surgeries'],['11',' min','Door to cath lab'],['36','','Cardiologists'],['98.4','%','Success rate']].map(s=>`<div><b><span data-cnt="${s[0]}">${s[0]}</span>${s[1]}</b>${s[2]}</div>`).join('')}</div>
+  <div class="lvc-panel" data-panel><div class="lvc-pv" data-pick><small>Dr. Anika Rao · Cardiology</small><b>Choose a time, Wednesday</b><div class="lvc-slots">${slots.map(s=>`<span data-slot="${s}">${s}</span>`).join('')}</div><span class="lvc-confirm" data-confirm>Confirm booking</span></div>
+    <div class="lvc-pv lvc-done" data-done><span class="lvc-tick"><svg viewBox="0 0 24 24" width="30" height="30"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#0E1C2B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><b>You're booked.</b><small>Wednesday, <span data-when>10:30</span> am. A reminder is on its way to WhatsApp.</small></div></div>
+  <span class="lvs-cur" data-cur></span>
+</div></div>`}
+function initLive(root){if(!root)return ()=>{};const inn=root.querySelector('.lvs-in'),q=s=>root.querySelector(s),qa=s=>root.querySelectorAll(s);
+  const fit=()=>{inn.style.transform=`scale(${root.clientWidth/1200})`};fit();const ro=new ResizeObserver(fit);ro.observe(root);
+  let tm=[];const cur=q('[data-cur]'),panel=q('[data-panel]');
+  const at=(t,f)=>tm.push(setTimeout(f,t));
+  const move=el=>{const r=el.getBoundingClientRect(),b=inn.getBoundingClientRect(),s=b.width/1200;cur.style.transform=`translate(${(r.left-b.left+r.width/2)/s}px,${(r.top-b.top+r.height/2)/s}px)`};
+  const tap=el=>{move(el);at(560,()=>{cur.classList.remove('tp');void cur.offsetWidth;cur.classList.add('tp');el.classList.add('prs');setTimeout(()=>el.classList.remove('prs'),260)})};
+  const step=(t,sel,fn)=>{at(t,()=>tap(q(sel)));at(t+640,fn)};
+  const tab=i=>{const t=q(`[data-tab="${i}"]`),hl=q('.lvc-hl');qa('[data-tab]').forEach(x=>x.classList.toggle('on',x===t));hl.style.transform=`translateX(${t.offsetLeft-6}px)`;hl.style.width=t.offsetWidth+'px'};
+  const count=()=>qa('[data-cnt]').forEach(e=>{const to=+e.dataset.cnt,dec=String(to).includes('.'),t0=performance.now();const f=n=>{const k=Math.min(1,(n-t0)/1400),v=to*(1-Math.pow(1-k,3));e.textContent=dec?v.toFixed(1):Math.round(v).toLocaleString('en-IN');if(k<1&&tm.length)requestAnimationFrame(f)};requestAnimationFrame(f)});
+  const bpm=[72,74,73,71,72,75,73];let bi=0;
+  const run=()=>{tm.forEach(clearTimeout);tm=[];tab(0);panel.className='lvc-panel';qa('[data-slot]').forEach(x=>x.classList.remove('on'));count();
+    for(let k=1;k<7;k++)at(k*1800,()=>{q('[data-bpm]').textContent=bpm[bi++%bpm.length]});
+    step(900,'[data-book]',()=>panel.classList.add('on'));
+    step(2500,'[data-slot="10:30"]',()=>q('[data-slot="10:30"]').classList.add('on'));
+    step(3900,'[data-confirm]',()=>panel.classList.add('ok'));
+    at(6800,()=>panel.classList.remove('on'));
+    step(7400,'[data-tab="1"]',()=>tab(1));
+    step(8800,'[data-tab="2"]',()=>tab(2));
+    step(10200,'[data-tab="0"]',()=>tab(0));
+    at(12400,run)};
+  requestAnimationFrame(()=>tab(0));
+  const io=new IntersectionObserver(es=>{if(es[0].isIntersecting){if(!tm.length)run()}else{tm.forEach(clearTimeout);tm=[]}});io.observe(root);
+  return ()=>{tm.forEach(clearTimeout);tm=[];io.disconnect();ro.disconnect()}}
+/* ===== BenchBox Labs v3: sleek, self-animating ===== */
+const PAYSA_HERO=Object.assign({},LAB_APPS[3],{acc:'#FF0C6A',p0:'#0B0A0D',p1:'#2A0B1B',p2:'#B3084C',p3:'#2B2830',p4:'#FF8DB8',frame:'bk'});
+const LAB_SITES=[['rouge','Rouge Studio','Creative agency',1098],['volt','Volt One','Electric car',1052],['fizo','Fizo','Sparkling soda',991],['oasis','Oasis Villas','Luxury stays',1064],['core','Core Heart Hospital','Cardiac care',1092],['tempo','Tempo','Fine watches',1044],['stride','Stride','Running shoes',1081],['bloom','Bloom','Clean skincare',997],['nomad','Nomad Roasters','Specialty coffee',1066],['plinth','Plinth','Finance SaaS',957]];
+const DEMO={
+ movra:[[1600,'[data-act="start"]'],[6500,'[data-act="tab"][data-t="week"]'],[7600,'[data-act="day"][data-i="2"]']],
+ medlo:[[1500,'[data-act="inc"][data-k="b"]'],[2300,'[data-act="inc"][data-k="c"]'],[4200,'[data-act="tab"][data-t="cart"]'],[5600,'[data-act="place"]']],
+ stilla:[[1500,'[data-act="mood"][data-i="4"]'],[3800,'[data-act="tab"][data-t="breathe"]'],[4600,'[data-act="br"]']],
+ paysa:[[1500,'[data-act="tab"][data-t="pay"]'],[2200,'[data-act="key"][data-k="2"]'],[2700,'[data-act="key"][data-k="5"]'],[3200,'[data-act="key"][data-k="0"]'],[3700,'[data-act="key"][data-k="0"]'],[5000,'[data-act="pay"]']],
+ hovi:[[1500,'[data-act="dev"][data-k="Fan"]'],[2400,'[data-act="dev"][data-k="TV"]'],[4200,'[data-act="tab"][data-t="climate"]'],[5200,'[data-act="t-"]'],[5800,'[data-act="t-"]']]
+};
+/* plays an app by itself, in a loop, with a visible tap */
+function autoDemo(ph,app){let stop=null,tm=[],alive=true;
+  const tap=sel=>{const e=ph.querySelector(sel);if(!e)return;const g=ph.querySelector('.p3glass'),r=e.getBoundingClientRect(),q=g.getBoundingClientRect(),sc=q.width/g.offsetWidth||1;
+    const d=document.createElement('span');d.className='l3tapfx';d.style.left=((r.left-q.left+r.width/2)/sc)+'px';d.style.top=((r.top-q.top+r.height/2)/sc)+'px';g.appendChild(d);setTimeout(()=>d.remove(),700);setTimeout(()=>e.click(),110)};
+  const run=()=>{if(!alive)return;stop&&stop();stop=runProto(ph,app);(DEMO[app.k]||[]).forEach(([t,s])=>tm.push(setTimeout(()=>alive&&tap(s),t)));tm.push(setTimeout(run,10500))};
+  const io=new IntersectionObserver(es=>{const v=es[0].isIntersecting;if(v&&!tm.length){run()}else if(!v){tm.forEach(clearTimeout);tm=[]}});io.observe(ph);
+  return ()=>{alive=false;tm.forEach(clearTimeout);io.disconnect();stop&&stop()}}
+function siteCard(s){return `<figure class="l3site"><div class="l3bar"><i></i><i></i><i></i></div><div class="l3view"><img src="labsites/${s[0]}.jpg" alt="${s[1]} website design" decoding="async" style="--t:${(-(1-562.5/s[3])*100).toFixed(2)}%"></div><figcaption><b>${s[1]}</b><small>${s[2]}</small></figcaption></figure>`}
+function labsView3(){
+  const build=[['Websites','home'],['Mobile apps','play'],['SaaS products','chart'],['Web apps','pie'],['AI and automation','bolt'],['Online stores','cart']];
+  const rowA=LAB_SITES.slice(0,5),rowB=LAB_SITES.slice(5);
+  return `<div class="labs lb3">
+  <div class="l3orb o1"></div><div class="l3orb o2"></div>
+  <section class="l3hero">
+    <div class="l3copy">
+      <span class="llock l3r">${LABS_MARK()}<span>BenchBox <b>Labs</b></span></span>
+      <h1 class="l3words">${'If it runs on a screen, we build it.'.split(' ').map((w,i)=>`<span style="--i:${i}"><em${w==='screen,'?' class="lpink"':''}>${w}</em></span>`).join(' ')}</h1>
+      <p class="lead l3r" style="--d:.7s">Websites, apps, SaaS and AI tools, built by the team that already runs your brand.</p>
+      <div class="row l3r" style="--d:.85s"><a class="btn pinkb" href="contact/" data-link data-want="1">Start a build ↗</a></div>
+    </div>
+    <div class="l3vis l3r" style="--d:.3s">
+      <div class="l3lap"><div class="l3scr lvwrap">${liveSite()}</div><div class="l3base"></div></div>
+      <div class="l3ph">${phoneFlat('p3hero','bk')}</div>
+    </div>
+  </section>
+  <div class="l3tags">${build.map(([t,i],k)=>`<span class="l3r" style="--d:${.1*k}s"><i>${ic(i,16)}</i>${t}</span>`).join('')}</div>
+
+  <section class="l3sec"><div class="l3head l3r"><span class="lnum">Websites</span><h2>Ten brands. <span class="lmute">Ten worlds.</span></h2></div></section>
+  <div class="l3marq"><div class="l3track">${[...rowA,...rowA].map(siteCard).join('')}</div></div>
+  <div class="l3marq rev"><div class="l3track">${[...rowB,...rowB].map(siteCard).join('')}</div></div>
+
+  <section class="l3sec" id="lwork"><div class="l3head l3r"><span class="lnum">Apps</span><h2>Tap a project.</h2></div>
+    <div class="l2grid">${LAB_APPS.map((a,i)=>`<button type="button" class="l2tile l3r" data-open-case="${i}" style="--acc:${a.acc};--bg:${a.bg};--d:${i*.08}s" aria-label="Open the ${a.name} case study">
+      <span class="l2tbg"></span>
+      <span class="l2mini"><span class="pf f-${LAB_PROJ[a.k].frame} mini"><span class="pff"><span class="p3glass"><span class="p3scr">${miniScreen(a)}</span><span class="p3isl"></span></span></span></span></span>
+      <span class="l2tap" aria-hidden="true"><i></i><i></i><i></i><b></b></span>
+      <span class="l2meta"><b>${a.name}</b><small>${a.cat}</small></span>
+    </button>`).join('')}</div>
+  </section>
+
+  <section class="l3sec"><div class="l3head l3r"><span class="lnum">How a build runs</span></div>
+    <ol class="l3steps">${[['Discover','Scope and a fixed quote'],['Design','A prototype you can tap'],['Build','Weekly demos'],['Launch','Live, with a campaign'],['Grow','Monthly updates']].map(([t,d],i)=>`<li class="l3r" style="--d:${i*.12}s"><span>${String(i+1).padStart(2,'0')}</span><b>${t}</b><small>${d}</small></li>`).join('')}</ol>
+  </section>
+
+  <section class="lcta l3r"><div class="lctam">${LABS_MARK()}</div><h2>Pull up a seat <span class="lpink">at the Labs.</span></h2>
+    <div class="row" style="justify-content:center"><a class="btn pinkb" href="contact/" data-link data-want="1">Start a build ↗</a><a class="btn lghost" href="https://wa.me/916361772547?text=Hi%20BenchBox%20Labs%2C%20I%27d%20like%20to%20build%20something." target="_blank" rel="noopener">WhatsApp us</a></div></section>
+  </div>
+  <div class="l2sheet" id="l2sheet" hidden role="dialog" aria-modal="true" aria-label="Project case study"></div>`;
+}
+function caseSheet3(i){const a=Object.assign({},LAB_APPS[i],LAB_APPS[i].k==='medlo'?{acc:'#45E3C4',bg:'radial-gradient(90% 80% at 70% 50%,#11574b,#062520 70%)'}:{}),P=LAB_PROJ[a.k],C=LAB_CASE[a.k],n=LAB_APPS[(i+1)%LAB_APPS.length];
+  return `<div class="l2s-in" style="--acc:${a.acc}">
+  <div class="l2s-bar"><span class="lmono">Recent project · 2026</span><button type="button" class="l2s-x" data-close-case aria-label="Close">✕</button></div>
+  <div class="l2s-hero" style="background:${a.bg}">
+    <div class="l2s-h"><span class="l2s-ic">${ic(C.icon,26)}</span><h2>${a.name}</h2><p class="l2s-tag">${P.tag}</p>
+      <dl class="l2s-dl"><div><dt>Category</dt><dd>${a.cat}</dd></div><div><dt>Platforms</dt><dd>${P.plat}</dd></div><div><dt>Timeline</dt><dd>12 to 16 weeks</dd></div></dl></div>
+    <div class="l2s-ph">${phoneFlat('p3case',P.frame)}</div>
+  </div>
+  <div class="l2s-body">
+    <section><span class="lnum">The brief</span><p class="l2s-big">${C.brief}</p></section>
+    <section><span class="lnum">The challenge</span><p>${C.challenge}</p></section>
+    <section><span class="lnum">What we did</span><ol class="l2s-ol">${C.approach.map(x=>`<li>${x}</li>`).join('')}</ol></section>
+    <section><span class="lnum">Features</span><ul class="l2s-feat">${P.feats.map(f=>`<li>${f}</li>`).join('')}</ul></section>
+    <section><span class="lnum">We delivered</span><p>${P.deliv}</p></section>
+    <div class="l2s-end"><a class="btn pinkb" href="contact/" data-link data-want="1">Build something like this ↗</a><button type="button" class="btn lghost" data-open-case="${(i+1)%LAB_APPS.length}">Next: ${n.name} →</button></div>
+  </div></div>`}
+function initLabs3(){
+  const kill=[];
+  const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}}),{rootMargin:'0px 0px -8% 0px'});
+  $$('.lb3 .l3r,.lb3 .l3words').forEach(el=>io.observe(el));kill.push(()=>io.disconnect());
+  const hero=$('#p3hero');if(hero)kill.push(autoDemo(hero,PAYSA_HERO));kill.push(initLive($('#lvs')));
+  const sh=$('#l2sheet');let stopCase=null;
+  const close=()=>{stopCase&&stopCase();stopCase=null;sh.classList.remove('on');document.documentElement.classList.remove('sheet-open');setTimeout(()=>{if(!sh.classList.contains('on')){sh.hidden=true;sh.innerHTML=''}},380)};
+  const open=i=>{stopCase&&stopCase();sh.innerHTML=caseSheet3(i);sh.hidden=false;sh.scrollTop=0;
+    requestAnimationFrame(()=>{sh.classList.add('on');document.documentElement.classList.add('sheet-open')});
+    stopCase=autoDemo($('#p3case'),LAB_APPS[i])};
+  function onDoc(e){const o=e.target.closest('[data-open-case]');if(o){e.preventDefault();open(+o.dataset.openCase);return}
+    if(e.target.closest('[data-close-case]')||e.target===sh)close();else if(sh.classList.contains('on')&&e.target.closest('#l2sheet a[data-link]'))close()}
+  document.addEventListener('click',onDoc);
+  const key=e=>{if(e.key==='Escape'&&sh.classList.contains('on'))close()};addEventListener('keydown',key);
+  cleanups.push(()=>{document.removeEventListener('click',onDoc);removeEventListener('keydown',key);kill.forEach(f=>{try{f()}catch(_){}});close();document.documentElement.classList.remove('sheet-open')});
+}
+
 /* ======================= ROUTER ======================= */
 const main=$('#main');let current=null,pending=null;
 function resolve(name){
@@ -6016,6 +6429,16 @@ function doReveal(){if(revealed)return;revealed=true;const H=document.documentEl
     if(scrollerOf(e.target))return;e.preventDefault()},{passive:false});
 })();
 /* footer: search-friendly service links */
+/* footer hard stop: nothing may add height after the footer */
+(function(){const F=()=>document.getElementById('footer');
+  const fb=()=>{const f=F();return f?f.getBoundingClientRect().bottom+scrollY:document.documentElement.scrollHeight};
+  const tame=()=>{const f=F();if(!f)return;if(document.documentElement.scrollHeight<=fb()+1)return;
+    let n=f.nextElementSibling;while(n){if(!/^(SCRIPT|STYLE|LINK)$/.test(n.tagName)&&getComputedStyle(n).position!=='fixed')n.style.setProperty('position','fixed','important');n=n.nextElementSibling}
+    [...document.body.children].forEach(el=>{if(el.compareDocumentPosition(f)&Node.DOCUMENT_POSITION_PRECEDING&&!f.contains(el)&&!el.contains(f)&&!/^(SCRIPT|STYLE|LINK)$/.test(el.tagName)){const cs=getComputedStyle(el);if(cs.position!=='fixed'&&cs.position!=='absolute'&&cs.display!=='none'&&el.getBoundingClientRect().height>0)el.style.setProperty('position','fixed','important')}})};
+  tame();addEventListener('load',tame);[1500,4000,9000].forEach(t=>setTimeout(tame,t));
+  new MutationObserver(tame).observe(document.body,{childList:true});
+  if(matchMedia('(hover:none)').matches){let lock=false;addEventListener('scroll',()=>{if(lock||document.documentElement.classList.contains('sheet-open'))return;const max=fb()-innerHeight;if(scrollY>max+1){lock=true;scrollTo(0,max);requestAnimationFrame(()=>lock=false)}},{passive:true})}
+})();
 /* scroll progress bar */
 addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-innerHeight;$('#prog').style.transform=`scaleX(${h>0?scrollY/h:0})`},{passive:true});
 $('#menuBtn').onclick=()=>{$('#mnav').hidden=false;$('#mnavX').focus()};
@@ -6066,7 +6489,7 @@ function mount(n){
     ts.addEventListener('wheel',e=>{if(Math.abs(e.deltaY)>Math.abs(e.deltaX)&&e.shiftKey){ts.scrollLeft+=e.deltaY;e.preventDefault()}},{passive:false})}
   if(n==='home'){startPhysics();miniBench();heroSwap();const fp=$('.filmpills');if(fp){const o=new IntersectionObserver(es=>{if(es[0].isIntersecting){fp.classList.add('on');o.disconnect()}},{threshold:.3});o.observe(fp);cleanups.push(()=>o.disconnect())}}
   if(n==='the-bench'){benchGame();timeline()}
-  if(n==='labs'){initLabs();initProjects();initDash();const h=$('#p3hero');if(h){p3drive(h,{rx:-6,ry:-24});const st=runProto(h,LAB_APPS[3]);cleanups.push(st)}}
+  if(n==='labs')initLabs3();
   if(n==='films')initFilms();
   if(n==='contact')initContact();
   if(n==='careers')initCareers();
