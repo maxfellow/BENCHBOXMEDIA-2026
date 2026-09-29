@@ -1,0 +1,17 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "(?<sub>.+)\\.vercel\\.app" }],
+      "destination": "https://benchboxmedia.com/:path*",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "(?<sub>.+)\\.vercel\\.app" }],
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+    }
+  ]
+}
