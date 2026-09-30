@@ -1,4 +1,4 @@
-# Bench Box Media website
+# BenchBox Media website
 
 Static website: 82 pages, each in its own folder (`films/index.html`, `services/index.html`, ...).
 Upload the **contents of this folder** to the root of your GitHub repository (not the folder itself).
