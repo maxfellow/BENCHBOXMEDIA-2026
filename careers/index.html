@@ -614,6 +614,61 @@ p{margin:0}
 .foot-legal{padding-bottom:78px}
 #footSeo{display:flex;flex-wrap:wrap;gap:8px 18px}
 #footSeo a{font-size:14px;opacity:.8;text-decoration:none;color:inherit}#footSeo a:hover{opacity:1;text-decoration:underline}
+/* ===== Originals (AI films) ===== */
+.ai-dark{--bg:#0A0A0B;--ink:#F4F4F6;--muted:#9A9AA3;--line:#26262C;--soft:#141418;background:var(--bg);color:var(--ink);border-radius:clamp(28px,4vw,48px);padding:clamp(28px,5vw,72px);margin-top:clamp(24px,3vw,40px);position:relative;overflow:hidden}
+.ai-dark .eyebrow{color:var(--muted)}
+.ai-film-top{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.ai-film-title{font:400 clamp(52px,10vw,170px)/.95 var(--display);margin-top:clamp(28px,4vw,56px);letter-spacing:-.01em}
+.ai-logline{margin-top:18px;font-size:clamp(20px,2.2vw,30px);font-style:italic;color:#C9C9D0}
+.ai-poster{position:relative;display:block;aspect-ratio:21/9;margin-top:clamp(32px,4vw,56px);border-radius:clamp(22px,2.4vw,34px);overflow:hidden;text-decoration:none;color:#fff;background:#05060a}
+.ai-poster .sky{position:absolute;inset:0;background:radial-gradient(60% 70% at 70% 30%,rgba(61,90,254,.45),transparent 70%),radial-gradient(50% 60% at 20% 80%,rgba(255,12,106,.35),transparent 70%),linear-gradient(160deg,#10131c,#05060a)}
+.ai-poster .yt,.ai-poster video,.ai-poster iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0}
+.ai-poster .shade{position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.55))}
+.ai-poster .play{position:absolute;left:50%;top:50%;translate:-50% -50%;width:clamp(64px,7vw,96px);aspect-ratio:1;border-radius:50%;background:#FF0C6A;display:grid;place-items:center;box-shadow:0 10px 40px rgba(0,0,0,.45);transition:transform .45s var(--spring)}
+.ai-poster .play::after{content:"";border-left:22px solid #fff;border-block:14px solid transparent;margin-left:6px}
+.ai-poster:hover .play{transform:scale(1.12)}
+.ai-poster .rt{position:absolute;right:4%;bottom:7%;font:500 12px/1 var(--mono);letter-spacing:.12em;background:rgba(0,0,0,.55);padding:8px 12px;border-radius:999px}
+.ai-poster.on .play,.ai-poster.on .rt,.ai-poster.on .shade{display:none}
+.ai-film-info{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);margin-top:clamp(32px,4vw,56px);align-items:start}
+.ai-synopsis{font-size:clamp(17px,1.5vw,21px);line-height:1.6;color:#C9C9D0;max-width:52ch}
+.ai-credits{display:grid;border-top:1px solid var(--line)}
+.ai-credits div{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:18px 0;border-bottom:1px solid var(--line)}
+.ai-credits b{font:600 clamp(17px,1.4vw,21px)/1.25 var(--body);text-align:right}
+.ai-quote{margin-top:clamp(90px,12vw,160px);text-align:center}
+.ai-quote h2{font:400 clamp(34px,5vw,78px)/1.08 var(--display);max-width:20ch;margin:18px auto 0}
+.ai-quote h2 em{font-style:normal;color:#FF0C6A}
+.ai-quote p{margin:22px auto 0;color:var(--muted);max-width:56ch;font-size:clamp(17px,1.5vw,20px)}
+.ai-sec{padding-top:clamp(90px,11vw,150px)}
+.ai-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:40px}
+.ai-tile{border-radius:30px;padding:28px;min-height:280px;display:flex;flex-direction:column;justify-content:space-between;gap:18px;transition:transform .5s var(--spring),border-radius .4s}
+.ai-tile:hover{transform:translateY(-8px) rotate(-1deg);border-radius:44px}
+.ai-tile .n{font:400 56px/1 var(--display)}
+.ai-tile h3{font:400 clamp(22px,2vw,30px)/1.1 var(--display)}
+.ai-tile p{font-size:15.5px;line-height:1.5;margin-top:8px;opacity:.85}
+.ai-reel{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;margin-top:40px}
+.ai-reel button{display:block;text-align:left;color:inherit;background:none;border:0;padding:0;cursor:pointer;font:inherit}
+.ai-reel .fr{position:relative;aspect-ratio:4/5;border-radius:24px;overflow:hidden;background:#111;transition:transform .45s var(--spring),border-radius .4s}
+.ai-reel button:hover .fr{transform:rotate(-1.5deg) scale(1.02);border-radius:36px}
+.ai-reel img,.ai-reel video{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover}
+.ai-reel video{opacity:0;transition:opacity .3s}.ai-reel .on video{opacity:1}
+.ai-reel .tag{position:absolute;left:10px;top:10px;background:#FF0C6A;color:#fff;border-radius:999px;padding:6px 10px;font:500 10px/1 var(--mono);letter-spacing:.12em;z-index:1}
+.ai-reel .cap{display:flex;justify-content:space-between;gap:8px;padding:12px 4px 0;font:400 18px/1.1 var(--display)}
+.ai-reel .cap small{font:500 11px/1.2 var(--mono);letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+.ai-ofai{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-top:40px}
+.ai-ofai div{border-radius:30px;padding:clamp(26px,3vw,44px)}
+.ai-ofai b{display:block;font:400 clamp(52px,7vw,110px)/1 var(--display)}
+.ai-ofai p{margin-top:14px;font-size:17px;max-width:38ch}
+.ai-cta{margin-top:clamp(90px,12vw,150px);border-radius:clamp(28px,4vw,48px);background:#FF0C6A;color:#141414;padding:clamp(32px,6vw,90px);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:28px}
+.ai-cta h2{font:400 clamp(40px,7vw,120px)/.98 var(--display);max-width:12ch}
+.ai-cta .btn{background:#141414;color:#fff}
+.ai-band{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(24px,4vw,56px);align-items:center;text-decoration:none;margin-top:clamp(70px,9vw,120px);padding:clamp(24px,4vw,56px)}
+.ai-band h2{font:400 clamp(40px,6vw,96px)/.98 var(--display);margin-top:16px}
+.ai-band p{margin-top:14px;color:#C9C9D0;font-size:clamp(16px,1.4vw,19px);max-width:44ch}
+.ai-band .go{display:inline-block;text-decoration:none;margin-top:22px;font:500 13px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;background:#FF0C6A;color:#fff;border-radius:999px;padding:12px 18px}
+.ai-band .ai-poster{margin-top:0;aspect-ratio:16/9}
+@media (max-width:1240px){.nav a.opt{display:none}}
+@media (max-width:980px){.ai-grid{grid-template-columns:1fr 1fr}.ai-film-info,.ai-band{grid-template-columns:1fr}.ai-poster{aspect-ratio:16/9}.ai-reel{grid-template-columns:repeat(5,minmax(220px,1fr));overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;margin-inline:calc(var(--gut) * -1);padding-inline:var(--gut)}.ai-reel button{scroll-snap-align:start}}
+@media (max-width:600px){.ai-grid,.ai-ofai{grid-template-columns:1fr}.ai-tile{min-height:0}.ai-poster .rt{display:none}}
 /* ===== BenchBox Labs ===== */
 html[data-page=labs] body{background:#0A0A0B}
 html[data-page=labs] .bar{--bg:#0A0A0B;--ink:#F4F4F6;--soft:#1A1A20;--line:#26262C;--muted:#9A9AA3;color:#F4F4F6}
@@ -1584,6 +1639,7 @@ html.bc-chatting .wa{opacity:0;pointer-events:none;transform:scale(.6)}
       <a href="services/" data-link>Services</a>
       <a href="the-bench/" data-link>The Bench<span class="bench-tag">NEW</span></a>
       <a href="labs/" data-link>Labs<span class="bench-tag">NEW</span></a>
+      <a href="originals/" data-link>Originals<span class="bench-tag">NEW</span></a>
       <a href="work/" data-link>Work</a>
       <a href="clients/" data-link>Clients</a>
       <a class="opt" href="blog/" data-link>Blog</a>
@@ -1615,7 +1671,7 @@ html.bc-chatting .wa{opacity:0;pointer-events:none;transform:scale(.6)}
     <a class="foot-cta" href="contact/" data-link><span>Let's</span> <span>talk</span> <span>↗</span></a>
     <div class="foot-grid">
       <div><p class="lead" style="font-size:19px">A full-service marketing agency. Strategy to screen, built on one bench.</p><p style="margin-top:14px;font-size:14px;opacity:.7;max-width:40ch">BenchBox Media (also written Bench Box Media or Benchboxmedia) is a marketing, PR, corporate communications, ad film and film marketing agency.</p></div>
-      <div><h4>Agency</h4><ul><li><a href="services/" data-link>Services</a></li><li><a href="the-bench/" data-link>The Bench</a></li><li><a href="labs/" data-link>BenchBox Labs</a></li><li><a href="about/" data-link>About</a></li><li><a href="careers/" data-link>Careers</a></li></ul></div>
+      <div><h4>Agency</h4><ul><li><a href="services/" data-link>Services</a></li><li><a href="the-bench/" data-link>The Bench</a></li><li><a href="labs/" data-link>BenchBox Labs</a></li><li><a href="originals/" data-link>Originals</a></li><li><a href="about/" data-link>About</a></li><li><a href="careers/" data-link>Careers</a></li></ul></div>
       <div><h4>Work</h4><ul><li><a href="case-studies/" data-link>Case studies</a></li><li><a href="films/" data-link>Films</a></li><li><a href="social/" data-link>Social creatives</a></li><li><a href="clients/" data-link>Clients</a></li><li><a href="partners/" data-link>Media partners</a></li><li><a href="blog/" data-link>Blog</a></li></ul></div>
       <div><h4>Talk</h4><ul><li>marketing@benchboxmedia.com</li><li>+91 6361 772 547</li><li><a href="contact/" data-link>Contact</a></li></ul><h4 style="margin-top:26px">Follow</h4><ul id="footSoc"></ul></div>
     </div>
@@ -1628,7 +1684,7 @@ html.bc-chatting .wa{opacity:0;pointer-events:none;transform:scale(.6)}
   <div class="mn-bg" aria-hidden="true"><i></i><i></i></div>
   <div class="mn-head"><a class="mn-home" href="./" data-link>Home</a><span class="mn-hi">Where to?</span><button class="xbtn" id="mnavX" type="button" aria-label="Close menu">✕</button></div>
   <div class="mn-tiles"><a class="mn-t mn-y" href="services/" data-link style="--i:0"><span class="mn-n">01</span><b>Services</b><small>11 ways we grow brands</small><span class="mn-ar">↗</span><i class="mn-dot"></i></a><a class="mn-t mn-p" href="the-bench/" data-link style="--i:1"><span class="mn-n">02</span><span class=mn-new>NEW</span><b>The Bench</b><small>One team, your whole brand</small><span class="mn-ar">↗</span><i class="mn-dot"></i></a><a class="mn-t mn-v" href="labs/" data-link style="--i:2"><span class="mn-n">03</span><span class=mn-new>NEW</span><b>Labs</b><small>Apps, websites, SaaS, AI</small><span class="mn-ar">↗</span><i class="mn-dot"></i></a><a class="mn-t mn-b" href="work/" data-link style="--i:3"><span class="mn-n">04</span><b>Work</b><small>Films, creatives, sites</small><span class="mn-ar">↗</span><i class="mn-dot"></i></a></div>
-  <div class="mn-rows"><a href="case-studies/" data-link style="--i:4">Case studies<span>→</span></a><a href="films/" data-link style="--i:5">Films<span>→</span></a><a href="social/" data-link style="--i:6">Social<span>→</span></a><a href="clients/" data-link style="--i:7">Clients<span>→</span></a><a href="blog/" data-link style="--i:8">Blog<span>→</span></a><a href="about/" data-link style="--i:9">About<span>→</span></a><a href="careers/" data-link style="--i:10">Careers<span>→</span></a><a href="partners/" data-link style="--i:11">Media partners<span>→</span></a></div>
+  <div class="mn-rows"><a href="originals/" data-link style="--i:4">Originals · New<span>→</span></a><a href="case-studies/" data-link style="--i:4">Case studies<span>→</span></a><a href="films/" data-link style="--i:5">Films<span>→</span></a><a href="social/" data-link style="--i:6">Social<span>→</span></a><a href="clients/" data-link style="--i:7">Clients<span>→</span></a><a href="blog/" data-link style="--i:8">Blog<span>→</span></a><a href="about/" data-link style="--i:9">About<span>→</span></a><a href="careers/" data-link style="--i:10">Careers<span>→</span></a><a href="partners/" data-link style="--i:11">Media partners<span>→</span></a></div>
   <div class="mn-cta" style="--i:12"><a class="mn-go" href="contact/" data-link>Start a project <span>↗</span></a><a class="mn-ic mn-wa" href="https://wa.me/916361772547?text=Hi%20BenchBox%20Media%2C%20I%27d%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener" aria-label="WhatsApp us"><svg viewBox="0 0 32 32" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm6 15.5c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.7-1.7-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.7l.5-.6.3-.5c.1-.2 0-.4 0-.6l-1-2.5c-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.8 5 .8.4 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 2-.8 2.2-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.6-.4z"/></svg></a><a class="mn-ic" href="tel:+916361772547" aria-label="Call us"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a></div>
   <div class="mn-foot" style="--i:13"><span>Indiranagar, Bangalore</span><span><a href="https://www.instagram.com/benchboxmedia" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.linkedin.com/company/bench-box-media" target="_blank" rel="noopener">LinkedIn</a></span></div>
 </div>
@@ -5447,6 +5503,18 @@ html.bc-chatting .wa{opacity:0;pointer-events:none;transform:scale(.6)}
     [
      "Can you handle national campaigns?",
      "Yes. We plan and buy media across India and produce creative in English, Hindi and South Indian languages."
+    ],
+    [
+     "Why choose BenchBox Media as your advertising agency in Bangalore?",
+     "Because strategy, creative, ad film production, media buying, digital and PR run in one team. You brief once, one person is accountable, and 100+ brands, including Coca-Cola, IKEA, Tanishq and TVS, have worked with us."
+    ],
+    [
+     "Do you make TVCs and AI ad films as part of campaigns?",
+     "Yes. Our in-house production team makes TVCs, digital films, UGC ads and AI ad films, so the campaign idea and the film are made by the same people."
+    ],
+    [
+     "How do we start a campaign with you?",
+     "Share a brief with your goal, timeline and budget range. We come back with a strategy and a scope before anything is produced."
     ]
    ]
   },
@@ -5497,6 +5565,14 @@ html.bc-chatting .wa{opacity:0;pointer-events:none;transform:scale(.6)}
     [
      "What does a corporate PR retainer include?",
      "Typically media relations, a monthly story plan, leadership profiling, coverage tracking and a monthly review, scoped to your goals."
+    ],
+    [
+     "Why choose BenchBox Media for corporate PR in Bangalore?",
+     "We combine media relations with content, films and digital, so your corporate story shows up in the press, on LinkedIn and in search, run by one team."
+    ],
+    [
+     "Do you handle leadership and founder profiling?",
+     "Yes. We build spokesperson profiles through interviews, bylines, panels and awards, and prepare leaders for media conversations."
     ]
    ]
   },
@@ -5547,6 +5623,14 @@ html.bc-chatting .wa{opacity:0;pointer-events:none;transform:scale(.6)}
     [
      "Do you work with startups?",
      "Yes. We help startups with launch PR, funding announcements, founder profiles and building credibility with customers and investors."
+    ],
+    [
+     "Why choose BenchBox Media as your PR agency in Bangalore?",
+     "We have run 200+ PR campaigns for brands, startups and films, and we pair media relations with content, creators and digital, so coverage turns into reach."
+    ],
+    [
+     "Do you guarantee media coverage?",
+     "No honest agency can guarantee editorial coverage. We guarantee the work: sharp stories, the right journalists and steady follow-up, with clear reporting every month."
     ]
    ]
   },
@@ -5597,6 +5681,18 @@ html.bc-chatting .wa{opacity:0;pointer-events:none;transform:scale(.6)}
     [
      "How do you report results?",
      "Monthly reviews with clear numbers on reach, leads, sales and spend, and one person you can call."
+    ],
+    [
+     "Why choose BenchBox Media as your digital marketing agency in Bangalore?",
+     "Social, performance ads, content, SEO, influencers and websites are run by one team, so your spend, creative and data are planned together instead of across vendors."
+    ],
+    [
+     "Do you run Google and Meta ads?",
+     "Yes. We plan, create and run campaigns across Google, YouTube, Meta, LinkedIn and marketplaces, with monthly reporting."
+    ],
+    [
+     "Do you also do SEO and AI search visibility?",
+     "Yes. We build SEO-ready websites and content, and structure pages so your brand shows up in Google and in AI assistants like ChatGPT."
     ]
    ]
   },
@@ -5639,6 +5735,18 @@ html.bc-chatting .wa{opacity:0;pointer-events:none;transform:scale(.6)}
     [
      "Do you redesign existing brands?",
      "Yes. We run a brand audit first, keep what is working, and evolve the rest."
+    ],
+    [
+     "Why choose BenchBox Media as your branding agency in Bangalore?",
+     "We design the identity and then use it every day across social, ads, films, packaging and websites, so the brand is built to work in the real world, not just in a deck."
+    ],
+    [
+     "What is included in a brand identity project?",
+     "Research, positioning, naming if needed, logo, colours, typography, a brand voice and a guidelines document, with key applications designed."
+    ],
+    [
+     "Do you design packaging?",
+     "Yes. We design packaging and retail material as part of brand identity projects or on their own."
     ]
    ]
   },
@@ -5685,6 +5793,18 @@ html.bc-chatting .wa{opacity:0;pointer-events:none;transform:scale(.6)}
     [
      "Do you buy outdoor and print as well as digital?",
      "Yes. We plan and buy across TV, OTT, digital, outdoor, print, radio and cinema."
+    ],
+    [
+     "Why choose BenchBox Media for media planning and buying?",
+     "We plan across TV, OTT, digital, outdoor, print, radio and cinema, and our creative team makes the ads, so the plan and the creative are built for each other."
+    ],
+    [
+     "Do you provide reports on media spend?",
+     "Yes. You get regular reports on spend, reach and results, with one person to answer questions."
+    ],
+    [
+     "Can you buy cinema and OTT advertising?",
+     "Yes. We plan and buy in-cinema ads with partners like PVR and INOX, and OTT and connected TV inventory."
     ]
    ]
   },
@@ -5727,6 +5847,18 @@ html.bc-chatting .wa{opacity:0;pointer-events:none;transform:scale(.6)}
     [
      "How early should we brief an event?",
      "Six to eight weeks is ideal for large corporate events; smaller activations can be turned around faster."
+    ],
+    [
+     "Why choose BenchBox Media for corporate events in Bangalore?",
+     "We have run 150+ launches and activation events, and the same team handles the concept, production, content, PR and social around the event."
+    ],
+    [
+     "What kinds of events do you manage?",
+     "Product launches, conferences, annual days, dealer meets, brand activations, mall and college activations, premieres and press events."
+    ],
+    [
+     "Do you cover the event on social and with film?",
+     "Yes. Our content team can film, photograph and post live, and deliver an aftermovie for later."
     ]
    ]
   },
@@ -5769,6 +5901,18 @@ html.bc-chatting .wa{opacity:0;pointer-events:none;transform:scale(.6)}
     [
      "Can you build our project website?",
      "Yes. We build fast, SEO-ready project websites and landing pages connected to your CRM."
+    ],
+    [
+     "Why choose BenchBox Media for real estate marketing in Bangalore?",
+     "We handle the full launch: project branding, walkthrough films, website, digital lead campaigns, outdoor and site events, so leads come from one connected plan."
+    ],
+    [
+     "How do you generate real estate leads?",
+     "Through Google and Meta lead campaigns, project landing pages, WhatsApp follow-up and outdoor, tracked against cost per lead and site visits."
+    ],
+    [
+     "Do you make 3D walkthroughs and project films?",
+     "Yes. We produce project films, walkthroughs and AI visuals for projects that are not built yet."
     ]
    ]
   },
@@ -5811,6 +5955,18 @@ html.bc-chatting .wa{opacity:0;pointer-events:none;transform:scale(.6)}
     [
      "Can you shoot across multiple offices or plants?",
      "Yes. We plan multi-location shoots across India and coordinate with your teams on site."
+    ],
+    [
+     "Why choose BenchBox Media for corporate film production in Bangalore?",
+     "Our production team scripts, shoots, edits and grades in-house, and we have made 500+ films and visual content for brands, hospitals, manufacturers and startups."
+    ],
+    [
+     "What types of corporate films do you make?",
+     "Company profile films, brand films, CSR films, product explainers, training and safety films, testimonials and event films."
+    ],
+    [
+     "Can corporate films be made with AI?",
+     "Yes. We use AI for visuals that are hard to shoot, like future plants, products in development or animated explainers, blended with live footage."
     ]
    ]
   },
@@ -5861,6 +6017,18 @@ html.bc-chatting .wa{opacity:0;pointer-events:none;transform:scale(.6)}
     [
      "Do you make UGC ads?",
      "Yes. We cast creators, write briefs and deliver UGC-style ads in the formats Meta, YouTube and marketplaces need."
+    ],
+    [
+     "Why choose BenchBox Media as your ad film production house in Bangalore?",
+     "Script, casting, shoot, edit, sound and grade happen in one team, and we have produced films for brands like Tanishq, IKEA, Sebamed, XYXX and TVS."
+    ],
+    [
+     "Do you make AI ad films?",
+     "Yes. Our AI studio makes AI ad films and AI brand films with cinematic realism, usually in one to three weeks. See our original AI short film, Before You Delete, on the Originals page."
+    ],
+    [
+     "Do you provide scripts and concepts?",
+     "Yes. We write the concept and script, or shoot from your script if you already have one."
     ]
    ]
   },
@@ -5903,6 +6071,18 @@ html.bc-chatting .wa{opacity:0;pointer-events:none;transform:scale(.6)}
     [
      "Do you maintain websites after launch?",
      "Yes. We offer ongoing updates, hosting support and SEO."
+    ],
+    [
+     "Why choose BenchBox Media for website development in Bangalore?",
+     "Our team designs, writes and builds the site, and makes it fast and SEO-ready from day one. We have built 20+ websites for healthcare, construction, hospitality and non-profit brands."
+    ],
+    [
+     "How much does a website cost in Bangalore?",
+     "It depends on pages, features and content. We share a clear quote after a short brief, with options for a focused first version."
+    ],
+    [
+     "Will my website show up on Google and ChatGPT?",
+     "We build every site with clean structure, metadata, schema and fast loading, which helps Google and AI assistants like ChatGPT understand and recommend your business."
     ]
    ]
   },
@@ -5945,6 +6125,18 @@ html.bc-chatting .wa{opacity:0;pointer-events:none;transform:scale(.6)}
     [
      "Can we reuse creator content in ads?",
      "Yes, when usage rights are agreed upfront. We include them in creator contracts where you need them."
+    ],
+    [
+     "Why choose BenchBox Media as your influencer marketing agency?",
+     "We pick creators on fit and audience, not follower count, write clear briefs and run the campaign end to end, with content you can reuse in ads."
+    ],
+    [
+     "Do you work with micro and nano influencers?",
+     "Yes. We mix macro, micro and nano creators depending on the goal, budget and region."
+    ],
+    [
+     "What is the difference between influencer content and UGC ads?",
+     "Influencer content is posted on the creator's own page to reach their audience. UGC ads are creator-style videos your brand runs as ads from its own account."
     ]
    ]
   },
@@ -5995,6 +6187,14 @@ html.bc-chatting .wa{opacity:0;pointer-events:none;transform:scale(.6)}
     [
      "Do you handle OTT releases too?",
      "Yes. We run premiere-night campaigns, reviewer outreach and platform-focused 'where to watch' pushes for direct-to-OTT films and series."
+    ],
+    [
+     "Why choose BenchBox Media as your film PR agency?",
+     "We run film PR together with trailers, music launches, creators, memes and media buying, so press coverage and buzz build at the same time."
+    ],
+    [
+     "Do you organise press meets and premieres?",
+     "Yes. We plan press meets, trailer and music launches, celebrity premieres and media screenings."
     ]
    ]
   },
@@ -6046,6 +6246,14 @@ html.bc-chatting .wa{opacity:0;pointer-events:none;transform:scale(.6)}
     [
      "Do you also do film PR?",
      "Yes. Film PR and publicity are part of the same plan, run by the same team."
+    ],
+    [
+     "Why choose BenchBox Media for movie promotion?",
+     "One team plans the release, runs film PR, creators and meme pages, produces promo content and buys media, for theatrical and OTT releases across South India."
+    ],
+    [
+     "When should movie promotions start?",
+     "Ideally eight to twelve weeks before release, starting from the first look, with the biggest push in the last two weeks."
     ]
    ]
   },
@@ -6092,6 +6300,14 @@ html.bc-chatting .wa{opacity:0;pointer-events:none;transform:scale(.6)}
     [
      "Do you build for both iOS and Android?",
      "Yes. We build native or cross-platform apps depending on what the product needs, and we can add a web dashboard or admin panel."
+    ],
+    [
+     "Why choose BenchBox Labs for mobile app development in Bangalore?",
+     "Design, development and launch marketing sit in one team, so your app is built and promoted by the same people, with weekly demos throughout."
+    ],
+    [
+     "Do you help publish apps on the App Store and Play Store?",
+     "Yes. We handle store listings, submission and review, and can plan the launch campaign too."
     ]
    ]
   },
@@ -6134,6 +6350,18 @@ html.bc-chatting .wa{opacity:0;pointer-events:none;transform:scale(.6)}
     [
      "Who owns the code?",
      "You do. Code, designs and accounts are handed over to you."
+    ],
+    [
+     "Why choose BenchBox Labs for SaaS development?",
+     "We design and build dashboards, portals, CRMs and SaaS products with a focus on a sharp first version, and hand over code and accounts to you."
+    ],
+    [
+     "What technology do you use?",
+     "We pick a modern, well-supported stack for each product, with cloud hosting, secure login and payments where needed."
+    ],
+    [
+     "Can you integrate with our existing tools?",
+     "Yes. We connect payments, CRMs, WhatsApp, email and other systems through their APIs."
     ]
    ]
   },
@@ -6176,6 +6404,18 @@ html.bc-chatting .wa{opacity:0;pointer-events:none;transform:scale(.6)}
     [
      "Can it work on WhatsApp?",
      "Yes. We build assistants for websites and WhatsApp Business."
+    ],
+    [
+     "Why choose BenchBox Labs for AI chatbots and automation?",
+     "We build assistants trained on your business that answer customers, capture leads and hand over to your team, on your website and WhatsApp."
+    ],
+    [
+     "What can business automation handle?",
+     "Lead capture, follow-ups, appointment booking, order updates, reports and other repetitive tasks across your tools."
+    ],
+    [
+     "How long does a chatbot take to build?",
+     "A focused website or WhatsApp assistant usually takes two to four weeks, including testing with real questions."
     ]
    ]
   }
@@ -6191,6 +6431,18 @@ const reduce=false; // animations run on every device, as requested
 const coarse=matchMedia('(pointer: coarse)').matches;
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const HEXS=['#FF0C6A','#FFD60A','#3D5AFE','#00C98D','#FF6B1A','#A98BFF'];
+/* ======================= ORIGINALS + PAGE FAQS ======================= */
+const PFAQ={"home": [["What is BenchBox Media?", "BenchBox Media (also written Bench Box Media) is a full-service marketing, advertising and production agency in Indiranagar, Bengaluru. One team handles strategy, media planning and buying, PR, branding, content, influencer marketing, ad films and TVCs, AI ad films, websites, apps and events."], ["Why do brands choose BenchBox Media as their agency in Bangalore?", "Because everything is built on one bench. Strategy, creative, production, media and PR sit in one team with one person accountable, so campaigns move faster and stay consistent. We have worked with 100+ brands, including Coca-Cola, IKEA, Tanishq, TVS, Zomato and Malabar Gold & Diamonds."], ["Does BenchBox Media make AI ad films?", "Yes. Our AI studio makes AI brand films, AI ad films and TVCs, AI product visuals and AI social content, finished with human direction, edit, sound and grade. Our original AI short film, Before You Delete, is on the Originals page."], ["Where is BenchBox Media based, and do you work outside Bangalore?", "We are based in Indiranagar, Bengaluru, and work with brands across India and abroad, producing in English, Hindi, Kannada, Tamil, Telugu and Malayalam."], ["How do I start a project with BenchBox Media?", "Send a brief through the contact page, WhatsApp +91 6361 772 547 or email marketing@benchboxmedia.com. Tell us what you are building and we will come back with next steps."]], "services": [["What services does BenchBox Media offer?", "Eleven disciplines under one roof: media planning and buying, web and technology, content and creative, influencer and creator marketing, strategy and consulting, public relations, branding and identity, brand partnerships, video and ad film production, events and activations, and film marketing."], ["Can I hire BenchBox Media for just one service?", "Yes. Many clients start with one service, like an ad film, a website or a PR launch, and add more later. You only pay for what you pick."], ["Do you handle both production and media buying?", "Yes. We write, shoot and edit the work, then plan and buy the media it runs on, so the creative and the spend are planned together."], ["Do you work with startups as well as large brands?", "Yes. We work with global brands, homegrown businesses, startups, real estate developers, hospitals, non-profits and film studios."], ["How is pricing decided?", "After a short brief we share a clear scope and estimate. Ongoing work usually runs on a monthly retainer; launches, films and events are priced as projects."]], "the-bench": [["What is The Bench by BenchBox Media?", "The Bench is BenchBox Media's flagship program: brand audit, strategy, social media, ads, content, PR and website built by one team around one table, with one person accountable and monthly reviews."], ["Who is The Bench for?", "Brands that are tired of managing five vendors. It suits growing businesses, new launches and established brands that want one team running their entire marketing."], ["What is included in The Bench?", "A brand audit, a strategy, social media management, paid ads, content and creative, PR and a website, planned together and reviewed every month."], ["How is The Bench different from hiring separate agencies?", "Separate agencies brief each other and lose time in between. On The Bench, the strategist, designer, editor, media buyer and PR lead work on the same plan, so nothing gets lost."], ["How do I get started with The Bench?", "Start with a brief on the contact page. We begin with a brand audit, then share the plan and team before anything goes live."]], "work": [["What kind of work has BenchBox Media done?", "Marketing case studies across branding, content, creators, PR, media, partnerships and events, plus 500+ films and visual content, 3000+ social creatives and 20+ websites."], ["Which brands has BenchBox Media worked with?", "100+ brands, including Coca-Cola, Adidas, IKEA, HP, Honda, Uber, Zomato, Tanishq, Britannia, TVS, Malabar Gold & Diamonds, Sebamed and Dot & Key."], ["Can I watch your ad films?", "Yes. The Films page has our TVCs, UGC ads, digital films and AI ad films. Hover to preview, tap to watch."], ["Do you have film marketing and movie promotion case studies?", "Yes. Our case studies include film campaigns covering PR, music and trailer launches, creator campaigns, dubbing releases and OTT premieres."]], "films": [["What types of ad films does BenchBox Media produce?", "TV commercials (TVCs), UGC ads, digital video commercials (DVCs), brand films, corporate films and AI ad films, from script to final cut."], ["What is the difference between a TVC, UGC and DVC?", "A TVC is a commercial made for television and OTT. UGC ads are creator-style videos made to feel native on social. A DVC is a digital video commercial made for YouTube, Meta and other online platforms."], ["Do you make AI ad films and AI brand films?", "Yes. Our AI studio produces AI ad films and AI brand films with cinematic realism, finished with human direction, edit, sound and grade. Watch our original AI short film, Before You Delete, on the Originals page."], ["How long does an ad film take to make?", "A typical digital film takes three to five weeks from brief to delivery, TVCs with larger shoots five to eight weeks, and most AI ad films one to three weeks."], ["Do you shoot outside Bangalore?", "Yes. Our production team is based in Bangalore and shoots across India, in English, Hindi, Kannada, Tamil, Telugu and Malayalam."]], "labs": [["What is BenchBox Labs?", "BenchBox Labs is the tech studio of BenchBox Media in Bangalore. It designs and builds websites, iOS and Android apps, SaaS platforms, web applications, AI chatbots, automation and online stores."], ["Does BenchBox Labs build mobile apps for iOS and Android?", "Yes. We build native or cross-platform apps, with a web dashboard or admin panel where the product needs one."], ["Can you build AI chatbots and WhatsApp bots?", "Yes. We build AI assistants for websites and WhatsApp Business that answer common questions, capture leads and hand over to your team."], ["Are your websites SEO-ready?", "Yes. Every site is built fast, mobile-first and structured for Google and AI search, with clean pages, metadata and schema."], ["Who owns the code and designs?", "You do. Code, designs and accounts are handed over to you at launch."]], "contact": [["How do I contact BenchBox Media?", "Email marketing@benchboxmedia.com, call or WhatsApp +91 6361 772 547, or send a brief with the form on this page. Our office is in Indiranagar, Bengaluru."], ["What should I include in my brief?", "Your brand, what you are building (a launch, a campaign, a film, a website), your timeline and, if you have one, a budget range. A few lines is enough to start."], ["Do you work with clients outside Bangalore?", "Yes. We work with brands across India and abroad, on calls and on site when needed."], ["What happens after I send a brief?", "We read every brief, come back with questions or a call, and then share a clear scope and estimate before any work begins."]]};
+const faqBlock=(f,cls='space')=>f?`<section class="${cls}"><div class="shead"><h2 class="mid">Questions, <span class="hl" style="--c:var(--yellow)">answered</span></h2></div>
+    <div class="faq">${f.map(([q,a])=>`<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join('')}</div></section>`:'';
+const pfaq=n=>n==='labs'?'':faqBlock(PFAQ[n]);
+function initOriginals(){
+  $$('[data-yt]').forEach(a=>a.addEventListener('click',e=>{if(e.metaKey||e.ctrlKey)return;e.preventDefault();if(a.classList.contains('on'))return;a.classList.add('on');
+    a.insertAdjacentHTML('beforeend',`<iframe src="https://www.youtube-nocookie.com/embed/${a.dataset.yt}?autoplay=1&rel=0&playsinline=1" title="Before You Delete, an AI short film by BenchBox Media" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`)}));
+  $$('[data-ai]').forEach(b=>{const v=b.querySelector('video');b.onclick=()=>openViewer('film',films,+b.dataset.ai);
+    b.onpointerenter=()=>{if(!v||reduce)return;if(!v.getAttribute('src'))v.src=v.dataset.src;v.play().then(()=>b.classList.add('on')).catch(()=>{})};
+    b.onpointerleave=()=>{v&&v.pause();b.classList.remove('on')}});
+}
 const hex=i=>HEXS[((i%6)+6)%6];
 const inkOn=c=>c==='#3D5AFE'?'#fff':'#141414';
 const FMT={TVC:'TV commercial',UGC:'Creator UGC',DVC:'Digital film',AI:'AI ad film'};
@@ -6270,6 +6522,10 @@ home:()=>`
       <div class="filmpills" aria-hidden="true">${['Strategy','PR','Launches','UGC','Premieres','Activations','Brands','Media','Streaming'].map((t,i)=>`<span style="--c:${hex(i)};--i:${i}">${t}</span>`).join('')}</div>
     </div>
   </section>
+  <section class="ai-dark ai-band">
+    <div><span class="eyebrow">Bench Box Originals · New</span><h2>Before You Delete</h2><p>Our original AI short film. If AI can make you feel this, imagine what it can do for your next ad.</p><a class="go" href="originals/" data-link>See Originals →</a></div>
+    <a class="ai-poster" href="https://youtu.be/gluIIuQbOnM" target="_blank" rel="noopener" data-yt="gluIIuQbOnM" aria-label="Watch Before You Delete"><span class="sky"></span><img class="yt" src="https://i.ytimg.com/vi/gluIIuQbOnM/maxresdefault.jpg" alt="Still from Before You Delete, an AI short film by BenchBox Media" loading="lazy" onerror="this.remove()"><span class="shade"></span><span class="play"></span><span class="rt">WATCH</span></a>
+  </section>
   ${testiHTML()}
   <section class="space">
     <div class="shead"><h2 class="mid">From the <span class="hl" style="--c:var(--lilac)">bench</span></h2><a class="link" href="blog/" data-link>All posts <span>→</span></a></div>
@@ -6284,6 +6540,47 @@ services:()=>`${phead('Services','Every part of how you <span class="hl" style="
     <span class="sprev">${sv.s.map(x=>`<em>${esc(x)}</em>`).join('')}</span></span>
     <span class="sgo">Open →</span></button>`).join('')}</div>
   <section class="space"><div class="shead" data-rv><h2 class="mid">By the <span class="hl" style="--c:var(--yellow)">numbers</span></h2></div>${statsHTML()}</section>`,
+originals:()=>`
+  <section class="ai-dark ai-film" aria-labelledby="aiTitle">
+    <div class="ai-film-top"><span class="eyebrow">Bench Box Originals · An original AI short film</span><span class="eyebrow">2026</span></div>
+    <h1 id="aiTitle" class="ai-film-title">Before You Delete</h1>
+    <p class="ai-logline">Sometimes &ldquo;nothing&rdquo; becomes &ldquo;everything.&rdquo;</p>
+    <a class="ai-poster" href="https://youtu.be/gluIIuQbOnM" target="_blank" rel="noopener" data-yt="gluIIuQbOnM" aria-label="Watch Before You Delete"><span class="sky"></span><img class="yt" src="https://i.ytimg.com/vi/gluIIuQbOnM/maxresdefault.jpg" alt="Still from Before You Delete, an AI short film by BenchBox Media" loading="lazy" onerror="this.remove()"><span class="shade"></span><span class="play"></span><span class="rt">WATCH THE FILM</span></a>
+    <div class="ai-film-info">
+      <p class="ai-synopsis">A son sees six years of forgotten files. A father sees the only memory of the woman he loved. An AI-generated emotional narrative about the small, mundane moments we ignore, and how they become the things we miss the most.</p>
+      <div class="ai-credits"><div><span class="eyebrow">Produced by</span><b>Bench Box Media</b></div><div><span class="eyebrow">Genre</span><b>AI · Emotional drama</b></div><div><span class="eyebrow">Format</span><b>Short film</b></div></div>
+    </div>
+  </section>
+  <section class="ai-quote">
+    <span class="eyebrow">Why it matters for your brand</span>
+    <h2>If AI can make you <em>feel</em> this, imagine your next ad.</h2>
+    <p>We are a production house for films, commercials and high-end visual stories. Absolute realism and cinematic emotion drive every frame, whether it comes from AI or OI.</p>
+  </section>
+  <section class="space ai-sec">
+    <div class="shead"><h2 class="mid">What we make <span class="hl" style="--c:var(--pink)">with AI</span></h2><p class="lead" style="max-width:40ch">Concept, prompt craft, generation, edit, sound and grade. One team, start to final frame.</p></div>
+    <div class="ai-grid">
+      <article class="ai-tile" style="background:#FFD60A;color:#141414"><span class="n">01</span><div><h3>AI brand films</h3><p>Story-led films that make people feel your brand, at a fraction of a traditional shoot.</p></div></article>
+      <article class="ai-tile" style="background:#3D5AFE;color:#fff"><span class="n">02</span><div><h3>AI ad films &amp; TVCs</h3><p>Commercials for TV, OTT and digital, built with AI and finished to broadcast quality.</p></div></article>
+      <article class="ai-tile" style="background:#FF0C6A;color:#141414"><span class="n">03</span><div><h3>AI product visuals</h3><p>Hero shots, worlds and launches for products that do not exist on camera yet.</p></div></article>
+      <article class="ai-tile" style="background:#00C98D;color:#141414"><span class="n">04</span><div><h3>AI social content</h3><p>Fast, scroll-stopping reels and creatives for always-on brand calendars.</p></div></article>
+    </div>
+  </section>
+  <section class="space ai-sec">
+    <div class="shead"><h2 class="mid">AI ads off <span class="hl" style="--c:var(--yellow)">our bench</span></h2><p class="lead" style="max-width:36ch">Brand concepts produced end to end by our AI studio. Tap to watch.</p></div>
+    <div class="ai-reel"><button type="button" data-ai="1" aria-label="Play Blinkit AI ad film"><div class="fr"><img src="posters/ai-blinkit-ai.jpg" alt="Blinkit AI ad film by BenchBox Media" loading="lazy"><video muted loop playsinline preload="none" data-src="videos/ai-blinkit-ai.mp4"></video><span class="tag">AI AD</span></div><div class="cap">Blinkit<small>Quick commerce</small></div></button><button type="button" data-ai="15" aria-label="Play Dot &amp; Key AI ad film"><div class="fr"><img src="posters/ai-dotandkey-ai.jpg" alt="Dot &amp; Key AI ad film by BenchBox Media" loading="lazy"><video muted loop playsinline preload="none" data-src="videos/ai-dotandkey-ai.mp4"></video><span class="tag">AI AD</span></div><div class="cap">Dot &amp; Key<small>Skincare</small></div></button><button type="button" data-ai="7" aria-label="Play Malabar Gold AI ad film"><div class="fr"><img src="posters/ai-malabar-gold-and-diamonds-ai.jpg" alt="Malabar Gold AI ad film by BenchBox Media" loading="lazy"><video muted loop playsinline preload="none" data-src="videos/ai-malabar-gold-and-diamonds-ai.mp4"></video><span class="tag">AI AD</span></div><div class="cap">Malabar Gold<small>Jewellery</small></div></button><button type="button" data-ai="19" aria-label="Play XO Curls AI ad film"><div class="fr"><img src="posters/ai-xo-curls-ai.jpg" alt="XO Curls AI ad film by BenchBox Media" loading="lazy"><video muted loop playsinline preload="none" data-src="videos/ai-xo-curls-ai.mp4"></video><span class="tag">AI AD</span></div><div class="cap">XO Curls<small>Haircare</small></div></button><button type="button" data-ai="11" aria-label="Play TVS AI ad film"><div class="fr"><img src="posters/ai-tvs-ai.jpg" alt="TVS AI ad film by BenchBox Media" loading="lazy"><video muted loop playsinline preload="none" data-src="videos/ai-tvs-ai.mp4"></video><span class="tag">AI AD</span></div><div class="cap">TVS<small>Automotive</small></div></button></div>
+  </section>
+  <section class="space ai-sec">
+    <div class="shead"><h2 class="mid">AI or <span class="hl" style="--c:var(--lilac)">OI</span>, same standard</h2></div>
+    <div class="ai-ofai">
+      <div style="background:#0A0A0B;color:#F4F4F6;box-shadow:inset 0 0 0 1px #26262C"><b>AI</b><p style="color:#C9C9D0">Artificial intelligence for worlds, scale and speed: impossible locations, fast variations, launches before the product exists.</p></div>
+      <div style="background:#F3F3F5;color:#141414"><b>OI</b><p style="color:#3A3A40">Original intelligence for everything else: real crews, real talent and real sets, directed with the same eye for emotion.</p></div>
+    </div>
+  </section>
+  <section class="space ai-sec"><div class="shead"><h2 class="mid">Originals, <span class="hl" style="--c:var(--green)">answered</span></h2></div><div class="faq"><details><summary>Who makes AI ad films and AI brand films in Bangalore?</summary><p>BenchBox Media (also written Bench Box Media) is a Bengaluru production house that makes AI brand films, AI ad films and TVCs, AI product visuals and AI social content, alongside live-action production. Its original AI short film, Before You Delete, shows the cinematic realism of its AI studio.</p></details><details><summary>Can an AI ad film look as real as a live-action shoot?</summary><p>Yes. We combine AI generation with human direction, editing, sound design and colour grading so every frame holds up at full screen, on social, OTT or TV.</p></details><details><summary>How long does an AI ad film take?</summary><p>Most AI ad films move from approved concept to final delivery in one to three weeks, depending on length, revisions and the number of versions needed.</p></details><details><summary>Do you still shoot with real crews and talent?</summary><p>Yes. We produce live-action TVCs, brand films, UGC and influencer content too, and often blend AI with real footage in the same film.</p></details><details><summary>What is Before You Delete?</summary><p>Before You Delete is an original AI short film produced by BenchBox Media. A son sees six years of forgotten files; a father sees the only memory of the woman he loved. It is an emotional drama about the small moments we ignore and later miss the most.</p></details></div></section>
+  <section class="ai-cta">
+    <h2>Make your next ad with AI.</h2>
+    <div style="display:grid;gap:14px;justify-items:start"><span style="font:500 12px/1.4 var(--mono);letter-spacing:.12em">MARKETING@BENCHBOXMEDIA.COM · +91 63617 72547</span><a class="btn" href="contact/" data-link data-want="8">Start an AI project ↗</a></div>
+  </section>`,
 labs:()=>labsView3(),
 'the-bench':()=>`
   <div class="bhero">
@@ -6336,7 +6633,11 @@ websites:()=>`${phead('BenchBox Labs','Websites we\'ve <span class="hl" style="-
 
 films:()=>`${phead('Work','Ad <span class="hl" style="--c:var(--yellow)">films</span>','TV commercials, creator UGC, digital films and AI ad films from our production team. Hover to preview, tap to watch.')}${workTabs('films')}${oneStat('500+','Films & visual content',1)}
   <div class="frow"><span class="eyebrow">Filter</span><div class="chiprow" id="filters">${['All','TVC','UGC','DVC','AI'].map((k,i)=>`<button class="fchip" type="button" data-k="${k}" aria-pressed="${k==='All'}">${k==='All'?'All films':FMT[k]} <em>${k==='All'?films.length:films.filter(f=>f.fmt===k).length}</em></button>`).join('')}</div></div>
-  <div class="wgrid" id="wgrid"></div>`,
+  <div class="wgrid" id="wgrid"></div>
+  <section class="ai-dark ai-band">
+    <div><span class="eyebrow">Bench Box Originals · New</span><h2>Before You Delete</h2><p>Our original AI short film. If AI can make you feel this, imagine what it can do for your next ad.</p><a class="go" href="originals/" data-link>See Originals →</a></div>
+    <a class="ai-poster" href="https://youtu.be/gluIIuQbOnM" target="_blank" rel="noopener" data-yt="gluIIuQbOnM" aria-label="Watch Before You Delete"><span class="sky"></span><img class="yt" src="https://i.ytimg.com/vi/gluIIuQbOnM/maxresdefault.jpg" alt="Still from Before You Delete, an AI short film by BenchBox Media" loading="lazy" onerror="this.remove()"><span class="shade"></span><span class="play"></span><span class="rt">WATCH</span></a>
+  </section>`,
 
 social:()=>`${phead('Work','Social <span class="hl" style="--c:var(--green)">creatives</span>','Ad creatives, festive posts and campaign visuals made on the bench.')}${workTabs('social')}${oneStat('3000+','Static creatives produced',3)}
   <div class="masonry">${D.social.map((s,i)=>`<button class="shot" type="button" data-sh="${i}"><img src="creatives/${s.f}.jpg" alt="${esc(s.c)}" loading="lazy"><span>${esc(s.c)}</span></button>`).join('')}</div>`,
@@ -6383,6 +6684,7 @@ contact:()=>`${phead('Contact','Pull up a <span class="hl" style="--c:var(--yell
         <div class="fld" style="--c:var(--orange)"><label for="fPhone">Phone</label><input id="fPhone" type="tel" autocomplete="tel"><span class="err"></span></div></div>
         <div class="fld" id="pickedWrap"><span class="lbl">You picked</span><div class="picked" id="picked"></div></div>
         <div class="fld" style="--c:var(--lilac)"><label for="fMsg">What are you building?</label><div class="stickers" id="fBuild" style="margin:6px 0 10px"><button type="button" class="stk" data-build="A brand launch" aria-pressed="false" style="--c:${hex(0)}">A brand launch</button><button type="button" class="stk" data-build="A product launch" aria-pressed="false" style="--c:${hex(1)}">A product launch</button><button type="button" class="stk" data-build="A campaign" aria-pressed="false" style="--c:${hex(2)}">A campaign</button><button type="button" class="stk" data-build="A rebrand" aria-pressed="false" style="--c:${hex(3)}">A rebrand</button><button type="button" class="stk" data-build="A TVC or ad film" aria-pressed="false" style="--c:${hex(4)}">A TVC or ad film</button><button type="button" class="stk" data-build="Social media" aria-pressed="false" style="--c:${hex(5)}">Social media</button><button type="button" class="stk" data-build="A website or app" aria-pressed="false" style="--c:${hex(6)}">A website or app</button><button type="button" class="stk" data-build="PR & press" aria-pressed="false" style="--c:${hex(7)}">PR &amp; press</button><button type="button" class="stk" data-build="An event" aria-pressed="false" style="--c:${hex(8)}">An event</button><button type="button" class="stk" data-build="A film release" aria-pressed="false" style="--c:${hex(9)}">A film release</button><button type="button" class="stk" data-build="Influencer campaign" aria-pressed="false" style="--c:${hex(10)}">Influencer campaign</button><button type="button" class="stk" data-build="Something else" aria-pressed="false" style="--c:${hex(11)}">Something else</button></div><textarea id="fMsg" placeholder="Tell us a little more (optional)"></textarea><span class="err" id="eMsg"></span></div>
+        <div class="fld" style="--c:var(--green)"><span class="lbl">How did you find us?</span><div class="stickers" id="fHeard" style="margin-top:6px">${['Google','ChatGPT or AI','Instagram','LinkedIn','A friend','Other'].map((t,i)=>`<button type="button" class="stk" data-heard="${t}" aria-pressed="false" style="--c:${hex(i+3)}">${t}</button>`).join('')}</div></div>
         <input type="checkbox" id="cfTrap" tabindex="-1" autocomplete="off" hidden aria-hidden="true"><button class="btn ink" type="submit" style="justify-self:start">Send brief ↗</button>
       </div>
       <div class="sent" id="sent" hidden><span class="eyebrow">Brief ready</span><h2>Thanks, <span id="sName"></span>!</h2><p class="muted">We couldn't send this automatically. Copy it and email marketing@benchboxmedia.com, and we'll pick it up from there.</p><pre id="sBody"></pre><div class="row"><button class="btn ink" type="button" id="copyBrief">Copy brief</button><button class="btn ghost" type="button" id="again">Edit</button></div></div>
@@ -7032,6 +7334,8 @@ function labsView3(){
     <ol class="l3steps">${[['Discover','Scope and a fixed quote'],['Design','A prototype you can tap'],['Build','Weekly demos'],['Launch','Live, with a campaign'],['Grow','Monthly updates']].map(([t,d],i)=>`<li class="l3r" style="--d:${i*.12}s"><span>${String(i+1).padStart(2,'0')}</span><b>${t}</b><small>${d}</small></li>`).join('')}</ol>
   </section>
 
+  ${faqBlock(PFAQ.labs,'l3sec')}
+
   <section class="lcta l3r"><div class="lctam">${LABS_MARK()}</div><h2>Pull up a seat <span class="lpink">at the Labs.</span></h2>
     <div class="row" style="justify-content:center"><a class="btn pinkb" href="contact/" data-link data-want="1">Start a build ↗</a><a class="btn lghost" href="https://wa.me/916361772547?text=Hi%20BenchBox%20Labs%2C%20I%27d%20like%20to%20build%20something." target="_blank" rel="noopener">WhatsApp us</a></div></section>
   </div>
@@ -7073,7 +7377,7 @@ function initLabs3(){
 /* ======================= ROUTER ======================= */
 const main=$('#main');let current=null,pending=null;
 function resolve(name){
-  if(V[name])return{html:V[name](),name};
+  if(V[name])return{html:V[name]()+pfaq(name),name};
   const ci=D.cases.findIndex(c=>c.slug===name);if(ci>=0)return{html:caseView(D.cases[ci],ci,false),name};
   const si=D.sites.findIndex(c=>c.slug===name);if(si>=0)return{html:caseView(D.sites[si],si,true),name};
   const pi=D.posts.findIndex(p=>p.slug===name);if(pi>=0)return{html:postView(D.posts[pi],pi),name};
@@ -7314,6 +7618,7 @@ const META={home:['BenchBox Media · Marketing, Media & Ad Films, Built on One B
  work:['Our Work · Case Studies, Films, Social Creatives & Tech | BenchBox Media','See our work: marketing case studies, ad films, social media creatives and websites built by BenchBox Media.'],
  'case-studies':['Case Studies · Marketing That Works | BenchBox Media','Case studies across branding, content, creators, PR, strategy, media buying, partnerships, films, events and technology.'],
  websites:['Websites We\'ve Built · Web Design & Development | BenchBox Media','Fast, SEO-ready websites for healthcare, non-profit, construction and hospitality brands.'],
+ originals:['Originals · AI Brand Films & AI Ad Films by BenchBox Media | Before You Delete','BenchBox Media makes AI brand films, AI ad films and TVCs in Bangalore. Watch Before You Delete, our original AI short film, and see AI ads made for Blinkit, TVS, Malabar Gold and more.'],
  films:['Ad Films · TVC, UGC, DVC & AI Ad Films | BenchBox Media','TV commercials, creator UGC, digital films and AI ad films produced by BenchBox Media.'],
  social:['Social Media Creatives · 3000+ Produced | BenchBox Media','Ad creatives, festive posts and campaign visuals from BenchBox Media.'],
  clients:['Clients · Trusted by Brands | BenchBox Media',null],partners:['Media Partners | BenchBox Media',null],blog:['Blog · Marketing Notes from the Bench | BenchBox Media',null],
@@ -7358,6 +7663,7 @@ function mount(n){
   if(n==='labs')initLabs3();
   if(n==='films')initFilms();
   if(n==='contact')initContact();
+  if($('[data-yt]')||$('[data-ai]'))initOriginals();
   if(n==='careers')initCareers();
   if(n==='case-studies')caseFilter();
   if(n==='blog'){const g=$('#btags');g.addEventListener('click',e=>{const b=e.target.closest('[data-bt]');if(!b)return;$$('#btags [data-bt]').forEach(x=>x.setAttribute('aria-pressed',x===b));const t=b.dataset.bt;$('#postlist').innerHTML=postsHTML(D.posts.filter(p=>t==='all'||p.tag===t));reveals()})}
@@ -7644,6 +7950,7 @@ async function sendForm(fields){
 function sentOK(box,first,line,again){box.innerHTML=`<span class="eyebrow">Sent</span><h2>Thanks, ${esc(first)}!</h2><p class="lead">${line}</p><div class="row"><button class="btn ghost" type="button" data-again>${again}</button></div>`;box.hidden=false}
 function initContact(){
   renderPicked();syncTray();
+  let heard='';$('#fHeard').addEventListener('click',e=>{const b=e.target.closest('[data-heard]');if(!b)return;heard=heard===b.dataset.heard?'':b.dataset.heard;$$('#fHeard [data-heard]').forEach(x=>x.setAttribute('aria-pressed',x.dataset.heard===heard))});
   const build=new Set();$('#fBuild').addEventListener('click',e=>{const b=e.target.closest('[data-build]');if(!b)return;const k=b.dataset.build;build.has(k)?build.delete(k):build.add(k);b.setAttribute('aria-pressed',build.has(k))});
   $('#cf').addEventListener('submit',e=>{e.preventDefault();const n=$('#fName').value.trim(),m=$('#fMail').value.trim(),msg=$('#fMsg').value.trim();
     $('#eName').textContent=n?'':'Add your name so we know who to reply to.';
@@ -7652,12 +7959,12 @@ function initContact(){
     if(!n||!okMail(m)||!(msg||picked.size||build.size))return;
     const svc=[...picked];if($('#cfTrap').checked)return;
     const btn=$('#cf button[type="submit"]'),lbl=btn.textContent;btn.disabled=true;btn.textContent='Sending…';
-    const fields={subject:`New enquiry from ${n}${$('#fCo').value.trim()?' · '+$('#fCo').value.trim():''}`,name:n,email:m,replyto:m,phone:$('#fPhone').value.trim()||'-',brand:$('#fCo').value.trim()||'-',services:svc.join(', ')||'Not specified',building:[...build].join(', ')||'-',message:msg||'-',page:current};
+    const fields={subject:`New enquiry from ${n}${$('#fCo').value.trim()?' · '+$('#fCo').value.trim():''}`,name:n,email:m,replyto:m,phone:$('#fPhone').value.trim()||'-',brand:$('#fCo').value.trim()||'-',services:svc.join(', ')||'Not specified',building:[...build].join(', ')||'-',message:msg||'-',heard_via:heard||'-',page:current};
     sendForm(fields).then(ok=>{btn.disabled=false;btn.textContent=lbl;
-      if(ok){$('#fBody').hidden=true;sentOK($('#sent'),n.split(' ')[0],'Your brief is with our team. We usually reply within one working day.','Send another brief');$('#cf').reset();build.clear();$$('#fBuild [data-build]').forEach(b=>b.setAttribute('aria-pressed','false'));picked.clear();syncTray();renderPicked();return}
+      if(ok){$('#fBody').hidden=true;sentOK($('#sent'),n.split(' ')[0],'Your brief is with our team. We usually reply within one working day.','Send another brief');$('#cf').reset();build.clear();heard='';$$('#fHeard [data-heard]').forEach(b=>b.setAttribute('aria-pressed','false'));$$('#fBuild [data-build]').forEach(b=>b.setAttribute('aria-pressed','false'));picked.clear();syncTray();renderPicked();return}
       $('#sent').innerHTML=SENT_HTML;fillFallback()});
     const fillFallback=()=>{
-    $('#sBody').textContent=`New brief for BenchBox Media\n\nName: ${n}\nBrand: ${$('#fCo').value.trim()||'-'}\nEmail: ${m}\nPhone: ${$('#fPhone').value.trim()||'-'}\n\nBuilding: ${[...build].join(', ')||'-'}\n\nInterested in:\n${svc.length?svc.map(x=>'- '+x).join('\n'):'- Not specified'}\n\nMessage:\n${msg||'-'}`;
+    $('#sBody').textContent=`New brief for BenchBox Media\n\nName: ${n}\nBrand: ${$('#fCo').value.trim()||'-'}\nEmail: ${m}\nPhone: ${$('#fPhone').value.trim()||'-'}\nFound us via: ${heard||'-'}\n\nBuilding: ${[...build].join(', ')||'-'}\n\nInterested in:\n${svc.length?svc.map(x=>'- '+x).join('\n'):'- Not specified'}\n\nMessage:\n${msg||'-'}`;
     $('#sName').textContent=n.split(' ')[0];$('#fBody').hidden=true;$('#sent').hidden=false;
     $('#copyBrief').onclick=e=>copyText($('#sBody').textContent,$('#sBody'),e.currentTarget)}});
   const SENT_HTML=$('#sent').innerHTML;
