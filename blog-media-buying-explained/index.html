@@ -620,7 +620,7 @@ p{margin:0}
 .ai-film-top{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .ai-film-title{font:400 clamp(52px,10vw,170px)/.95 var(--display);margin-top:clamp(28px,4vw,56px);letter-spacing:-.01em}
 .ai-logline{margin-top:18px;font-size:clamp(20px,2.2vw,30px);font-style:italic;color:#C9C9D0}
-.ai-poster{position:relative;display:block;aspect-ratio:21/9;margin-top:clamp(32px,4vw,56px);border-radius:clamp(22px,2.4vw,34px);overflow:hidden;text-decoration:none;color:#fff;background:#05060a}
+.ai-poster{position:relative;display:block;aspect-ratio:16/9;margin-top:clamp(32px,4vw,56px);border-radius:clamp(22px,2.4vw,34px);overflow:hidden;text-decoration:none;color:#fff;background:#05060a}
 .ai-poster .sky{position:absolute;inset:0;background:radial-gradient(60% 70% at 70% 30%,rgba(61,90,254,.45),transparent 70%),radial-gradient(50% 60% at 20% 80%,rgba(255,12,106,.35),transparent 70%),linear-gradient(160deg,#10131c,#05060a)}
 .ai-poster .yt,.ai-poster video,.ai-poster iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0}
 .ai-poster .shade{position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.55))}
@@ -669,6 +669,18 @@ p{margin:0}
 @media (max-width:1240px){.nav a.opt{display:none}}
 @media (max-width:980px){.ai-grid{grid-template-columns:1fr 1fr}.ai-film-info,.ai-band{grid-template-columns:1fr}.ai-poster{aspect-ratio:16/9}.ai-reel{grid-template-columns:repeat(5,minmax(220px,1fr));overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;margin-inline:calc(var(--gut) * -1);padding-inline:var(--gut)}.ai-reel button{scroll-snap-align:start}}
 @media (max-width:600px){.ai-grid,.ai-ofai{grid-template-columns:1fr}.ai-tile{min-height:0}.ai-poster .rt{display:none}}
+.ai-poster{transition:transform 1.2s cubic-bezier(.25,.1,.25,1),box-shadow 1.2s cubic-bezier(.25,.1,.25,1);isolation:isolate}
+.ai-poster .yt{transition:transform 2.6s cubic-bezier(.4,0,.2,1)}.ai-poster .bw{position:absolute;inset:0;-webkit-backdrop-filter:grayscale(1);backdrop-filter:grayscale(1);opacity:1;transition:opacity 2.4s cubic-bezier(.4,0,.2,1);pointer-events:none}.ai-poster:hover .bw,.ai-poster:focus-visible .bw{opacity:0}
+.ai-poster:hover{transform:translateY(-4px);box-shadow:0 46px 90px -40px rgba(255,12,106,.45)}
+.ai-poster:hover .yt,.ai-poster:focus-visible .yt{transform:scale(1.035)}
+.ai-poster .shade{transition:opacity 1.6s cubic-bezier(.25,.1,.25,1)}.ai-poster:hover .shade{opacity:.4}
+.ai-poster .play::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #FF0C6A;animation:aiRing 2.6s cubic-bezier(.2,.6,.3,1) infinite;pointer-events:none}
+@keyframes aiRing{from{transform:scale(1);opacity:.9}to{transform:scale(1.9);opacity:0}}
+.ai-poster:hover .play{transform:scale(1.08)}.ai-poster .play{transition:transform 1.2s cubic-bezier(.25,.1,.25,1)}
+.ai-poster .rt{transition:background 1s cubic-bezier(.25,.1,.25,1),color 1s cubic-bezier(.25,.1,.25,1),transform 1.2s cubic-bezier(.25,.1,.25,1)}
+.ai-poster:hover .rt{background:#FF0C6A;color:#fff;transform:translateY(-2px)}
+@media (hover:none){.ai-poster:hover{transform:none}.ai-poster:hover .yt{transform:none}.ai-poster .bw{display:none}}
+@media (prefers-reduced-motion:reduce){.ai-poster,.ai-poster .yt{transition:none}.ai-poster .play::before{animation:none}}
 /* ===== BenchBox Labs ===== */
 html[data-page=labs] body{background:#0A0A0B}
 html[data-page=labs] .bar{--bg:#0A0A0B;--ink:#F4F4F6;--soft:#1A1A20;--line:#26262C;--muted:#9A9AA3;color:#F4F4F6}
@@ -6425,7 +6437,7 @@ const faqBlock=(f,cls='space')=>f?`<section class="${cls}"><div class="shead"><h
 const pfaq=n=>n==='labs'?'':faqBlock(PFAQ[n]);
 function initOriginals(){
   $$('[data-yt]').forEach(a=>a.addEventListener('click',e=>{if(e.metaKey||e.ctrlKey)return;e.preventDefault();if(a.classList.contains('on'))return;a.classList.add('on');
-    a.insertAdjacentHTML('beforeend',`<iframe src="https://www.youtube-nocookie.com/embed/${a.dataset.yt}?autoplay=1&rel=0&playsinline=1" title="Before You Delete, an AI short film by BenchBox Media" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`)}));
+    a.insertAdjacentHTML('beforeend',`<iframe src="https://www.youtube-nocookie.com/embed/${a.dataset.yt}?autoplay=1&rel=0&playsinline=1" title="Before You Delete, an AI short film by BenchBox Media" allow="autoplay; encrypted-media; picture-in-picture; fullscreen; clipboard-write" allowfullscreen></iframe>`)}));
   $$('[data-ai]').forEach(b=>{const v=b.querySelector('video');b.onclick=()=>openViewer('film',films,+b.dataset.ai);
     b.onpointerenter=()=>{if(!v||reduce)return;if(!v.getAttribute('src'))v.src=v.dataset.src;v.play().then(()=>b.classList.add('on')).catch(()=>{})};
     b.onpointerleave=()=>{v&&v.pause();b.classList.remove('on')}});
@@ -6511,7 +6523,7 @@ home:()=>`
   </section>
   <section class="ai-dark ai-band">
     <div><span class="eyebrow">Bench Box Originals · New</span><h2>Before You Delete</h2><p>Our original AI short film. If AI can make you feel this, imagine what it can do for your next ad.</p><a class="go" href="originals/" data-link>See Originals →</a></div>
-    <a class="ai-poster" href="https://youtu.be/gluIIuQbOnM" target="_blank" rel="noopener" data-yt="gluIIuQbOnM" aria-label="Watch Before You Delete"><span class="sky"></span><img class="yt" src="https://i.ytimg.com/vi/gluIIuQbOnM/maxresdefault.jpg" alt="Still from Before You Delete, an AI short film by BenchBox Media" loading="lazy" onerror="this.remove()"><span class="shade"></span><span class="play"></span><span class="rt">WATCH</span></a>
+    <a class="ai-poster" href="https://youtu.be/gluIIuQbOnM" target="_blank" rel="noopener" data-yt="gluIIuQbOnM" aria-label="Watch Before You Delete"><span class="sky"></span><img class="yt" src="originals/before-you-delete.jpg" alt="Still from Before You Delete, an AI short film by BenchBox Media" loading="lazy" onerror="this.remove()"><span class="bw"></span><span class="shade"></span><span class="play"></span><span class="rt">WATCH</span></a>
   </section>
   ${testiHTML()}
   <section class="space">
@@ -6532,7 +6544,7 @@ originals:()=>`
     <div class="ai-film-top"><span class="eyebrow">Bench Box Originals · An original AI short film</span><span class="eyebrow">2026</span></div>
     <h1 id="aiTitle" class="ai-film-title">Before You Delete</h1>
     <p class="ai-logline">Sometimes &ldquo;nothing&rdquo; becomes &ldquo;everything.&rdquo;</p>
-    <a class="ai-poster" href="https://youtu.be/gluIIuQbOnM" target="_blank" rel="noopener" data-yt="gluIIuQbOnM" aria-label="Watch Before You Delete"><span class="sky"></span><img class="yt" src="https://i.ytimg.com/vi/gluIIuQbOnM/maxresdefault.jpg" alt="Still from Before You Delete, an AI short film by BenchBox Media" loading="lazy" onerror="this.remove()"><span class="shade"></span><span class="play"></span><span class="rt">WATCH THE FILM</span></a>
+    <a class="ai-poster" href="https://youtu.be/gluIIuQbOnM" target="_blank" rel="noopener" data-yt="gluIIuQbOnM" aria-label="Watch Before You Delete"><span class="sky"></span><img class="yt" src="originals/before-you-delete.jpg" alt="Still from Before You Delete, an AI short film by BenchBox Media" loading="lazy" onerror="this.remove()"><span class="bw"></span><span class="shade"></span><span class="play"></span><span class="rt">WATCH THE FILM</span></a>
     <div class="ai-film-info">
       <p class="ai-synopsis">A son sees six years of forgotten files. A father sees the only memory of the woman he loved. An AI-generated emotional narrative about the small, mundane moments we ignore, and how they become the things we miss the most.</p>
       <div class="ai-credits"><div><span class="eyebrow">Produced by</span><b>Bench Box Media</b></div><div><span class="eyebrow">Genre</span><b>AI · Emotional drama</b></div><div><span class="eyebrow">Format</span><b>Short film</b></div></div>
@@ -6623,7 +6635,7 @@ films:()=>`${phead('Work','Ad <span class="hl" style="--c:var(--yellow)">films</
   <div class="wgrid" id="wgrid"></div>
   <section class="ai-dark ai-band">
     <div><span class="eyebrow">Bench Box Originals · New</span><h2>Before You Delete</h2><p>Our original AI short film. If AI can make you feel this, imagine what it can do for your next ad.</p><a class="go" href="originals/" data-link>See Originals →</a></div>
-    <a class="ai-poster" href="https://youtu.be/gluIIuQbOnM" target="_blank" rel="noopener" data-yt="gluIIuQbOnM" aria-label="Watch Before You Delete"><span class="sky"></span><img class="yt" src="https://i.ytimg.com/vi/gluIIuQbOnM/maxresdefault.jpg" alt="Still from Before You Delete, an AI short film by BenchBox Media" loading="lazy" onerror="this.remove()"><span class="shade"></span><span class="play"></span><span class="rt">WATCH</span></a>
+    <a class="ai-poster" href="https://youtu.be/gluIIuQbOnM" target="_blank" rel="noopener" data-yt="gluIIuQbOnM" aria-label="Watch Before You Delete"><span class="sky"></span><img class="yt" src="originals/before-you-delete.jpg" alt="Still from Before You Delete, an AI short film by BenchBox Media" loading="lazy" onerror="this.remove()"><span class="bw"></span><span class="shade"></span><span class="play"></span><span class="rt">WATCH</span></a>
   </section>`,
 
 social:()=>`${phead('Work','Social <span class="hl" style="--c:var(--green)">creatives</span>','Ad creatives, festive posts and campaign visuals made on the bench.')}${workTabs('social')}${oneStat('3000+','Static creatives produced',3)}
